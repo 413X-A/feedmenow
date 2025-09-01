@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Plants Tycoon - Shop</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <h1>Shop / Weltmarkt</h1>
+  <div class="top-bar">
+    <span id="goldDisplay"></span>
+    <span id="waterDisplay"></span>
+    <span id="fertDisplay"></span>
+    <span id="levelDisplay"></span>
+  </div>
+
+  <h2>Seeds kaufen</h2>
+  <div id="seedsList"></div>
+
+  <h2>Wasser kaufen</h2>
+  <div class="buy-controls">
+    <button onclick="adjust('water', -1)">-</button>
+    <span id="waterAmount">0</span>
+    <button onclick="adjust('water', 1)">+</button>
+    <button onclick="buy('water')">Kaufen</button>
+  </div>
+
+  <h2>Dünger kaufen</h2>
+  <div class="buy-controls">
+    <button onclick="adjust('fert', -1)">-</button>
+    <span id="fertAmount">0</span>
+    <button onclick="adjust('fert', 1)">+</button>
+    <button onclick="buy('fert')">Kaufen</button>
+  </div>
+
+  <button onclick="goBack()">Zurück zur Startseite</button>
+</div>
+<script src="shop.js"></script>
+</body>
+</html>
