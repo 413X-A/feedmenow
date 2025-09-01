@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #eef;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.top-bar {
+  background: #444;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 80px);
+  grid-template-rows: repeat(3, 80px);
+  gap: 5px;
+}
+
+.cell {
+  border: 1px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.normal { background-color: lightgreen; }
+.water { background-color: lightblue; }
+.night { background-color: violet; }
+.sand { background-color: beige; }
+.greenhouse { background-color: lightyellow; }
+.blocked { opacity: 0.5; }
+.rotten { background-color: brown; }
+.stone { background-color: gray; }
