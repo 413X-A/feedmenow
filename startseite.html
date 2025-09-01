@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Plants Tycoon - Startseite</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+<div class="top-bar">
+  <div class="top-info">
+    <span id="goldDisplay">Gold: 0</span>
+    <span id="xpDisplay">XP: 0</span>
+    <span id="levelDisplay">Level: 1</span>
+    <span id="waterDisplay">Wasser: 0</span>
+    <span id="fertDisplay">Dünger: 0</span>
+  </div>
+  <div class="top-buttons">
+    <button id="shopBtn">Shop/Weltmarkt</button>
+    <button id="backupExportBtn">Backup Export</button>
+    <button id="backupImportBtn">Backup Import</button>
+  </div>
+</div>
+
+<h2>Deine Felder</h2>
+<div id="fieldsContainer"></div>
+
+<div id="seedMenu" style="display:none;">
+  <h3>Seed setzen:</h3>
+  <div id="seedButtons" class="seed-menu"></div>
+  <button onclick="closeSeedMenu()">Abbrechen</button>
+</div>
+
+</div>
+<script src="start.js"></script>
+</body>
+</html>
