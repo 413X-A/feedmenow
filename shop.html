@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Pflanzen Tycoon - Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadShop()">
+  <div class="top-ui">
+    <span>Gold: <span id="gold">0</span></span> |
+    <span>Level: <span id="level">1</span></span> |
+    <span>XP: <span id="xp">0</span></span>
+  </div>
+
+  <button onclick="goStart()">Zurück</button>
+
+  <h2>Seeds kaufen</h2>
+  <div id="seedShop"></div>
+
+  <h2>Pflanzen verkaufen</h2>
+  <div id="sellShop"></div>
+
+  <h2>Wasser & Dünger</h2>
+  <div>
+    Wasser: <span id="water">0</span> t  
+    <button onclick="buyWater(1)">+1t (1G)</button>
+    <button onclick="buyWater(10)">+10t (10G)</button>
+  </div>
+  <div>
+    Dünger: <span id="fertilizer">0</span>  
+    <button onclick="buyFertilizer(1)">+1 (2G)</button>
+    <button onclick="buyFertilizer(10)">+10 (20G)</button>
+  </div>
+
+  <h2>Weltmarkt</h2>
+  <div id="marketInfo"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
