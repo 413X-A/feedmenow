@@ -695,7 +695,6 @@ function loadGame() {
 
 // navigation from start page
 function goToField(ft) {
-  const d = getCurrentData(); if(!d) { location.href='index.html'; return; }
   // level gating
   if ((ft === 'water' && d.level < 2) || (ft === 'night' && d.level < 3) || (ft === 'sand' && d.level < 4) || (ft === 'greenhouse' && d.level < 5)) {
     alert('Dieses Feld ist noch nicht freigeschaltet. Level aufsteigen um es freizuschalten.');
