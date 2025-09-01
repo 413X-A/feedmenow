@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Plants Tycoon - Startseite</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <div class="top-bar">
+    <span id="goldDisplay">Gold: 0</span>
+    <span id="xpDisplay">XP: 0</span>
+    <span id="levelDisplay">Level: 1</span>
+    <button onclick="openShop()">Shop</button>
+    <button onclick="exportBackup()">Backup Export</button>
+    <button onclick="importBackup()">Backup Import</button>
+  </div>
+
+  <h2>Deine Felder</h2>
+  <div id="fieldsContainer">
+    <!-- Felder werden per JS geladen -->
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
