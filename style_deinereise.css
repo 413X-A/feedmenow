@@ -1,0 +1,47 @@
+.einzelner_fortschritt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #f0f8ff, #e6f7ff);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.einzelner_fortschritt span {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 1rem;
+    flex: 1; /* Text nimmt den verbleibenden Platz */
+}
+
+.einzelner_fortschritt button {
+    padding: 10px 50px;
+    border-radius: 6px;
+    border: none;
+    background-color: #4caf50;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    flex: 0;
+    margin-left: 10px;
+}
+
+.einzelner_fortschritt button:hover:not(:disabled) {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.einzelner_fortschritt button:disabled {
+    background-color: #b0b0b0;
+    cursor: not-allowed;
+}
+
+.einzelner_fortschritt.abgeholt {
+    background-color: #d1d1d1;
+    opacity: 0.7;
+}

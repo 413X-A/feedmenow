@@ -1,0 +1,775 @@
+  // 🌱 Feld 1 freischalten – Gemüsegarten
+  { fortschritt: 0, feld: "Gemüsegarten freischalten", beschreibung: "Du hast den Gemüsegarten freigeschaltet!", name: "Gemüsegarten freischalten", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 0, anzahlfelder: 6}, 
+
+  // 🌱 Gemüsegarten – 10 Pflanzen
+  { fortschritt: 1, feld: "Gemüsegarten", beschreibung: "Karotten wachsen gleichmäßig.", name: "Karotte", dauer: 3, xp: 2, kaufpreis: 2, verkaufspreis: 8, ansehen: 1, freigeschaltet: false, wasserverbrauch: 1, energieverbrauch: 0, gold: 0, wasser: 0, energie: 0, samen: 10, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 0, anzahlfelder: null}, 
+  { fortschritt: 2, feld: "Gemüsegarten", beschreibung: "Frischer Salat ist beliebt.", name: "Salat", dauer: 4, xp: 3, kaufpreis: 3, verkaufspreis: 10, ansehen: 1, freigeschaltet: false, wasserverbrauch: 1, energieverbrauch: 0, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 20, anzahlfelder: null}, 
+
+  // 🎁 Bonus
+  { fortschritt: 3, feld: "Bonus", beschreibung: "Du erhältst 5 Gold!", name: "Bonus", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 5, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: true, fertiggewachsen: null, exp_fortschritt: 30, anzahlfelder: null}, 
+
+  { fortschritt: 4, feld: "Gemüsegarten", beschreibung: "Tomaten reifen kräftig.", name: "Tomate", dauer: 5, xp: 4, kaufpreis: 4, verkaufspreis: 12, ansehen: 2, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 0, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 40, anzahlfelder: null}, 
+  { fortschritt: 5, feld: "Gemüsegarten", beschreibung: "Gurken sind erfrischend.", name: "Gurke", dauer: 6, xp: 4, kaufpreis: 4, verkaufspreis: 14, ansehen: 1, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 0, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 50, anzahlfelder: null}, 
+
+  // 🎁 Bonus
+  { fortschritt: 6, feld: "Bonus", beschreibung: "Du erhältst 5 Wasser!", name: "Bonus", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 5, energie: 0, samen: 0, geerntet: 0, bonus: true, fertiggewachsen: null, exp_fortschritt: 60, anzahlfelder: null}, 
+
+  { fortschritt: 7, feld: "Gemüsegarten", beschreibung: "Zwiebeln für viele Gerichte.", name: "Zwiebel", dauer: 7, xp: 5, kaufpreis: 5, verkaufspreis: 15, ansehen: 2, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 1, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 70, anzahlfelder: null}, 
+  { fortschritt: 8, feld: "Gemüsegarten", beschreibung: "Radieschen sind knackig.", name: "Radieschen", dauer: 4, xp: 3, kaufpreis: 3, verkaufspreis: 11, ansehen: 1, freigeschaltet: false, wasserverbrauch: 1, energieverbrauch: 1, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 80, anzahlfelder: null}, 
+  { fortschritt: 9, feld: "Gemüsegarten", beschreibung: "Kürbisse brauchen Geduld.", name: "Kürbis", dauer: 10, xp: 6, kaufpreis: 6, verkaufspreis: 20, ansehen: 3, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 90, anzahlfelder: null}, 
+  { fortschritt: 10, feld: "Gemüsegarten", beschreibung: "Paprika bringt Farbe.", name: "Paprika", dauer: 8, xp: 6, kaufpreis: 6, verkaufspreis: 18, ansehen: 2, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 100, anzahlfelder: null}, 
+  { fortschritt: 11, feld: "Gemüsegarten", beschreibung: "Spinat ist gesund.", name: "Spinat", dauer: 5, xp: 4, kaufpreis: 4, verkaufspreis: 13, ansehen: 1, freigeschaltet: false, wasserverbrauch: 1, energieverbrauch: 1, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 110, anzahlfelder: null}, 
+  { fortschritt: 12, feld: "Gemüsegarten", beschreibung: "Brokkoli stärkt die Gesundheit.", name: "Brokkoli", dauer: 6, xp: 5, kaufpreis: 5, verkaufspreis: 16, ansehen: 2, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 1, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 120, anzahlfelder: null}, 
+
+  // 🌍 Weltmarkt – Samenhändler
+  { fortschritt: 13, feld: "Weltmarkt", beschreibung: "Der Samenhändler ist jetzt verfügbar! Kaufe Samen direkt beim Markt.", name: "Weltmarkt", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 130, anzahlfelder: null}, 
+
+
+
+  // 🌾 Feld 2 freischalten – Getreideacker
+{ fortschritt: 14, feld: "Getreideacker freischalten", beschreibung: "Du hast den Getreideacker freigeschaltet!", name: "Getreideacker freischalten", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 140, anzahlfelder: 12}, 
+
+// 🌾 Getreideacker – 10 Pflanzen
+{ fortschritt: 15, feld: "Getreideacker", beschreibung: "Weizen ist die Basis vieler Produkte.", name: "Weizen", dauer: 8, xp: 5, kaufpreis: 5, verkaufspreis: 15, ansehen: 2, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 160, anzahlfelder: null}, 
+{ fortschritt: 16, feld: "Getreideacker", beschreibung: "Gerste für kräftiges Bier.", name: "Gerste", dauer: 9, xp: 6, kaufpreis: 6, verkaufspreis: 18, ansehen: 2, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 180, anzahlfelder: null}, 
+
+// 🎁 Bonus
+{ fortschritt: 17, feld: "Bonus", beschreibung: "Du erhältst 10 Gold!", name: "Bonus", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 10, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: true, fertiggewachsen: null, exp_fortschritt: 200, anzahlfelder: null}, 
+
+{ fortschritt: 18, feld: "Getreideacker", beschreibung: "Roggen ist robust.", name: "Roggen", dauer: 10, xp: 7, kaufpreis: 7, verkaufspreis: 20, ansehen: 3, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 220, anzahlfelder: null}, 
+{ fortschritt: 19, feld: "Getreideacker", beschreibung: "Hafer für gesunde Nahrung.", name: "Hafer", dauer: 11, xp: 8, kaufpreis: 8, verkaufspreis: 22, ansehen: 3, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 240, anzahlfelder: null}, 
+
+// 🎁 Bonus
+{ fortschritt: 20, feld: "Bonus", beschreibung: "Du erhältst 10 Wasser!", name: "Bonus", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 10, energie: 0, samen: 0, geerntet: 0, bonus: true, fertiggewachsen: null, exp_fortschritt: 260, anzahlfelder: null}, 
+
+{ fortschritt: 21, feld: "Getreideacker", beschreibung: "Mais ist vielseitig.", name: "Mais", dauer: 12, xp: 9, kaufpreis: 9, verkaufspreis: 24, ansehen: 3, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 280, anzahlfelder: null}, 
+{ fortschritt: 22, feld: "Getreideacker", beschreibung: "Hirse ist trockenresistent.", name: "Hirse", dauer: 11, xp: 8, kaufpreis: 8, verkaufspreis: 23, ansehen: 2, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 300, anzahlfelder: null}, 
+{ fortschritt: 23, feld: "Getreideacker", beschreibung: "Buchweizen ist beliebt.", name: "Buchweizen", dauer: 10, xp: 7, kaufpreis: 7, verkaufspreis: 21, ansehen: 2, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 320, anzahlfelder: null}, 
+
+// 🎁 Bonus
+{ fortschritt: 24, feld: "Bonus", beschreibung: "Du erhältst 5 Energie!", name: "Bonus", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 0, energie: 5, samen: 0, geerntet: 0, bonus: true, fertiggewachsen: null, exp_fortschritt: 340, anzahlfelder: null}, 
+
+{ fortschritt: 25, feld: "Getreideacker", beschreibung: "Dinkel ist ein Klassiker.", name: "Dinkel", dauer: 13, xp: 10, kaufpreis: 10, verkaufspreis: 26, ansehen: 3, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 360, anzahlfelder: null}, 
+{ fortschritt: 26, feld: "Getreideacker", beschreibung: "Reis wächst in Wasserfeldern.", name: "Reis", dauer: 14, xp: 11, kaufpreis: 11, verkaufspreis: 28, ansehen: 4, freigeschaltet: false, wasserverbrauch: 4, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 380, anzahlfelder: null}, 
+{ fortschritt: 27, feld: "Getreideacker", beschreibung: "Quinoa ist sehr wertvoll.", name: "Quinoa", dauer: 15, xp: 12, kaufpreis: 12, verkaufspreis: 30, ansehen: 5, freigeschaltet: false, wasserverbrauch: 4, energieverbrauch: 4, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 400, anzahlfelder: null}, 
+
+// 🌍 Weltmarkt – Getreidehändler
+{ fortschritt: 28, feld: "Weltmarkt", beschreibung: "Der Getreidehändler ist jetzt verfügbar! Verkaufe dein Getreide auf dem Markt.", name: "Weltmarkt", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 420, anzahlfelder: null}, 
+
+// 🍎 Feld 3 freischalten – Obstplantage
+{ fortschritt: 29, feld: "Obstplantage freischalten", beschreibung: "Du hast die Obstplantage freigeschaltet!", name: "Obstplantage freischalten", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 440, anzahlfelder: 6}, 
+
+
+
+// 🍎 Obstplantage – 10 Pflanzen
+{ fortschritt: 30, feld: "Obstplantage", beschreibung: "Apfelbäume tragen regelmäßig Früchte.", name: "Apfel", dauer: 12, xp: 6, kaufpreis: 6, verkaufspreis: 20, ansehen: 2, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 470, anzahlfelder: null}, 
+{ fortschritt: 31, feld: "Obstplantage", beschreibung: "Birnen sind süß und saftig.", name: "Birne", dauer: 13, xp: 7, kaufpreis: 7, verkaufspreis: 22, ansehen: 2, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 500, anzahlfelder: null}, 
+
+// 🎁 Bonus
+{ fortschritt: 32, feld: "Bonus", beschreibung: "Du erhältst 15 Gold!", name: "Bonus", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 15, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: true, fertiggewachsen: null, exp_fortschritt: 530, anzahlfelder: null}, 
+
+{ fortschritt: 33, feld: "Obstplantage", beschreibung: "Kirschen sind beliebt.", name: "Kirsche", dauer: 14, xp: 8, kaufpreis: 8, verkaufspreis: 24, ansehen: 3, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 560, anzahlfelder: null}, 
+{ fortschritt: 34, feld: "Obstplantage", beschreibung: "Pflaumen wachsen langsam.", name: "Pflaume", dauer: 15, xp: 9, kaufpreis: 9, verkaufspreis: 26, ansehen: 3, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 590, anzahlfelder: null}, 
+
+// 🎁 Bonus
+{ fortschritt: 35, feld: "Bonus", beschreibung: "Du erhältst 10 Wasser!", name: "Bonus", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 10, energie: 0, samen: 0, geerntet: 0, bonus: true, fertiggewachsen: null, exp_fortschritt: 620, anzahlfelder: null}, 
+
+{ fortschritt: 36, feld: "Obstplantage", beschreibung: "Aprikosen sind süß und nahrhaft.", name: "Aprikose", dauer: 15, xp: 9, kaufpreis: 9, verkaufspreis: 27, ansehen: 3, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 650, anzahlfelder: null}, 
+{ fortschritt: 37, feld: "Obstplantage", beschreibung: "Pfirsiche sind ein Luxusgut.", name: "Pfirsich", dauer: 16, xp: 10, kaufpreis: 10, verkaufspreis: 30, ansehen: 4, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 680, anzahlfelder: null}, 
+
+// 🎁 Bonus
+{ fortschritt: 38, feld: "Bonus", beschreibung: "Du erhältst 10 Energie!", name: "Bonus", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 0, energie: 10, samen: 0, geerntet: 0, bonus: true, fertiggewachsen: null, exp_fortschritt: 710, anzahlfelder: null}, 
+
+{ fortschritt: 39, feld: "Obstplantage", beschreibung: "Mangos sind exotisch.", name: "Mango", dauer: 18, xp: 11, kaufpreis: 12, verkaufspreis: 35, ansehen: 5, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 740, anzahlfelder: null}, 
+{ fortschritt: 40, feld: "Obstplantage", beschreibung: "Orangen sind erfrischend.", name: "Orange", dauer: 17, xp: 11, kaufpreis: 11, verkaufspreis: 32, ansehen: 4, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 770, anzahlfelder: null}, 
+{ fortschritt: 41, feld: "Obstplantage", beschreibung: "Zitronen bringen Frische.", name: "Zitrone", dauer: 16, xp: 10, kaufpreis: 10, verkaufspreis: 30, ansehen: 3, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 800, anzahlfelder: null}, 
+{ fortschritt: 42, feld: "Obstplantage", beschreibung: "Granatäpfel sind wertvoll.", name: "Granatapfel", dauer: 19, xp: 12, kaufpreis: 13, verkaufspreis: 38, ansehen: 5, freigeschaltet: false, wasserverbrauch: 4, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 830, anzahlfelder: null}, 
+
+// 🌍 Weltmarkt – Obsthändler
+{ fortschritt: 43, feld: "Weltmarkt", beschreibung: "Der Obsthändler ist jetzt verfügbar! Verkaufe Obst zu besseren Preisen.", name: "Weltmarkt", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 860, anzahlfelder: null}, 
+
+
+
+// 🍓 Feld 4 freischalten – Beerenhain
+{ fortschritt: 44, feld: "Beerenhain freischalten", beschreibung: "Du hast den Beerenhain freigeschaltet!", name: "Beerenhain freischalten", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 900, anzahlfelder: 6}, 
+
+// 🍓 Beerenhain – 10 Pflanzen
+{ fortschritt: 45, feld: "Beerenhain", beschreibung: "Erdbeeren sind süß und beliebt.", name: "Erdbeere", dauer: 10, xp: 6, kaufpreis: 5, verkaufspreis: 18, ansehen: 2, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 930, anzahlfelder: null}, 
+{ fortschritt: 46, feld: "Beerenhain", beschreibung: "Himbeeren wachsen zügig.", name: "Himbeere", dauer: 11, xp: 7, kaufpreis: 6, verkaufspreis: 20, ansehen: 2, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 960, anzahlfelder: null}, 
+
+// 🎁 Bonus
+{ fortschritt: 47, feld: "Bonus", beschreibung: "Du erhältst 20 Gold!", name: "Bonus", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 20, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: true, fertiggewachsen: null, exp_fortschritt: 990, anzahlfelder: null}, 
+
+{ fortschritt: 48, feld: "Beerenhain", beschreibung: "Brombeeren wachsen dicht.", name: "Brombeere", dauer: 12, xp: 7, kaufpreis: 6, verkaufspreis: 22, ansehen: 3, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 1020, anzahlfelder: null}, 
+{ fortschritt: 49, feld: "Beerenhain", beschreibung: "Heidelbeeren sind begehrt.", name: "Heidelbeere", dauer: 13, xp: 8, kaufpreis: 7, verkaufspreis: 25, ansehen: 3, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 1050, anzahlfelder: null}, 
+
+// 🎁 Bonus
+{ fortschritt: 50, feld: "Bonus", beschreibung: "Du erhältst 15 Wasser!", name: "Bonus", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 15, energie: 0, samen: 0, geerntet: 0, bonus: true, fertiggewachsen: null, exp_fortschritt: 1080, anzahlfelder: null}, 
+
+{ fortschritt: 51, feld: "Beerenhain", beschreibung: "Johannisbeeren sind klein, aber wertvoll.", name: "Johannisbeere", dauer: 14, xp: 8, kaufpreis: 7, verkaufspreis: 26, ansehen: 4, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 1110, anzahlfelder: null}, 
+{ fortschritt: 52, feld: "Beerenhain", beschreibung: "Stachelbeeren gedeihen gut.", name: "Stachelbeere", dauer: 13, xp: 7, kaufpreis: 6, verkaufspreis: 23, ansehen: 3, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 1140, anzahlfelder: null}, 
+{ fortschritt: 53, feld: "Beerenhain", beschreibung: "Goji-Beeren sind selten.", name: "Goji-Beere", dauer: 15, xp: 9, kaufpreis: 9, verkaufspreis: 30, ansehen: 5, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 1170, anzahlfelder: null}, 
+{ fortschritt: 54, feld: "Beerenhain", beschreibung: "Cranberrys sind beliebt in der Küche.", name: "Cranberry", dauer: 16, xp: 10, kaufpreis: 10, verkaufspreis: 32, ansehen: 4, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 1200, anzahlfelder: null}, 
+{ fortschritt: 55, feld: "Beerenhain", beschreibung: "Sanddorn liefert viele Vitamine.", name: "Sanddorn", dauer: 17, xp: 11, kaufpreis: 11, verkaufspreis: 35, ansehen: 5, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 1230, anzahlfelder: null}, 
+{ fortschritt: 56, feld: "Beerenhain", beschreibung: "Holunder ist nützlich für Sirup.", name: "Holunder", dauer: 18, xp: 12, kaufpreis: 12, verkaufspreis: 38, ansehen: 5, freigeschaltet: false, wasserverbrauch: 4, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 1260, anzahlfelder: null}, 
+
+// 🌍 Weltmarkt – Beerenhändler
+{ fortschritt: 57, feld: "Weltmarkt", beschreibung: "Der Beerenhändler ist jetzt verfügbar! Verkaufe Beeren zu besseren Preisen.", name: "Weltmarkt", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 1290, anzahlfelder: null}, 
+
+
+
+// 🌿 Feld 5 freischalten – Kräutergarten
+{ fortschritt: 58, feld: "Kräutergarten freischalten", beschreibung: "Du hast den Kräutergarten freigeschaltet!", name: "Kräutergarten freischalten", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 1320, anzahlfelder: 6},
+
+// 🌿 Kräutergarten – 10 Pflanzen
+{ fortschritt: 59, feld: "Kräutergarten", beschreibung: "Basilikum ist aromatisch und beliebt.", name: "Basilikum", dauer: 8, xp: 6, kaufpreis: 4, verkaufspreis: 16, ansehen: 2, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 1, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 1350, anzahlfelder: null},
+{ fortschritt: 60, feld: "Kräutergarten", beschreibung: "Petersilie wächst schnell.", name: "Petersilie", dauer: 9, xp: 6, kaufpreis: 4, verkaufspreis: 17, ansehen: 2, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 1, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 1380, anzahlfelder: null},
+
+// 🎁 Bonus
+{ fortschritt: 61, feld: "Bonus", beschreibung: "Du erhältst 10 Energie!", name: "Bonus", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 0, energie: 10, samen: 0, geerntet: 0, bonus: true, fertiggewachsen: null, exp_fortschritt: 1410, anzahlfelder: null},
+
+{ fortschritt: 62, feld: "Kräutergarten", beschreibung: "Dill ist vielseitig verwendbar.", name: "Dill", dauer: 10, xp: 7, kaufpreis: 5, verkaufspreis: 18, ansehen: 3, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 1440, anzahlfelder: null},
+{ fortschritt: 63, feld: "Kräutergarten", beschreibung: "Thymian wächst robust.", name: "Thymian", dauer: 11, xp: 7, kaufpreis: 5, verkaufspreis: 19, ansehen: 3, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 1470, anzahlfelder: null},
+
+{ fortschritt: 64, feld: "Kräutergarten", beschreibung: "Rosmarin duftet herrlich.", name: "Rosmarin", dauer: 12, xp: 8, kaufpreis: 6, verkaufspreis: 20, ansehen: 4, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 1500, anzahlfelder: null},
+
+// 🎁 Bonus
+{ fortschritt: 65, feld: "Bonus", beschreibung: "Du erhältst 15 Gold!", name: "Bonus", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 15, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: true, fertiggewachsen: null, exp_fortschritt: 1530, anzahlfelder: null},
+
+{ fortschritt: 66, feld: "Kräutergarten", beschreibung: "Minze ist erfrischend.", name: "Minze", dauer: 9, xp: 6, kaufpreis: 4, verkaufspreis: 18, ansehen: 2, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 1, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 1560, anzahlfelder: null},
+{ fortschritt: 67, feld: "Kräutergarten", beschreibung: "Koriander ist beliebt in der Küche.", name: "Koriander", dauer: 10, xp: 7, kaufpreis: 5, verkaufspreis: 19, ansehen: 3, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 1590, anzahlfelder: null},
+{ fortschritt: 68, feld: "Kräutergarten", beschreibung: "Schnittlauch wächst schnell.", name: "Schnittlauch", dauer: 9, xp: 6, kaufpreis: 4, verkaufspreis: 17, ansehen: 2, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 1, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 1620, anzahlfelder: null},
+{ fortschritt: 69, feld: "Kräutergarten", beschreibung: "Salbei wirkt heilend.", name: "Salbei", dauer: 12, xp: 8, kaufpreis: 6, verkaufspreis: 21, ansehen: 4, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 1650, anzahlfelder: null},
+{ fortschritt: 70, feld: "Kräutergarten", beschreibung: "Oregano passt zu vielen Gerichten.", name: "Oregano", dauer: 11, xp: 7, kaufpreis: 5, verkaufspreis: 20, ansehen: 3, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 1680, anzahlfelder: null},
+
+// 🌍 Weltmarkt – Kräuterhändler
+{ fortschritt: 71, feld: "Weltmarkt", beschreibung: "Der Kräuterhändler ist verfügbar! Verkaufe Kräuter für höhere Preise.", name: "Weltmarkt", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 1710, anzahlfelder: null},
+
+
+
+// 🌸 Feld 6 freischalten – Blumenfeld
+{ fortschritt: 72, feld: "Blumenfeld freischalten", beschreibung: "Du hast das Blumenfeld freigeschaltet!", name: "Blumenfeld freischalten", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 1740, anzahlfelder: 6},
+
+// 🌸 Blumenfeld – 10 Pflanzen
+{ fortschritt: 73, feld: "Blumenfeld", beschreibung: "Rose - klassische Schönheit.", name: "Rose", dauer: 10, xp: 8, kaufpreis: 5, verkaufspreis: 20, ansehen: 3, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 1770, anzahlfelder: null},
+{ fortschritt: 74, feld: "Blumenfeld", beschreibung: "Sonnenblume wächst hoch.", name: "Sonnenblume", dauer: 9, xp: 7, kaufpreis: 4, verkaufspreis: 18, ansehen: 2, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 1, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 1800, anzahlfelder: null},
+
+// 🎁 Bonus
+{ fortschritt: 75, feld: "Bonus", beschreibung: "Du erhältst 10 Wasser!", name: "Bonus", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 10, energie: 0, samen: 0, geerntet: 0, bonus: true, fertiggewachsen: null, exp_fortschritt: 1830, anzahlfelder: null},
+
+{ fortschritt: 76, feld: "Blumenfeld", beschreibung: "Tulpe blüht früh im Jahr.", name: "Tulpe", dauer: 8, xp: 6, kaufpreis: 3, verkaufspreis: 15, ansehen: 2, freigeschaltet: false, wasserverbrauch: 1, energieverbrauch: 1, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 1860, anzahlfelder: null},
+{ fortschritt: 77, feld: "Blumenfeld", beschreibung: "Lilie ist elegant.", name: "Lilie", dauer: 10, xp: 7, kaufpreis: 4, verkaufspreis: 18, ansehen: 3, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 1890, anzahlfelder: null},
+
+{ fortschritt: 78, feld: "Blumenfeld", beschreibung: "Orchidee ist selten und wertvoll.", name: "Orchidee", dauer: 12, xp: 9, kaufpreis: 6, verkaufspreis: 25, ansehen: 4, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 1920, anzahlfelder: null},
+{ fortschritt: 79, feld: "Blumenfeld", beschreibung: "Narzisse blüht im Frühling.", name: "Narzisse", dauer: 9, xp: 7, kaufpreis: 4, verkaufspreis: 17, ansehen: 2, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 1, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 1950, anzahlfelder: null},
+
+// 🎁 Bonus
+{ fortschritt: 80, feld: "Bonus", beschreibung: "Du erhältst 15 Gold!", name: "Bonus", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 15, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: true, fertiggewachsen: null, exp_fortschritt: 1980, anzahlfelder: null},
+
+{ fortschritt: 81, feld: "Blumenfeld", beschreibung: "Chrysantheme blüht lange.", name: "Chrysantheme", dauer: 10, xp: 8, kaufpreis: 5, verkaufspreis: 20, ansehen: 3, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 2010, anzahlfelder: null},
+{ fortschritt: 82, feld: "Blumenfeld", beschreibung: "Lavendel duftet wunderbar.", name: "Lavendel", dauer: 11, xp: 8, kaufpreis: 5, verkaufspreis: 22, ansehen: 3, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 2040, anzahlfelder: null},
+{ fortschritt: 83, feld: "Blumenfeld", beschreibung: "Mohn blüht bunt.", name: "Mohn", dauer: 9, xp: 7, kaufpreis: 4, verkaufspreis: 18, ansehen: 2, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 1, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 2070, anzahlfelder: null},
+{ fortschritt: 84, feld: "Blumenfeld", beschreibung: "Gerbera ist farbenfroh.", name: "Gerbera", dauer: 10, xp: 8, kaufpreis: 5, verkaufspreis: 20, ansehen: 3, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 2100, anzahlfelder: null},
+
+// 🌍 Weltmarkt – Blumenhändler
+{ fortschritt: 85, feld: "Weltmarkt", beschreibung: "Der Blumenhändler ist verfügbar! Verkaufe Blumen direkt auf dem Markt.", name: "Weltmarkt", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 2130, anzahlfelder: null},
+
+
+
+// 🌴 Feld 7 freischalten – Tropisches Feld
+{ fortschritt: 86, feld: "Tropisches Feld freischalten", beschreibung: "Du hast das Tropische Feld freigeschaltet!", name: "Tropisches Feld freischalten", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 2160, anzahlfelder: 6},
+
+// 🌴 Tropisches Feld – 10 Pflanzen
+{ fortschritt: 87, feld: "Tropisches Feld", beschreibung: "Banane wächst schnell und liefert Energie.", name: "Banane", dauer: 12, xp: 10, kaufpreis: 6, verkaufspreis: 25, ansehen: 3, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 2190, anzahlfelder: null},
+{ fortschritt: 88, feld: "Tropisches Feld", beschreibung: "Ananas gedeiht in warmem Klima.", name: "Ananas", dauer: 14, xp: 11, kaufpreis: 7, verkaufspreis: 28, ansehen: 4, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 2225, anzahlfelder: null},
+
+// 🎁 Bonus
+{ fortschritt: 89, feld: "Bonus", beschreibung: "Du erhältst 10 Energie!", name: "Bonus", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 0, energie: 10, samen: 0, geerntet: 0, bonus: true, fertiggewachsen: null, exp_fortschritt: 2260, anzahlfelder: null},
+
+{ fortschritt: 90, feld: "Tropisches Feld", beschreibung: "Papaya ist tropisch und saftig.", name: "Papaya", dauer: 13, xp: 10, kaufpreis: 6, verkaufspreis: 26, ansehen: 3, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 2295, anzahlfelder: null},
+{ fortschritt: 91, feld: "Tropisches Feld", beschreibung: "Kokosnuss liefert Nahrung und Wasser.", name: "Kokosnuss", dauer: 15, xp: 12, kaufpreis: 8, verkaufspreis: 30, ansehen: 4, freigeschaltet: false, wasserverbrauch: 4, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 2330, anzahlfelder: null},
+
+{ fortschritt: 92, feld: "Tropisches Feld", beschreibung: "Guave ist exotisch und lecker.", name: "Guave", dauer: 12, xp: 10, kaufpreis: 6, verkaufspreis: 25, ansehen: 3, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 2365, anzahlfelder: null},
+{ fortschritt: 93, feld: "Tropisches Feld", beschreibung: "Passionsfrucht - exotisch und beliebt.", name: "Passionsfrucht", dauer: 14, xp: 11, kaufpreis: 7, verkaufspreis: 28, ansehen: 4, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 2400, anzahlfelder: null},
+
+// 🎁 Bonus
+{ fortschritt: 94, feld: "Bonus", beschreibung: "Du erhältst 10 Gold!", name: "Bonus", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 10, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: true, fertiggewachsen: null, exp_fortschritt: 2435, anzahlfelder: null},
+
+{ fortschritt: 95, feld: "Tropisches Feld", beschreibung: "Litschi ist exotisch und süß.", name: "Litschi", dauer: 13, xp: 10, kaufpreis: 6, verkaufspreis: 26, ansehen: 3, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 2470, anzahlfelder: null},
+{ fortschritt: 96, feld: "Tropisches Feld", beschreibung: "Drachenfrucht - selten und wertvoll.", name: "Drachenfrucht", dauer: 15, xp: 12, kaufpreis: 8, verkaufspreis: 30, ansehen: 5, freigeschaltet: false, wasserverbrauch: 4, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 2505, anzahlfelder: null},
+{ fortschritt: 97, feld: "Tropisches Feld", beschreibung: "Avocado ist cremig und beliebt.", name: "Avocado", dauer: 14, xp: 11, kaufpreis: 7, verkaufspreis: 28, ansehen: 4, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 2540, anzahlfelder: null},
+{ fortschritt: 98, feld: "Tropisches Feld", beschreibung: "Jackfrucht - gigantisch und selten.", name: "Jackfrucht", dauer: 16, xp: 13, kaufpreis: 9, verkaufspreis: 35, ansehen: 5, freigeschaltet: false, wasserverbrauch: 4, energieverbrauch: 4, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 2575, anzahlfelder: null},
+
+// 🌍 Weltmarkt – Tropische Früchte verfügbar
+{ fortschritt: 99, feld: "Weltmarkt", beschreibung: "Der tropische Früchtehändler ist verfügbar! Verkaufe exotische Früchte.", name: "Weltmarkt", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 2610, anzahlfelder: null},
+
+
+
+// 🏠 Feld 8 freischalten – Gewächshaus
+{ fortschritt: 100, feld: "Gewächshaus freischalten", beschreibung: "Du hast das Gewächshaus freigeschaltet!", name: "Gewächshaus freischalten", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 2610, anzahlfelder: 6},
+
+// 🏠 Gewächshaus – 10 Pflanzen
+{ fortschritt: 101, feld: "Gewächshaus", beschreibung: "Gurke (Premium) wächst unter optimalen Bedingungen.", name: "Gurke (Premium)", dauer: 8, xp: 12, kaufpreis: 8, verkaufspreis: 35, ansehen: 5, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 2645, anzahlfelder: null},
+{ fortschritt: 102, feld: "Gewächshaus", beschreibung: "Tomate (Premium) liebt das Gewächshaus.", name: "Tomate (Premium)", dauer: 9, xp: 13, kaufpreis: 9, verkaufspreis: 38, ansehen: 5, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 2685, anzahlfelder: null},
+
+// 🎁 Bonus
+{ fortschritt: 103, feld: "Bonus", beschreibung: "Du erhältst 15 Gold für deine Premium-Produkte!", name: "Bonus", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 15, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: true, fertiggewachsen: null, exp_fortschritt: 2725, anzahlfelder: null},
+
+{ fortschritt: 104, feld: "Gewächshaus", beschreibung: "Aubergine gedeiht gut im Gewächshaus.", name: "Aubergine", dauer: 10, xp: 11, kaufpreis: 7, verkaufspreis: 30, ansehen: 4, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 2760, anzahlfelder: null},
+{ fortschritt: 105, feld: "Gewächshaus", beschreibung: "Chili ist würzig und beliebt.", name: "Chili", dauer: 8, xp: 12, kaufpreis: 8, verkaufspreis: 35, ansehen: 5, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 2800, anzahlfelder: null},
+
+{ fortschritt: 106, feld: "Gewächshaus", beschreibung: "Zucchini wächst gleichmäßig.", name: "Zucchini", dauer: 9, xp: 11, kaufpreis: 7, verkaufspreis: 32, ansehen: 4, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 2840, anzahlfelder: null},
+{ fortschritt: 107, feld: "Gewächshaus", beschreibung: "Spinat (Premium) wächst schnell.", name: "Spinat (Premium)", dauer: 7, xp: 12, kaufpreis: 8, verkaufspreis: 34, ansehen: 5, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 2880, anzahlfelder: null},
+
+// 🎁 Bonus
+{ fortschritt: 108, feld: "Bonus", beschreibung: "Du erhältst 10 Wasser für die Pflanzenpflege!", name: "Bonus", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 10, energie: 0, samen: 0, geerntet: 0, bonus: true, fertiggewachsen: null, exp_fortschritt: 2920, anzahlfelder: null},
+
+{ fortschritt: 109, feld: "Gewächshaus", beschreibung: "Rucola wächst würzig und klein.", name: "Rucola", dauer: 8, xp: 10, kaufpreis: 6, verkaufspreis: 28, ansehen: 3, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 2960, anzahlfelder: null},
+{ fortschritt: 110, feld: "Gewächshaus", beschreibung: "Kresse wächst schnell und klein.", name: "Kresse", dauer: 6, xp: 9, kaufpreis: 5, verkaufspreis: 24, ansehen: 3, freigeschaltet: false, wasserverbrauch: 1, energieverbrauch: 1, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 3000, anzahlfelder: null},
+
+{ fortschritt: 111, feld: "Gewächshaus", beschreibung: "Melone ist saftig und beliebt.", name: "Melone", dauer: 12, xp: 11, kaufpreis: 7, verkaufspreis: 32, ansehen: 4, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 3040, anzahlfelder: null},
+{ fortschritt: 112, feld: "Gewächshaus", beschreibung: "Trauben - süß und wertvoll.", name: "Trauben", dauer: 10, xp: 12, kaufpreis: 8, verkaufspreis: 36, ansehen: 5, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 3080, anzahlfelder: null},
+
+// 🌍 Weltmarkt – Gewächshaus-Produkte verfügbar
+{ fortschritt: 113, feld: "Weltmarkt", beschreibung: "Gewächshaus-Händler verfügbar! Premium-Gemüse kann verkauft werden.", name: "Weltmarkt", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 3120, anzahlfelder: null},
+
+
+
+// 🏠 Feld 9 freischalten – Exotische Heilpflanzen
+{ fortschritt: 114, feld: "Exotische Heilpflanzen freischalten", beschreibung: "Du hast das Feld für Exotische Heilpflanzen freigeschaltet!", name: "Exotische Heilpflanzen freischalten", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 3160, anzahlfelder: 6},
+
+// 🏠 Exotische Heilpflanzen – 10 Pflanzen
+{ fortschritt: 115, feld: "Exotische Heilpflanzen", beschreibung: "Aloe Vera wächst und stärkt deine Heilkräfte.", name: "Aloe Vera", dauer: 10, xp: 14, kaufpreis: 10, verkaufspreis: 45, ansehen: 6, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 3205, anzahlfelder: null},
+{ fortschritt: 116, feld: "Exotische Heilpflanzen", beschreibung: "Ginseng ist selten und wertvoll.", name: "Ginseng", dauer: 12, xp: 15, kaufpreis: 12, verkaufspreis: 50, ansehen: 7, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 3250, anzahlfelder: null},
+
+// 🎁 Bonus
+{ fortschritt: 117, feld: "Bonus", beschreibung: "Du erhältst 20 Gold für exotische Heilpflanzen!", name: "Bonus", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 20, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: true, fertiggewachsen: null, exp_fortschritt: 3300, anzahlfelder: null},
+
+{ fortschritt: 118, feld: "Exotische Heilpflanzen", beschreibung: "Kurkuma wächst intensiv und ist begehrt.", name: "Kurkuma", dauer: 11, xp: 13, kaufpreis: 9, verkaufspreis: 42, ansehen: 5, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 3345, anzahlfelder: null},
+{ fortschritt: 119, feld: "Exotische Heilpflanzen", beschreibung: "Ingwer wächst aromatisch.", name: "Ingwer", dauer: 10, xp: 12, kaufpreis: 8, verkaufspreis: 40, ansehen: 5, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 3390, anzahlfelder: null},
+
+{ fortschritt: 120, feld: "Exotische Heilpflanzen", beschreibung: "Eukalyptus wächst schnell und verbreitet Aroma.", name: "Eukalyptus", dauer: 9, xp: 11, kaufpreis: 7, verkaufspreis: 36, ansehen: 4, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 3435, anzahlfelder: null},
+{ fortschritt: 121, feld: "Exotische Heilpflanzen", beschreibung: "Teebaum ist beliebt für Heilmittel.", name: "Teebaum", dauer: 10, xp: 12, kaufpreis: 8, verkaufspreis: 40, ansehen: 5, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 3480, anzahlfelder: null},
+
+// 🎁 Bonus
+{ fortschritt: 122, feld: "Bonus", beschreibung: "Du erhältst 10 Energie für deine exotischen Pflanzen!", name: "Bonus", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 0, energie: 10, samen: 0, geerntet: 0, bonus: true, fertiggewachsen: null, exp_fortschritt: 3530, anzahlfelder: null},
+
+{ fortschritt: 123, feld: "Exotische Heilpflanzen", beschreibung: "Kava wächst langsam, aber wertvoll.", name: "Kava", dauer: 12, xp: 14, kaufpreis: 10, verkaufspreis: 48, ansehen: 6, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 3580, anzahlfelder: null},
+{ fortschritt: 124, feld: "Exotische Heilpflanzen", beschreibung: "Ashwagandha ist selten und besonders.", name: "Ashwagandha", dauer: 11, xp: 13, kaufpreis: 9, verkaufspreis: 44, ansehen: 5, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 3630, anzahlfelder: null},
+
+{ fortschritt: 125, feld: "Exotische Heilpflanzen", beschreibung: "Neem wächst robust.", name: "Neem", dauer: 10, xp: 12, kaufpreis: 8, verkaufspreis: 40, ansehen: 5, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 3680, anzahlfelder: null},
+{ fortschritt: 126, feld: "Exotische Heilpflanzen", beschreibung: "Safran - teuer und exklusiv.", name: "Safran", dauer: 15, xp: 16, kaufpreis: 15, verkaufspreis: 60, ansehen: 8, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 3730, anzahlfelder: null},
+
+// 🌍 Weltmarkt – Heilpflanzen verfügbar
+{ fortschritt: 127, feld: "Weltmarkt", beschreibung: "Heilpflanzen-Händler verfügbar! Seltene Pflanzen können verkauft werden.", name: "Weltmarkt", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 3780, anzahlfelder: null},
+
+
+
+// 🏠 Feld 10 freischalten – Mystisches Feld
+{ fortschritt: 128, feld: "Mystisches Feld freischalten", beschreibung: "Du hast das Mystische Feld freigeschaltet!", name: "Mystisches Feld freischalten", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 3830, anzahlfelder: 6},
+
+// 🏠 Mystisches Feld – 10 Pflanzen
+{ fortschritt: 129, feld: "Mystisches Feld", beschreibung: "Goldene Karotte leuchtet magisch.", name: "Goldene Karotte", dauer: 15, xp: 18, kaufpreis: 15, verkaufspreis: 75, ansehen: 10, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 3890, anzahlfelder: null},
+{ fortschritt: 130, feld: "Mystisches Feld", beschreibung: "Schwarzer Reis ist selten und wertvoll.", name: "Schwarzer Reis", dauer: 14, xp: 17, kaufpreis: 14, verkaufspreis: 70, ansehen: 9, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 3950, anzahlfelder: null},
+
+// 🎁 Bonus
+{ fortschritt: 131, feld: "Bonus", beschreibung: "Du erhältst 25 Gold für mystische Pflanzen!", name: "Bonus", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 25, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: true, fertiggewachsen: null, exp_fortschritt: 4020, anzahlfelder: null},
+
+{ fortschritt: 132, feld: "Mystisches Feld", beschreibung: "Kristall-Tomate schimmert bunt.", name: "Kristall-Tomate", dauer: 13, xp: 16, kaufpreis: 13, verkaufspreis: 65, ansehen: 8, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 4080, anzahlfelder: null},
+{ fortschritt: 133, feld: "Mystisches Feld", beschreibung: "Traumfrucht wächst nur bei Vollmond.", name: "Traumfrucht", dauer: 16, xp: 19, kaufpreis: 16, verkaufspreis: 80, ansehen: 11, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 4, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 4145, anzahlfelder: null},
+
+{ fortschritt: 134, feld: "Mystisches Feld", beschreibung: "Schattenkraut gedeiht im Halbschatten.", name: "Schattenkraut", dauer: 12, xp: 15, kaufpreis: 12, verkaufspreis: 60, ansehen: 8, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 2, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 4210, anzahlfelder: null},
+{ fortschritt: 135, feld: "Mystisches Feld", beschreibung: "Flammenblume strahlt Wärme aus.", name: "Flammenblume", dauer: 15, xp: 18, kaufpreis: 15, verkaufspreis: 75, ansehen: 10, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 4280, anzahlfelder: null},
+
+// 🎁 Bonus
+{ fortschritt: 136, feld: "Bonus", beschreibung: "Du erhältst 15 Energie für mystische Pflanzen!", name: "Bonus", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 0, energie: 15, samen: 0, geerntet: 0, bonus: true, fertiggewachsen: null, exp_fortschritt: 4350, anzahlfelder: null},
+
+{ fortschritt: 137, feld: "Mystisches Feld", beschreibung: "Sternenbeere leuchtet nachts.", name: "Sternenbeere", dauer: 14, xp: 16, kaufpreis: 14, verkaufspreis: 68, ansehen: 9, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 4420, anzahlfelder: null},
+{ fortschritt: 138, feld: "Mystisches Feld", beschreibung: "Drachenblatt ist sehr selten.", name: "Drachenblatt", dauer: 15, xp: 17, kaufpreis: 15, verkaufspreis: 72, ansehen: 10, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 4490, anzahlfelder: null},
+{ fortschritt: 139, feld: "Mystisches Feld", beschreibung: "Regenbogenmais wächst farbenfroh.", name: "Regenbogenmais", dauer: 16, xp: 18, kaufpreis: 16, verkaufspreis: 76, ansehen: 10, freigeschaltet: false, wasserverbrauch: 3, energieverbrauch: 3, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 4560, anzahlfelder: null},
+{ fortschritt: 140, feld: "Mystisches Feld", beschreibung: "Ewigkeitssamen sind legendär.", name: "Ewigkeitssamen", dauer: 20, xp: 20, kaufpreis: 20, verkaufspreis: 90, ansehen: 12, freigeschaltet: false, wasserverbrauch: 4, energieverbrauch: 4, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 4640, anzahlfelder: null},
+
+// 🌍 Weltmarkt – Mystisches Feld
+{ fortschritt: 141, feld: "Weltmarkt", beschreibung: "Mystische Pflanzen-Händler verfügbar! Verkaufe seltene und legendäre Pflanzen.", name: "Weltmarkt", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 4700, anzahlfelder: null},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 🏠 Nussgarten freischalten
+{ fortschritt:142, feld:"Nussgarten freischalten", beschreibung:"Du hast den Nussgarten freigeschaltet! Pflanze Nüsse und sammle wertvolle Ernte.", name:"Nussgarten freischalten", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:4760, anzahlfelder:6 },
+
+// 🌰 Nussgarten – Pflanzen
+{ fortschritt:143, feld:"Nussgarten", name:"Walnuss", beschreibung:"Walnüsse sind nahrhaft und beliebt bei Händlern.", dauer:12, xp:14, kaufpreis:10, verkaufspreis:45, ansehen:6, freigeschaltet:false, wasserverbrauch:4, energieverbrauch:4, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:4820, anzahlfelder:null },
+{ fortschritt:144, feld:"Nussgarten", name:"Mandel", beschreibung:"Mandelbäume liefern köstliche Nüsse für vielfältige Rezepte.", dauer:11, xp:13, kaufpreis:9, verkaufspreis:42, ansehen:5, freigeschaltet:false, wasserverbrauch:4, energieverbrauch:4, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:4880, anzahlfelder:null },
+{ fortschritt:145, feld:"Nussgarten", name:"Haselnuss", beschreibung:"Haselnüsse wachsen schnell und aromatisch, beliebt bei Kunden.", dauer:10, xp:12, kaufpreis:8, verkaufspreis:40, ansehen:5, freigeschaltet:false, wasserverbrauch:4, energieverbrauch:5, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:4940, anzahlfelder:null },
+
+// 🎁 Bonus nach 3. Pflanze
+{ fortschritt:146, feld:"Bonus", beschreibung:"Du erhältst 10 Gold für deine ersten drei Nüsse!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:10, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:5000, anzahlfelder:null },
+
+{ fortschritt:147, feld:"Nussgarten", name:"Cashew", beschreibung:"Cashewkerne sind exotisch und sehr gefragt.", dauer:13, xp:15, kaufpreis:11, verkaufspreis:48, ansehen:6, freigeschaltet:false, wasserverbrauch:5, energieverbrauch:5, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:5060, anzahlfelder:null },
+{ fortschritt:148, feld:"Nussgarten", name:"Pekannuss", beschreibung:"Pekannüsse wachsen langsam, aber liefern große Erträge.", dauer:14, xp:16, kaufpreis:12, verkaufspreis:50, ansehen:7, freigeschaltet:false, wasserverbrauch:5, energieverbrauch:5, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:5120, anzahlfelder:null },
+{ fortschritt:149, feld:"Nussgarten", name:"Macadamia", beschreibung:"Macadamia ist nahrhaft und sehr wertvoll auf dem Markt.", dauer:15, xp:17, kaufpreis:13, verkaufspreis:55, ansehen:7, freigeschaltet:false, wasserverbrauch:5, energieverbrauch:6, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:5180, anzahlfelder:null },
+
+// 🎁 Bonus nach 6. Pflanze
+{ fortschritt:150, feld:"Bonus", beschreibung:"Du erhältst 15 Energie für deine Nüsse!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:15, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:5240, anzahlfelder:null },
+
+{ fortschritt:151, feld:"Nussgarten", name:"Paranuss", beschreibung:"Paranüsse wachsen hoch und liefern robuste Erträge.", dauer:13, xp:15, kaufpreis:12, verkaufspreis:52, ansehen:6, freigeschaltet:false, wasserverbrauch:5, energieverbrauch:6, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:5300, anzahlfelder:null },
+{ fortschritt:152, feld:"Nussgarten", name:"Kastanie", beschreibung:"Kastanien sind vielseitig verwendbar in Speisen und Getränken.", dauer:12, xp:14, kaufpreis:10, verkaufspreis:45, ansehen:5, freigeschaltet:false, wasserverbrauch:5, energieverbrauch:5, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:5360, anzahlfelder:null },
+{ fortschritt:153, feld:"Nussgarten", name:"Pinienkern", beschreibung:"Pinienkerne sind klein, aber sehr wertvoll auf dem Markt.", dauer:14, xp:16, kaufpreis:13, verkaufspreis:54, ansehen:7, freigeschaltet:false, wasserverbrauch:6, energieverbrauch:6, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:5420, anzahlfelder:null },
+{ fortschritt:154, feld:"Nussgarten", name:"Pili-Nuss", beschreibung:"Pili-Nüsse sind selten und sehr gefragt bei Sammlern.", dauer:15, xp:17, kaufpreis:14, verkaufspreis:58, ansehen:7, freigeschaltet:false, wasserverbrauch:6, energieverbrauch:7, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:5480, anzahlfelder:null },
+
+// 🎁 Bonus nach 10. Pflanze
+{ fortschritt:155, feld:"Bonus", beschreibung:"Du erhältst 30 Gold für deine Nüsse!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:30, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:5540, anzahlfelder:null },
+
+// 🌍 Weltmarkt
+{ fortschritt:156, feld:"Weltmarkt", beschreibung:"Nüsse können auf dem Weltmarkt verkauft werden! Höhere Preise für seltene Sorten.", name:"Weltmarkt", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:5600, anzahlfelder:null },
+
+
+
+// 🏠 Tropischer Garten freischalten
+{ fortschritt:157, feld:"Tropischer Garten freischalten", beschreibung:"Du hast den Tropischen Garten freigeschaltet! Pflanze exotische Früchte und sammle wertvolle Ernte.", name:"Tropischer Garten freischalten", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:5660, anzahlfelder:6 },
+
+// 🥭 Tropischer Garten – Pflanzen
+{ fortschritt:158, feld:"Tropischer Garten", name:"Banane", beschreibung:"Bananen wachsen schnell und liefern süße Früchte.", dauer:10, xp:14, kaufpreis:10, verkaufspreis:45, ansehen:6, freigeschaltet:false, wasserverbrauch:5, energieverbrauch:5, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:5720, anzahlfelder:null },
+{ fortschritt:159, feld:"Tropischer Garten", name:"Ananas", beschreibung:"Ananas wächst langsam, dafür groß und saftig.", dauer:12, xp:15, kaufpreis:12, verkaufspreis:50, ansehen:6, freigeschaltet:false, wasserverbrauch:5, energieverbrauch:5, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:5780, anzahlfelder:null },
+{ fortschritt:160, feld:"Tropischer Garten", name:"Papaya", beschreibung:"Papayas liefern saftige Früchte und viele Samen.", dauer:11, xp:14, kaufpreis:11, verkaufspreis:48, ansehen:5, freigeschaltet:false, wasserverbrauch:5, energieverbrauch:6, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:5840, anzahlfelder:null },
+
+// 🎁 Bonus nach 3. Pflanze
+{ fortschritt:161, feld:"Bonus", beschreibung:"Du erhältst 15 Gold für deine ersten drei tropischen Früchte!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:15, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:5900, anzahlfelder:null },
+
+{ fortschritt:162, feld:"Tropischer Garten", name:"Kokosnuss", beschreibung:"Kokosnüsse wachsen hoch und liefern köstliches Wasser.", dauer:13, xp:16, kaufpreis:13, verkaufspreis:55, ansehen:6, freigeschaltet:false, wasserverbrauch:6, energieverbrauch:6, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:5960, anzahlfelder:null },
+{ fortschritt:163, feld:"Tropischer Garten", name:"Guave", beschreibung:"Guaven sind aromatisch und exotisch.", dauer:12, xp:15, kaufpreis:12, verkaufspreis:52, ansehen:6, freigeschaltet:false, wasserverbrauch:6, energieverbrauch:6, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:6020, anzahlfelder:null },
+{ fortschritt:164, feld:"Tropischer Garten", name:"Passionsfrucht", beschreibung:"Passionsfrüchte wachsen rankend und sind sehr beliebt.", dauer:14, xp:17, kaufpreis:14, verkaufspreis:58, ansehen:7, freigeschaltet:false, wasserverbrauch:6, energieverbrauch:7, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:6080, anzahlfelder:null },
+
+// 🎁 Bonus nach 6. Pflanze
+{ fortschritt:165, feld:"Bonus", beschreibung:"Du erhältst 20 Energie für deine tropischen Pflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:20, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:6140, anzahlfelder:null },
+
+{ fortschritt:166, feld:"Tropischer Garten", name:"Litschi", beschreibung:"Litschis sind süß und saftig, ideal für exotische Gerichte.", dauer:13, xp:16, kaufpreis:13, verkaufspreis:55, ansehen:6, freigeschaltet:false, wasserverbrauch:7, energieverbrauch:7, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:6200, anzahlfelder:null },
+{ fortschritt:167, feld:"Tropischer Garten", name:"Drachenfrucht", beschreibung:"Drachenfrüchte leuchten farbenfroh und sind selten.", dauer:15, xp:18, kaufpreis:15, verkaufspreis:60, ansehen:7, freigeschaltet:false, wasserverbrauch:7, energieverbrauch:8, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:6260, anzahlfelder:null },
+{ fortschritt:168, feld:"Tropischer Garten", name:"Avocado", beschreibung:"Avocados liefern wertvolles Fruchtfleisch und gesunde Fette.", dauer:14, xp:17, kaufpreis:14, verkaufspreis:58, ansehen:7, freigeschaltet:false, wasserverbrauch:7, energieverbrauch:7, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:6320, anzahlfelder:null },
+{ fortschritt:169, feld:"Tropischer Garten", name:"Jackfrucht", beschreibung:"Jackfrüchte sind riesig und bieten viele essbare Teile.", dauer:16, xp:19, kaufpreis:16, verkaufspreis:65, ansehen:8, freigeschaltet:false, wasserverbrauch:8, energieverbrauch:8, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:6380, anzahlfelder:null },
+
+// 🎁 Bonus nach 10. Pflanze
+{ fortschritt:170, feld:"Bonus", beschreibung:"Du erhältst 40 Gold für deine tropischen Pflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:40, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:6440, anzahlfelder:null },
+
+// 🌍 Weltmarkt
+{ fortschritt:171, feld:"Weltmarkt", beschreibung:"Exotische Früchte können auf dem Weltmarkt verkauft werden! Höhere Preise für seltene Früchte.", name:"Weltmarkt", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:6500, anzahlfelder:null },
+
+
+
+// 🏠 Heilkräuter-Oase freischalten
+{ fortschritt:172, feld:"Heilkräuter-Oase freischalten", beschreibung:"Du hast die Heilkräuter-Oase freigeschaltet! Pflanze wertvolle Heilkräuter.", name:"Heilkräuter-Oase freischalten", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:6560, anzahlfelder:6 },
+
+// 🌿 Heilkräuter-Oase – Pflanzen
+{ fortschritt:173, feld:"Heilkräuter-Oase", name:"Basilikum", beschreibung:"Basilikum stärkt die Gesundheit und hat aromatischen Duft.", dauer:10, xp:14, kaufpreis:10, verkaufspreis:45, ansehen:6, freigeschaltet:false, wasserverbrauch:6, energieverbrauch:5, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:6620, anzahlfelder:null },
+{ fortschritt:174, feld:"Heilkräuter-Oase", name:"Petersilie", beschreibung:"Petersilie wächst schnell und wirkt vitalisierend.", dauer:11, xp:15, kaufpreis:11, verkaufspreis:48, ansehen:6, freigeschaltet:false, wasserverbrauch:6, energieverbrauch:6, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:6680, anzahlfelder:null },
+{ fortschritt:175, feld:"Heilkräuter-Oase", name:"Dill", beschreibung:"Dill ist vielseitig und beliebt für Heilmittel.", dauer:12, xp:16, kaufpreis:12, verkaufspreis:50, ansehen:6, freigeschaltet:false, wasserverbrauch:6, energieverbrauch:6, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:6740, anzahlfelder:null },
+
+// 🎁 Bonus nach 3. Pflanze
+{ fortschritt:176, feld:"Bonus", beschreibung:"Du erhältst 15 Gold für deine ersten drei Kräuter!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:15, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:6800, anzahlfelder:null },
+
+{ fortschritt:177, feld:"Heilkräuter-Oase", name:"Thymian", beschreibung:"Thymian stärkt das Immunsystem und wächst schnell.", dauer:11, xp:15, kaufpreis:11, verkaufspreis:48, ansehen:5, freigeschaltet:false, wasserverbrauch:7, energieverbrauch:6, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:6860, anzahlfelder:null },
+{ fortschritt:178, feld:"Heilkräuter-Oase", name:"Rosmarin", beschreibung:"Rosmarin duftet aromatisch und ist vielseitig verwendbar.", dauer:12, xp:16, kaufpreis:12, verkaufspreis:52, ansehen:6, freigeschaltet:false, wasserverbrauch:7, energieverbrauch:6, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:6920, anzahlfelder:null },
+{ fortschritt:179, feld:"Heilkräuter-Oase", name:"Minze", beschreibung:"Minze wächst schnell und verleiht einen frischen Geschmack.", dauer:13, xp:17, kaufpreis:13, verkaufspreis:55, ansehen:6, freigeschaltet:false, wasserverbrauch:7, energieverbrauch:7, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:6980, anzahlfelder:null },
+
+// 🎁 Bonus nach 6. Pflanze
+{ fortschritt:180, feld:"Bonus", beschreibung:"Du erhältst 20 Energie für deine Kräuter!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:20, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:7040, anzahlfelder:null },
+
+{ fortschritt:181, feld:"Heilkräuter-Oase", name:"Koriander", beschreibung:"Koriander ist exotisch und reich an Aroma.", dauer:12, xp:16, kaufpreis:12, verkaufspreis:50, ansehen:6, freigeschaltet:false, wasserverbrauch:8, energieverbrauch:7, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:7100, anzahlfelder:null },
+{ fortschritt:182, feld:"Heilkräuter-Oase", name:"Schnittlauch", beschreibung:"Schnittlauch liefert frisches Aroma für viele Gerichte.", dauer:11, xp:15, kaufpreis:11, verkaufspreis:48, ansehen:5, freigeschaltet:false, wasserverbrauch:8, energieverbrauch:7, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:7160, anzahlfelder:null },
+{ fortschritt:183, feld:"Heilkräuter-Oase", name:"Salbei", beschreibung:"Salbei wirkt heilend und wächst robust.", dauer:12, xp:16, kaufpreis:12, verkaufspreis:52, ansehen:6, freigeschaltet:false, wasserverbrauch:8, energieverbrauch:8, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:7220, anzahlfelder:null },
+{ fortschritt:184, feld:"Heilkräuter-Oase", name:"Oregano", beschreibung:"Oregano ist aromatisch und beliebt für Würzmischungen.", dauer:13, xp:17, kaufpreis:13, verkaufspreis:55, ansehen:6, freigeschaltet:false, wasserverbrauch:9, energieverbrauch:8, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:7280, anzahlfelder:null },
+
+// 🎁 Bonus nach 10. Pflanze
+{ fortschritt:185, feld:"Bonus", beschreibung:"Du erhältst 30 Gold für deine Heilkräuter!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:30, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:7340, anzahlfelder:null },
+
+// 🌍 Weltmarkt
+{ fortschritt:186, feld:"Weltmarkt", beschreibung:"Heilkräuter können auf dem Weltmarkt verkauft werden! Seltene Kräuter bringen hohe Preise.", name:"Weltmarkt", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:7400, anzahlfelder:null },
+
+
+
+// 🏠 Pilzdomäne freischalten
+{ fortschritt:187, feld:"Pilzdomäne freischalten", beschreibung:"Du hast die Pilzdomäne freigeschaltet! Züchte seltene Pilze und sammle wertvolle Ernte.", name:"Pilzdomäne freischalten", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:7460, anzahlfelder:6 },
+
+// 🍄 Pilzdomäne – Pflanzen
+{ fortschritt:188, feld:"Pilzdomäne", name:"Champignon", beschreibung:"Champignons sind leicht anzubauen und vielseitig verwendbar.", dauer:8, xp:12, kaufpreis:8, verkaufspreis:35, ansehen:5, freigeschaltet:false, wasserverbrauch:5, energieverbrauch:4, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:7520, anzahlfelder:null },
+{ fortschritt:189, feld:"Pilzdomäne", name:"Steinpilz", beschreibung:"Steinpilze sind aromatisch und sehr gefragt auf dem Markt.", dauer:10, xp:14, kaufpreis:10, verkaufspreis:45, ansehen:6, freigeschaltet:false, wasserverbrauch:6, energieverbrauch:5, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:7580, anzahlfelder:null },
+{ fortschritt:190, feld:"Pilzdomäne", name:"Austernpilz", beschreibung:"Austernpilze wachsen schnell und sind vielseitig.", dauer:9, xp:13, kaufpreis:9, verkaufspreis:40, ansehen:5, freigeschaltet:false, wasserverbrauch:6, energieverbrauch:5, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:7640, anzahlfelder:null },
+
+// 🎁 Bonus nach 3. Pflanze
+{ fortschritt:191, feld:"Bonus", beschreibung:"Du erhältst 10 Gold für deine ersten drei Pilze!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:10, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:7700, anzahlfelder:null },
+
+{ fortschritt:192, feld:"Pilzdomäne", name:"Maronenpilz", beschreibung:"Maronenpilze wachsen robust und sind sehr aromatisch.", dauer:11, xp:15, kaufpreis:11, verkaufspreis:48, ansehen:6, freigeschaltet:false, wasserverbrauch:7, energieverbrauch:6, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:7760, anzahlfelder:null },
+{ fortschritt:193, feld:"Pilzdomäne", name:"Pfifferling", beschreibung:"Pfifferlinge sind klein, aromatisch und beliebt bei Sammlern.", dauer:12, xp:16, kaufpreis:12, verkaufspreis:50, ansehen:6, freigeschaltet:false, wasserverbrauch:7, energieverbrauch:6, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:7820, anzahlfelder:null },
+{ fortschritt:194, feld:"Pilzdomäne", name:"Shiitake", beschreibung:"Shiitake-Pilze sind wertvoll und exotisch.", dauer:13, xp:17, kaufpreis:13, verkaufspreis:55, ansehen:6, freigeschaltet:false, wasserverbrauch:8, energieverbrauch:7, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:7880, anzahlfelder:null },
+
+// 🎁 Bonus nach 6. Pflanze
+{ fortschritt:195, feld:"Bonus", beschreibung:"Du erhältst 15 Energie für deine Pilze!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:15, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:7940, anzahlfelder:null },
+
+{ fortschritt:196, feld:"Pilzdomäne", name:"Enoki", beschreibung:"Enoki-Pilze sind klein, aber sehr wertvoll.", dauer:14, xp:18, kaufpreis:14, verkaufspreis:60, ansehen:7, freigeschaltet:false, wasserverbrauch:8, energieverbrauch:8, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:8000, anzahlfelder:null },
+{ fortschritt:197, feld:"Pilzdomäne", name:"Morchel", beschreibung:"Morcheln sind selten und sehr begehrt.", dauer:15, xp:19, kaufpreis:15, verkaufspreis:65, ansehen:7, freigeschaltet:false, wasserverbrauch:9, energieverbrauch:8, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:8060, anzahlfelder:null },
+{ fortschritt:198, feld:"Pilzdomäne", name:"Trüffel", beschreibung:"Trüffel sind legendär und extrem wertvoll.", dauer:18, xp:21, kaufpreis:18, verkaufspreis:80, ansehen:8, freigeschaltet:false, wasserverbrauch:10, energieverbrauch:10, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:8120, anzahlfelder:null },
+{ fortschritt:199, feld:"Pilzdomäne", name:"Amanita", beschreibung:"Amanita-Pilze sind mystisch und selten, ideal für Sammler.", dauer:16, xp:20, kaufpreis:16, verkaufspreis:75, ansehen:8, freigeschaltet:false, wasserverbrauch:10, energieverbrauch:9, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:8180, anzahlfelder:null },
+
+// 🎁 Bonus nach 10. Pflanze
+{ fortschritt:200, feld:"Bonus", beschreibung:"Du erhältst 50 Gold für deine Pilze!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:50, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:8240, anzahlfelder:null },
+
+// 🌍 Weltmarkt
+{ fortschritt:201, feld:"Weltmarkt", beschreibung:"Pilze können auf dem Weltmarkt verkauft werden! Seltene Sorten bringen hohe Preise.", name:"Weltmarkt", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:8300, anzahlfelder:null },
+
+
+
+// 🏠 Elementar-Garten freischalten
+{ fortschritt:202, feld:"Elementar-Garten freischalten", beschreibung:"Du hast den Elementar-Garten freigeschaltet! Pflanze Pflanzen mit Feuer, Wasser, Erde und Luft Kräften.", name:"Elementar-Garten freischalten", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:8360, anzahlfelder:6 },
+
+// 🌱 Elementar-Garten – Pflanzen
+{ fortschritt:203, feld:"Elementar-Garten", name:"Feuerblume", beschreibung:"Feuerblumen strahlen Hitze aus und wachsen schnell.", dauer:12, xp:16, kaufpreis:12, verkaufspreis:55, ansehen:6, freigeschaltet:false, wasserverbrauch:8, energieverbrauch:10, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:8420, anzahlfelder:null },
+{ fortschritt:204, feld:"Elementar-Garten", name:"Wasserlilie", beschreibung:"Wasserlilien gedeihen in feuchten Umgebungen und wirken beruhigend.", dauer:13, xp:17, kaufpreis:13, verkaufspreis:58, ansehen:6, freigeschaltet:false, wasserverbrauch:9, energieverbrauch:9, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:8480, anzahlfelder:null },
+{ fortschritt:205, feld:"Elementar-Garten", name:"Erdenkraut", beschreibung:"Erdenkraut wächst robust und stärkt den Boden.", dauer:14, xp:18, kaufpreis:14, verkaufspreis:60, ansehen:7, freigeschaltet:false, wasserverbrauch:9, energieverbrauch:10, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:8540, anzahlfelder:null },
+
+// 🎁 Bonus nach 3. Pflanze
+{ fortschritt:206, feld:"Bonus", beschreibung:"Du erhältst 20 Gold für die ersten drei Elementarpflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:20, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:8600, anzahlfelder:null },
+
+{ fortschritt:207, feld:"Elementar-Garten", name:"Luftblatt", beschreibung:"Luftblätter bewegen sich mit dem Wind und speichern Energie.", dauer:12, xp:17, kaufpreis:12, verkaufspreis:57, ansehen:6, freigeschaltet:false, wasserverbrauch:10, energieverbrauch:11, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:8660, anzahlfelder:null },
+{ fortschritt:208, feld:"Elementar-Garten", name:"Flammenkaktus", beschreibung:"Flammenkakteen widerstehen Hitze und speichern Energie.", dauer:13, xp:18, kaufpreis:13, verkaufspreis:60, ansehen:7, freigeschaltet:false, wasserverbrauch:10, energieverbrauch:12, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:8720, anzahlfelder:null },
+{ fortschritt:209, feld:"Elementar-Garten", name:"Blitzkraut", beschreibung:"Blitzkraut speichert elektrische Energie und leuchtet nachts.", dauer:14, xp:19, kaufpreis:14, verkaufspreis:65, ansehen:7, freigeschaltet:false, wasserverbrauch:11, energieverbrauch:13, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:8780, anzahlfelder:null },
+
+// 🎁 Bonus nach 6. Pflanze
+{ fortschritt:210, feld:"Bonus", beschreibung:"Du erhältst 25 Energie für Elementarpflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:25, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:8840, anzahlfelder:null },
+
+{ fortschritt:211, feld:"Elementar-Garten", name:"Frostblume", beschreibung:"Frostblumen widerstehen Kälte und wachsen langsam.", dauer:15, xp:20, kaufpreis:15, verkaufspreis:70, ansehen:8, freigeschaltet:false, wasserverbrauch:12, energieverbrauch:14, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:8900, anzahlfelder:null },
+{ fortschritt:212, feld:"Elementar-Garten", name:"Lavaspross", beschreibung:"Lavasprosse widerstehen Feuer und wachsen unter extremen Bedingungen.", dauer:16, xp:21, kaufpreis:16, verkaufspreis:75, ansehen:8, freigeschaltet:false, wasserverbrauch:13, energieverbrauch:15, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:8960, anzahlfelder:null },
+{ fortschritt:213, feld:"Elementar-Garten", name:"Sturmblatt", beschreibung:"Sturmblätter sammeln Windenergie und wachsen hoch.", dauer:16, xp:21, kaufpreis:16, verkaufspreis:78, ansehen:8, freigeschaltet:false, wasserverbrauch:13, energieverbrauch:15, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:9020, anzahlfelder:null },
+{ fortschritt:214, feld:"Elementar-Garten", name:"Donnerblüte", beschreibung:"Donnerblüten erzeugen elektrisches Prickeln und leuchten nachts.", dauer:17, xp:22, kaufpreis:17, verkaufspreis:80, ansehen:9, freigeschaltet:false, wasserverbrauch:14, energieverbrauch:16, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:9080, anzahlfelder:null },
+
+// 🎁 Bonus nach 10. Pflanze
+{ fortschritt:215, feld:"Bonus", beschreibung:"Du erhältst 60 Gold für deine Elementarpflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:60, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:9140, anzahlfelder:null },
+
+// 🌍 Weltmarkt
+{ fortschritt:216, feld:"Weltmarkt", beschreibung:"Elementarpflanzen können auf dem Weltmarkt verkauft werden! Seltene Elemente bringen hohe Preise.", name:"Weltmarkt", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:9200, anzahlfelder:null },
+
+
+
+// 🏠 Kristallgärten freischalten
+{ fortschritt:217, feld:"Kristallgärten freischalten", beschreibung:"Du hast die Kristallgärten freigeschaltet! Pflanze kristalline Pflanzen mit magischer Energie.", name:"Kristallgärten freischalten", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:9260, anzahlfelder:6 },
+
+// 🌱 Kristallgärten – Pflanzen
+{ fortschritt:218, feld:"Kristallgärten", name:"Kristallrose", beschreibung:"Kristallrosen glitzern und speichern magische Energie.", dauer:15, xp:20, kaufpreis:15, verkaufspreis:70, ansehen:8, freigeschaltet:false, wasserverbrauch:12, energieverbrauch:15, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:9320, anzahlfelder:null },
+{ fortschritt:219, feld:"Kristallgärten", name:"Saphirblüte", beschreibung:"Saphirblüten sind selten und leuchten nachts blau.", dauer:16, xp:21, kaufpreis:16, verkaufspreis:75, ansehen:8, freigeschaltet:false, wasserverbrauch:13, energieverbrauch:16, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:9380, anzahlfelder:null },
+{ fortschritt:220, feld:"Kristallgärten", name:"Rubinblatt", beschreibung:"Rubinblätter speichern Wärme und strahlen rot.", dauer:17, xp:22, kaufpreis:17, verkaufspreis:78, ansehen:9, freigeschaltet:false, wasserverbrauch:14, energieverbrauch:17, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:9440, anzahlfelder:null },
+
+// 🎁 Bonus nach 3. Pflanze
+{ fortschritt:221, feld:"Bonus", beschreibung:"Du erhältst 25 Gold für die ersten drei Kristallpflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:25, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:9500, anzahlfelder:null },
+
+{ fortschritt:222, feld:"Kristallgärten", name:"Diamantlilie", beschreibung:"Diamantlilien sind extrem robust und leuchten hell.", dauer:18, xp:23, kaufpreis:18, verkaufspreis:85, ansehen:9, freigeschaltet:false, wasserverbrauch:15, energieverbrauch:18, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:9560, anzahlfelder:null },
+{ fortschritt:223, feld:"Kristallgärten", name:"Amethystkraut", beschreibung:"Amethystkraut speichert magische Energie und duftet stark.", dauer:19, xp:24, kaufpreis:19, verkaufspreis:90, ansehen:10, freigeschaltet:false, wasserverbrauch:16, energieverbrauch:19, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:9620, anzahlfelder:null },
+{ fortschritt:224, feld:"Kristallgärten", name:"Topasblatt", beschreibung:"Topasblätter reflektieren Licht und speichern Wärme.", dauer:20, xp:25, kaufpreis:20, verkaufspreis:95, ansehen:10, freigeschaltet:false, wasserverbrauch:17, energieverbrauch:20, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:9680, anzahlfelder:null },
+
+// 🎁 Bonus nach 6. Pflanze
+{ fortschritt:225, feld:"Bonus", beschreibung:"Du erhältst 30 Energie für deine Kristallpflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:30, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:9740, anzahlfelder:null },
+
+{ fortschritt:226, feld:"Kristallgärten", name:"Opalblüte", beschreibung:"Opalblüten schimmern in allen Farben und speichern Energie.", dauer:21, xp:26, kaufpreis:21, verkaufspreis:100, ansehen:11, freigeschaltet:false, wasserverbrauch:18, energieverbrauch:22, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:9800, anzahlfelder:null },
+{ fortschritt:227, feld:"Kristallgärten", name:"Perlblatt", beschreibung:"Perlblätter glänzen weiß und sind besonders selten.", dauer:22, xp:27, kaufpreis:22, verkaufspreis:105, ansehen:11, freigeschaltet:false, wasserverbrauch:19, energieverbrauch:23, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:9860, anzahlfelder:null },
+{ fortschritt:228, feld:"Kristallgärten", name:"Sternenblüte", beschreibung:"Sternenblüten leuchten nachts und sammeln Lichtenergie.", dauer:23, xp:28, kaufpreis:23, verkaufspreis:110, ansehen:12, freigeschaltet:false, wasserverbrauch:20, energieverbrauch:24, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:9920, anzahlfelder:null },
+{ fortschritt:229, feld:"Kristallgärten", name:"Lichtkristall", beschreibung:"Lichtkristalle speichern Sonnenlicht und wachsen langsam.", dauer:25, xp:30, kaufpreis:25, verkaufspreis:120, ansehen:13, freigeschaltet:false, wasserverbrauch:22, energieverbrauch:25, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:9980, anzahlfelder:null },
+
+// 🎁 Bonus nach 10. Pflanze
+{ fortschritt:230, feld:"Bonus", beschreibung:"Du erhältst 70 Gold für deine Kristallpflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:70, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:10040, anzahlfelder:null },
+
+// 🌍 Weltmarkt
+{ fortschritt:231, feld:"Weltmarkt", beschreibung:"Kristallpflanzen können auf dem Weltmarkt verkauft werden! Seltene Sorten bringen hohe Preise.", name:"Weltmarkt", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:10100, anzahlfelder:null },
+
+
+
+// 🏠 Astralgarten freischalten
+{ fortschritt:232, feld:"Astralgarten freischalten", beschreibung:"Du hast den Astralgarten freigeschaltet! Pflanze Pflanzen, die kosmische Energie speichern.", name:"Astralgarten freischalten", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:10160, anzahlfelder:6 },
+
+// 🌱 Astralgarten – Pflanzen
+{ fortschritt:233, feld:"Astralgarten", name:"Mondblüte", beschreibung:"Mondblüten öffnen sich nachts und speichern Mondenergie.", dauer:18, xp:24, kaufpreis:18, verkaufspreis:85, ansehen:8, freigeschaltet:false, wasserverbrauch:14, energieverbrauch:16, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:10220, anzahlfelder:null },
+{ fortschritt:234, feld:"Astralgarten", name:"Sonnenstern", beschreibung:"Sonnensterne speichern Sonnenenergie und leuchten am Tag.", dauer:19, xp:25, kaufpreis:19, verkaufspreis:90, ansehen:9, freigeschaltet:false, wasserverbrauch:15, energieverbrauch:17, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:10280, anzahlfelder:null },
+{ fortschritt:235, feld:"Astralgarten", name:"Meteorblatt", beschreibung:"Meteorblätter speichern kosmische Partikel und strahlen nachts.", dauer:20, xp:26, kaufpreis:20, verkaufspreis:95, ansehen:9, freigeschaltet:false, wasserverbrauch:16, energieverbrauch:18, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:10340, anzahlfelder:null },
+
+// 🎁 Bonus nach 3. Pflanze
+{ fortschritt:236, feld:"Bonus", beschreibung:"Du erhältst 30 Gold für die ersten drei Astralpflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:30, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:10400, anzahlfelder:null },
+
+{ fortschritt:237, feld:"Astralgarten", name:"Nebula-Kraut", beschreibung:"Nebula-Kräuter leuchten violett und speichern Energie.", dauer:21, xp:27, kaufpreis:21, verkaufspreis:100, ansehen:10, freigeschaltet:false, wasserverbrauch:17, energieverbrauch:19, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:10460, anzahlfelder:null },
+{ fortschritt:238, feld:"Astralgarten", name:"Kometensprosse", beschreibung:"Kometensprosse speichern Meteoritenteilchen.", dauer:22, xp:28, kaufpreis:22, verkaufspreis:105, ansehen:10, freigeschaltet:false, wasserverbrauch:18, energieverbrauch:20, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:10520, anzahlfelder:null },
+{ fortschritt:239, feld:"Astralgarten", name:"Galaxienblatt", beschreibung:"Galaxienblätter zeigen spiralförmige Muster und speichern Energie.", dauer:23, xp:29, kaufpreis:23, verkaufspreis:110, ansehen:11, freigeschaltet:false, wasserverbrauch:19, energieverbrauch:21, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:10580, anzahlfelder:null },
+
+// 🎁 Bonus nach 6. Pflanze
+{ fortschritt:240, feld:"Bonus", beschreibung:"Du erhältst 35 Energie für deine Astralpflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:35, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:10640, anzahlfelder:null },
+
+{ fortschritt:241, feld:"Astralgarten", name:"Sternenkranz", beschreibung:"Sternenkränze leuchten nachts und sammeln Lichtenergie.", dauer:24, xp:30, kaufpreis:24, verkaufspreis:115, ansehen:12, freigeschaltet:false, wasserverbrauch:20, energieverbrauch:22, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:10700, anzahlfelder:null },
+{ fortschritt:242, feld:"Astralgarten", name:"Planetenspross", beschreibung:"Planetensprosse speichern Gravitation und Energie.", dauer:25, xp:31, kaufpreis:25, verkaufspreis:120, ansehen:12, freigeschaltet:false, wasserverbrauch:21, energieverbrauch:23, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:10760, anzahlfelder:null },
+{ fortschritt:243, feld:"Astralgarten", name:"Kosmosblüte", beschreibung:"Kosmosblüten sind selten und leuchten im gesamten Garten.", dauer:26, xp:32, kaufpreis:26, verkaufspreis:125, ansehen:13, freigeschaltet:false, wasserverbrauch:22, energieverbrauch:24, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:10820, anzahlfelder:null },
+{ fortschritt:244, feld:"Astralgarten", name:"Universalsprosse", beschreibung:"Universalsprosse speichern die Energie des gesamten Universums.", dauer:28, xp:34, kaufpreis:28, verkaufspreis:130, ansehen:14, freigeschaltet:false, wasserverbrauch:24, energieverbrauch:26, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:10880, anzahlfelder:null },
+
+// 🎁 Bonus nach 10. Pflanze
+{ fortschritt:245, feld:"Bonus", beschreibung:"Du erhältst 80 Gold für deine Astralpflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:80, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:10940, anzahlfelder:null },
+
+// 🌍 Weltmarkt
+{ fortschritt:246, feld:"Weltmarkt", beschreibung:"Astralpflanzen können auf dem Weltmarkt verkauft werden! Seltene Sorten bringen hohe Preise.", name:"Weltmarkt", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:11000, anzahlfelder:null },
+
+
+
+// 🏠 Nebelwald freischalten
+{ fortschritt:247, feld:"Nebelwald freischalten", beschreibung:"Du hast den Nebelwald freigeschaltet! Pflanze Pflanzen, die in mystischem Nebel gedeihen.", name:"Nebelwald freischalten", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:11060, anzahlfelder:6 },
+
+// 🌱 Nebelwald – Pflanzen
+{ fortschritt:248, feld:"Nebelwald", name:"Frostmoos", beschreibung:"Frostmoos gedeiht im Nebel und speichert Kälteenergie.", dauer:20, xp:26, kaufpreis:20, verkaufspreis:95, ansehen:9, freigeschaltet:false, wasserverbrauch:18, energieverbrauch:20, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:11120, anzahlfelder:null },
+{ fortschritt:249, feld:"Nebelwald", name:"Dunstblatt", beschreibung:"Dunstblätter sammeln Nebeltröpfchen und speichern Energie.", dauer:21, xp:27, kaufpreis:21, verkaufspreis:100, ansehen:10, freigeschaltet:false, wasserverbrauch:19, energieverbrauch:21, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:11180, anzahlfelder:null },
+{ fortschritt:250, feld:"Nebelwald", name:"Nebelrose", beschreibung:"Nebelrosen blühen im mystischen Nebel und leuchten sanft.", dauer:22, xp:28, kaufpreis:22, verkaufspreis:105, ansehen:10, freigeschaltet:false, wasserverbrauch:20, energieverbrauch:22, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:11240, anzahlfelder:null },
+
+// 🎁 Bonus nach 3. Pflanze
+{ fortschritt:251, feld:"Bonus", beschreibung:"Du erhältst 35 Gold für die ersten drei Nebelpflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:35, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:11300, anzahlfelder:null },
+
+{ fortschritt:252, feld:"Nebelwald", name:"Schattenfarne", beschreibung:"Schattenfarne sammeln Licht im Nebel und wachsen schnell.", dauer:23, xp:29, kaufpreis:23, verkaufspreis:110, ansehen:11, freigeschaltet:false, wasserverbrauch:21, energieverbrauch:23, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:11360, anzahlfelder:null },
+{ fortschritt:253, feld:"Nebelwald", name:"Glühpilz", beschreibung:"Glühpilze leuchten im Nebel und geben Energie ab.", dauer:24, xp:30, kaufpreis:24, verkaufspreis:115, ansehen:11, freigeschaltet:false, wasserverbrauch:22, energieverbrauch:24, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:11420, anzahlfelder:null },
+{ fortschritt:254, feld:"Nebelwald", name:"Mystikblatt", beschreibung:"Mystikblätter speichern die geheimnisvolle Energie des Nebels.", dauer:25, xp:31, kaufpreis:25, verkaufspreis:120, ansehen:12, freigeschaltet:false, wasserverbrauch:23, energieverbrauch:25, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:11480, anzahlfelder:null },
+
+// 🎁 Bonus nach 6. Pflanze
+{ fortschritt:255, feld:"Bonus", beschreibung:"Du erhältst 40 Energie für deine Nebelpflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:40, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:11540, anzahlfelder:null },
+
+{ fortschritt:256, feld:"Nebelwald", name:"Nebelblüte", beschreibung:"Nebelblüten sammeln Energie aus dem Morgendunst.", dauer:26, xp:32, kaufpreis:26, verkaufspreis:125, ansehen:13, freigeschaltet:false, wasserverbrauch:24, energieverbrauch:26, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:11600, anzahlfelder:null },
+{ fortschritt:257, feld:"Nebelwald", name:"Morgenkraut", beschreibung:"Morgenkraut gedeiht nur in dichtem Nebel und speichert Energie.", dauer:27, xp:33, kaufpreis:27, verkaufspreis:130, ansehen:13, freigeschaltet:false, wasserverbrauch:25, energieverbrauch:27, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:11660, anzahlfelder:null },
+{ fortschritt:258, feld:"Nebelwald", name:"Dämmerblüte", beschreibung:"Dämmerblüten blühen in der Dämmerung und leuchten sanft.", dauer:28, xp:34, kaufpreis:28, verkaufspreis:135, ansehen:14, freigeschaltet:false, wasserverbrauch:26, energieverbrauch:28, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:11720, anzahlfelder:null },
+{ fortschritt:259, feld:"Nebelwald", name:"Ewigkeitspilz", beschreibung:"Ewigkeitspilze speichern magische Energie dauerhaft.", dauer:30, xp:36, kaufpreis:30, verkaufspreis:145, ansehen:15, freigeschaltet:false, wasserverbrauch:28, energieverbrauch:30, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:11780, anzahlfelder:null },
+
+// 🎁 Bonus nach 10. Pflanze
+{ fortschritt:260, feld:"Bonus", beschreibung:"Du erhältst 90 Gold für deine Nebelpflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:90, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:11840, anzahlfelder:null },
+
+// 🌍 Weltmarkt
+{ fortschritt:261, feld:"Weltmarkt", beschreibung:"Nebelwaldpflanzen können auf dem Weltmarkt verkauft werden! Seltene Sorten bringen hohe Preise.", name:"Weltmarkt", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:11900, anzahlfelder:null },
+
+
+
+// 🏠 Phantasmagoria freischalten
+{ fortschritt:262, feld:"Phantasmagoria freischalten", beschreibung:"Du hast die Phantasmagoria freigeschaltet! Pflanze Pflanzen mit schaurig-schönen Effekten.", name:"Phantasmagoria freischalten", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:11960, anzahlfelder:6 },
+
+// 🌱 Phantasmagoria – Pflanzen
+{ fortschritt:263, feld:"Phantasmagoria", name:"Geisterblüte", beschreibung:"Geisterblüten leuchten unheimlich und speichern dunkle Energie.", dauer:22, xp:30, kaufpreis:22, verkaufspreis:110, ansehen:10, freigeschaltet:false, wasserverbrauch:24, energieverbrauch:26, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:12020, anzahlfelder:null },
+{ fortschritt:264, feld:"Phantasmagoria", name:"Spukblatt", beschreibung:"Spukblätter bewegen sich leicht im Wind und speichern Energie.", dauer:23, xp:31, kaufpreis:23, verkaufspreis:115, ansehen:11, freigeschaltet:false, wasserverbrauch:25, energieverbrauch:27, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:12080, anzahlfelder:null },
+{ fortschritt:265, feld:"Phantasmagoria", name:"Schattenlilie", beschreibung:"Schattenlilien gedeihen nur in dunklen Nebeln.", dauer:24, xp:32, kaufpreis:24, verkaufspreis:120, ansehen:11, freigeschaltet:false, wasserverbrauch:26, energieverbrauch:28, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:12140, anzahlfelder:null },
+
+// 🎁 Bonus nach 3. Pflanze
+{ fortschritt:266, feld:"Bonus", beschreibung:"Du erhältst 40 Gold für die ersten drei Phantaspflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:40, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:12200, anzahlfelder:null },
+
+{ fortschritt:267, feld:"Phantasmagoria", name:"Nachtkraut", beschreibung:"Nachtkraut blüht nur bei Dunkelheit und sammelt Energie.", dauer:25, xp:33, kaufpreis:25, verkaufspreis:125, ansehen:12, freigeschaltet:false, wasserverbrauch:27, energieverbrauch:29, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:12260, anzahlfelder:null },
+{ fortschritt:268, feld:"Phantasmagoria", name:"Geistermoos", beschreibung:"Geistermoos wächst schnell im Schatten und speichert Energie.", dauer:26, xp:34, kaufpreis:26, verkaufspreis:130, ansehen:12, freigeschaltet:false, wasserverbrauch:28, energieverbrauch:30, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:12320, anzahlfelder:null },
+{ fortschritt:269, feld:"Phantasmagoria", name:"Dunkelblatt", beschreibung:"Dunkelblätter absorbieren Licht und speichern es in der Pflanze.", dauer:27, xp:35, kaufpreis:27, verkaufspreis:135, ansehen:13, freigeschaltet:false, wasserverbrauch:29, energieverbrauch:31, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:12380, anzahlfelder:null },
+
+// 🎁 Bonus nach 6. Pflanze
+{ fortschritt:270, feld:"Bonus", beschreibung:"Du erhältst 45 Energie für deine Phantaspflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:45, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:12440, anzahlfelder:null },
+
+{ fortschritt:271, feld:"Phantasmagoria", name:"Nebelorchidee", beschreibung:"Nebelorchideen sammeln Energie aus mystischem Dunst.", dauer:28, xp:36, kaufpreis:28, verkaufspreis:140, ansehen:14, freigeschaltet:false, wasserverbrauch:30, energieverbrauch:32, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:12500, anzahlfelder:null },
+{ fortschritt:272, feld:"Phantasmagoria", name:"Schattenblüte", beschreibung:"Schattenblüten leuchten schwach und speichern Schattenenergie.", dauer:29, xp:37, kaufpreis:29, verkaufspreis:145, ansehen:14, freigeschaltet:false, wasserverbrauch:31, energieverbrauch:33, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:12560, anzahlfelder:null },
+{ fortschritt:273, feld:"Phantasmagoria", name:"Dämmerblatt", beschreibung:"Dämmerblätter speichern die Energie von Sonnenauf- und untergang.", dauer:30, xp:38, kaufpreis:30, verkaufspreis:150, ansehen:15, freigeschaltet:false, wasserverbrauch:32, energieverbrauch:34, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:12620, anzahlfelder:null },
+{ fortschritt:274, feld:"Phantasmagoria", name:"Ewigkeitskraut", beschreibung:"Ewigkeitskraut ist extrem selten und speichert unendliche Energie.", dauer:32, xp:40, kaufpreis:32, verkaufspreis:160, ansehen:16, freigeschaltet:false, wasserverbrauch:34, energieverbrauch:36, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:12680, anzahlfelder:null },
+
+// 🎁 Bonus nach 10. Pflanze
+{ fortschritt:275, feld:"Bonus", beschreibung:"Du erhältst 100 Gold für deine Phantaspflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:100, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:12740, anzahlfelder:null },
+
+// 🌍 Weltmarkt
+{ fortschritt:276, feld:"Weltmarkt", beschreibung:"Phantasmagoria-Pflanzen können auf dem Weltmarkt verkauft werden! Seltene Sorten bringen hohe Preise.", name:"Weltmarkt", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:12800, anzahlfelder:null },
+
+
+
+// 🏠 Zeitgarten freischalten
+{ fortschritt:277, feld:"Zeitgarten freischalten", beschreibung:"Du hast den Zeitgarten freigeschaltet! Pflanze Pflanzen, die die Zeit manipulieren.", name:"Zeitgarten freischalten", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:12860, anzahlfelder:6 },
+
+// 🌱 Zeitgarten – Pflanzen
+{ fortschritt:278, feld:"Zeitgarten", name:"Vergangenheitsblüte", beschreibung:"Vergangenheitsblüten lassen Erinnerungen erblühen.", dauer:25, xp:36, kaufpreis:25, verkaufspreis:130, ansehen:12, freigeschaltet:false, wasserverbrauch:28, energieverbrauch:30, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:12920, anzahlfelder:null },
+{ fortschritt:279, feld:"Zeitgarten", name:"Zukunftsblatt", beschreibung:"Zukunftsblätter speichern Energie für kommende Zeiten.", dauer:26, xp:37, kaufpreis:26, verkaufspreis:135, ansehen:12, freigeschaltet:false, wasserverbrauch:29, energieverbrauch:31, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:12980, anzahlfelder:null },
+{ fortschritt:280, feld:"Zeitgarten", name:"Ewige Knospe", beschreibung:"Ewige Knospen blühen unaufhörlich und speichern Zeitenergie.", dauer:27, xp:38, kaufpreis:27, verkaufspreis:140, ansehen:13, freigeschaltet:false, wasserverbrauch:30, energieverbrauch:32, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:13040, anzahlfelder:null },
+
+// 🎁 Bonus nach 3. Pflanze
+{ fortschritt:281, feld:"Bonus", beschreibung:"Du erhältst 45 Gold für die ersten drei Zeitpflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:45, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:13100, anzahlfelder:null },
+
+{ fortschritt:282, feld:"Zeitgarten", name:"Chronofarn", beschreibung:"Chronofarne verlangsamen die Zeit um sich herum.", dauer:28, xp:39, kaufpreis:28, verkaufspreis:145, ansehen:14, freigeschaltet:false, wasserverbrauch:31, energieverbrauch:33, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:13160, anzahlfelder:null },
+{ fortschritt:283, feld:"Zeitgarten", name:"Sekundenkraut", beschreibung:"Sekundenkraut speichert winzige Zeitfragmente.", dauer:29, xp:40, kaufpreis:29, verkaufspreis:150, ansehen:14, freigeschaltet:false, wasserverbrauch:32, energieverbrauch:34, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:13220, anzahlfelder:null },
+{ fortschritt:284, feld:"Zeitgarten", name:"Minutenblatt", beschreibung:"Minutenblätter speichern Energie über längere Zeiträume.", dauer:30, xp:41, kaufpreis:30, verkaufspreis:155, ansehen:15, freigeschaltet:false, wasserverbrauch:33, energieverbrauch:35, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:13280, anzahlfelder:null },
+
+// 🎁 Bonus nach 6. Pflanze
+{ fortschritt:285, feld:"Bonus", beschreibung:"Du erhältst 50 Energie für deine Zeitpflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:50, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:13340, anzahlfelder:null },
+
+{ fortschritt:286, feld:"Zeitgarten", name:"Stundenblüte", beschreibung:"Stundenblüten speichern Energie über viele Stunden.", dauer:31, xp:42, kaufpreis:31, verkaufspreis:160, ansehen:16, freigeschaltet:false, wasserverbrauch:34, energieverbrauch:36, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:13400, anzahlfelder:null },
+{ fortschritt:287, feld:"Zeitgarten", name:"Tageskraut", beschreibung:"Tageskraut speichert Sonnenenergie für einen ganzen Tag.", dauer:32, xp:43, kaufpreis:32, verkaufspreis:165, ansehen:16, freigeschaltet:false, wasserverbrauch:35, energieverbrauch:37, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:13460, anzahlfelder:null },
+{ fortschritt:288, feld:"Zeitgarten", name:"Wochenblatt", beschreibung:"Wochenblätter speichern Energie über eine Woche.", dauer:33, xp:44, kaufpreis:33, verkaufspreis:170, ansehen:17, freigeschaltet:false, wasserverbrauch:36, energieverbrauch:38, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:13520, anzahlfelder:null },
+{ fortschritt:289, feld:"Zeitgarten", name:"Monatsblüte", beschreibung:"Monatsblüten speichern Energie über einen ganzen Monat.", dauer:34, xp:45, kaufpreis:34, verkaufspreis:175, ansehen:17, freigeschaltet:false, wasserverbrauch:37, energieverbrauch:39, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:13580, anzahlfelder:null },
+
+// 🎁 Bonus nach 10. Pflanze
+{ fortschritt:290, feld:"Bonus", beschreibung:"Du erhältst 110 Gold für deine Zeitpflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:110, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:13640, anzahlfelder:null },
+
+// 🌍 Weltmarkt
+{ fortschritt:291, feld:"Weltmarkt", beschreibung:"Zeitgartenpflanzen können auf dem Weltmarkt verkauft werden! Seltene Sorten bringen hohe Preise.", name:"Weltmarkt", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:13700, anzahlfelder:null },
+
+
+
+// 🏠 Äthergarten freischalten
+{ fortschritt:292, feld:"Äthergarten freischalten", beschreibung:"Du hast den Äthergarten freigeschaltet! Pflanze Pflanzen, die Ätherenergie speichern.", name:"Äthergarten freischalten", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:13760, anzahlfelder:6 },
+
+// 🌱 Äthergarten – Pflanzen
+{ fortschritt:293, feld:"Äthergarten", name:"Ätherrose", beschreibung:"Ätherrosen speichern magische Energie aus der Umgebung.", dauer:33, xp:46, kaufpreis:33, verkaufspreis:180, ansehen:18, freigeschaltet:false, wasserverbrauch:38, energieverbrauch:40, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:13820, anzahlfelder:null },
+{ fortschritt:294, feld:"Äthergarten", name:"Lichtblatt", beschreibung:"Lichtblätter sammeln Ätherlicht und speichern es für später.", dauer:34, xp:47, kaufpreis:34, verkaufspreis:185, ansehen:18, freigeschaltet:false, wasserverbrauch:39, energieverbrauch:41, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:13880, anzahlfelder:null },
+{ fortschritt:295, feld:"Äthergarten", name:"Sternenblüte", beschreibung:"Sternenblüten leuchten nachts und speichern kosmische Energie.", dauer:35, xp:48, kaufpreis:35, verkaufspreis:190, ansehen:19, freigeschaltet:false, wasserverbrauch:40, energieverbrauch:42, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:13940, anzahlfelder:null },
+
+// 🎁 Bonus nach 3. Pflanze
+{ fortschritt:296, feld:"Bonus", beschreibung:"Du erhältst 50 Gold für die ersten drei Ätherpflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:50, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:14000, anzahlfelder:null },
+
+{ fortschritt:297, feld:"Äthergarten", name:"Mondkraut", beschreibung:"Mondkraut sammelt Energie bei Vollmond.", dauer:36, xp:49, kaufpreis:36, verkaufspreis:195, ansehen:20, freigeschaltet:false, wasserverbrauch:41, energieverbrauch:43, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:14060, anzahlfelder:null },
+{ fortschritt:298, feld:"Äthergarten", name:"Sonnenfarn", beschreibung:"Sonnenfarne speichern Licht- und Ätherenergie.", dauer:37, xp:50, kaufpreis:37, verkaufspreis:200, ansehen:20, freigeschaltet:false, wasserverbrauch:42, energieverbrauch:44, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:14120, anzahlfelder:null },
+{ fortschritt:299, feld:"Äthergarten", name:"Galaxienblatt", beschreibung:"Galaxienblätter enthalten Energie ganzer Sternsysteme.", dauer:38, xp:51, kaufpreis:38, verkaufspreis:205, ansehen:21, freigeschaltet:false, wasserverbrauch:43, energieverbrauch:45, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:14180, anzahlfelder:null },
+
+// 🎁 Bonus nach 6. Pflanze
+{ fortschritt:300, feld:"Bonus", beschreibung:"Du erhältst 55 Energie für deine Ätherpflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:55, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:14240, anzahlfelder:null },
+
+{ fortschritt:301, feld:"Äthergarten", name:"Kometenblüte", beschreibung:"Kometenblüten speichern Energie aus vorbeiziehenden Kometen.", dauer:39, xp:52, kaufpreis:39, verkaufspreis:210, ansehen:22, freigeschaltet:false, wasserverbrauch:44, energieverbrauch:46, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:14300, anzahlfelder:null },
+{ fortschritt:302, feld:"Äthergarten", name:"Nebelkristall", beschreibung:"Nebelkristalle speichern ätherische Nebelenergie.", dauer:40, xp:53, kaufpreis:40, verkaufspreis:215, ansehen:22, freigeschaltet:false, wasserverbrauch:45, energieverbrauch:47, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:14360, anzahlfelder:null },
+{ fortschritt:303, feld:"Äthergarten", name:"Lichtsamen", beschreibung:"Lichtsamen wachsen zu Pflanzen voller Ätherenergie.", dauer:41, xp:54, kaufpreis:41, verkaufspreis:220, ansehen:23, freigeschaltet:false, wasserverbrauch:46, energieverbrauch:48, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:14420, anzahlfelder:null },
+{ fortschritt:304, feld:"Äthergarten", name:"Ewigkeitssprosse", beschreibung:"Ewigkeitssprossen speichern Energie endlos.", dauer:42, xp:55, kaufpreis:42, verkaufspreis:225, ansehen:24, freigeschaltet:false, wasserverbrauch:47, energieverbrauch:49, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:14480, anzahlfelder:null },
+
+// 🎁 Bonus nach 10. Pflanze
+{ fortschritt:305, feld:"Bonus", beschreibung:"Du erhältst 120 Gold für deine Ätherpflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:120, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:14540, anzahlfelder:null },
+
+// 🌍 Weltmarkt
+{ fortschritt:306, feld:"Weltmarkt", beschreibung:"Äthergartenpflanzen können auf dem Weltmarkt verkauft werden! Seltene Sorten bringen hohe Preise.", name:"Weltmarkt", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:14600, anzahlfelder:null },
+
+
+
+// 🏠 Dimensionsfeld freischalten
+{ fortschritt:307, feld:"Dimensionsfeld freischalten", beschreibung:"Du hast das Dimensionsfeld freigeschaltet! Pflanze Pflanzen, die die Dimensionen beeinflussen.", name:"Dimensionsfeld freischalten", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:14660, anzahlfelder:6 },
+
+// 🌱 Dimensionsfeld – Pflanzen
+{ fortschritt:308, feld:"Dimensionsfeld", name:"Portalblüte", beschreibung:"Portalblüten öffnen kleine Dimensionstore.", dauer:45, xp:60, kaufpreis:45, verkaufspreis:250, ansehen:25, freigeschaltet:false, wasserverbrauch:50, energieverbrauch:52, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:14720, anzahlfelder:null },
+{ fortschritt:309, feld:"Dimensionsfeld", name:"Raumkraut", beschreibung:"Raumkraut dehnt und verzerrt den umgebenden Raum.", dauer:46, xp:61, kaufpreis:46, verkaufspreis:255, ansehen:26, freigeschaltet:false, wasserverbrauch:51, energieverbrauch:53, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:14780, anzahlfelder:null },
+{ fortschritt:310, feld:"Dimensionsfeld", name:"Zeitschleifenblume", beschreibung:"Zeitschleifenblumen manipulieren kleine Zeiträume.", dauer:47, xp:62, kaufpreis:47, verkaufspreis:260, ansehen:26, freigeschaltet:false, wasserverbrauch:52, energieverbrauch:54, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:14840, anzahlfelder:null },
+
+// 🎁 Bonus nach 3. Pflanze
+{ fortschritt:311, feld:"Bonus", beschreibung:"Du erhältst 60 Gold für die ersten drei Dimensionspflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:60, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:14900, anzahlfelder:null },
+
+{ fortschritt:312, feld:"Dimensionsfeld", name:"Schrumpfblatt", beschreibung:"Schrumpfblätter verändern ihre Größe nach Belieben.", dauer:48, xp:63, kaufpreis:48, verkaufspreis:265, ansehen:27, freigeschaltet:false, wasserverbrauch:53, energieverbrauch:55, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:14960, anzahlfelder:null },
+{ fortschritt:313, feld:"Dimensionsfeld", name:"Expandkraut", beschreibung:"Expandkraut vergrößert sich und den Raum um sich herum.", dauer:49, xp:64, kaufpreis:49, verkaufspreis:270, ansehen:28, freigeschaltet:false, wasserverbrauch:54, energieverbrauch:56, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:15020, anzahlfelder:null },
+{ fortschritt:314, feld:"Dimensionsfeld", name:"Singularitätssprosse", beschreibung:"Singularitätssprossen sammeln Energie wie ein schwarzes Loch.", dauer:50, xp:65, kaufpreis:50, verkaufspreis:275, ansehen:29, freigeschaltet:false, wasserverbrauch:55, energieverbrauch:57, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:15080, anzahlfelder:null },
+
+// 🎁 Bonus nach 6. Pflanze
+{ fortschritt:315, feld:"Bonus", beschreibung:"Du erhältst 60 Energie für deine Dimensionspflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:60, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:15140, anzahlfelder:null },
+
+{ fortschritt:316, feld:"Dimensionsfeld", name:"Transdimensionalkraut", beschreibung:"Transdimensionalkräuter wachsen durch mehrere Dimensionen gleichzeitig.", dauer:51, xp:66, kaufpreis:51, verkaufspreis:280, ansehen:30, freigeschaltet:false, wasserverbrauch:56, energieverbrauch:58, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:15200, anzahlfelder:null },
+{ fortschritt:317, feld:"Dimensionsfeld", name:"Dimenblüte", beschreibung:"Dimenblüten verschieben die Wahrnehmung von Raum und Zeit.", dauer:52, xp:67, kaufpreis:52, verkaufspreis:285, ansehen:31, freigeschaltet:false, wasserverbrauch:57, energieverbrauch:59, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:15260, anzahlfelder:null },
+{ fortschritt:318, feld:"Dimensionsfeld", name:"Paradoxkraut", beschreibung:"Paradoxkraut existiert gleichzeitig in mehreren Zuständen.", dauer:53, xp:68, kaufpreis:53, verkaufspreis:290, ansehen:32, freigeschaltet:false, wasserverbrauch:58, energieverbrauch:60, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:15320, anzahlfelder:null },
+{ fortschritt:319, feld:"Dimensionsfeld", name:"Multiversumblüte", beschreibung:"Multiversumblüten verbinden Energien aus Parallelwelten.", dauer:54, xp:69, kaufpreis:54, verkaufspreis:295, ansehen:33, freigeschaltet:false, wasserverbrauch:59, energieverbrauch:61, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:15380, anzahlfelder:null },
+
+// 🎁 Bonus nach 10. Pflanze
+{ fortschritt:320, feld:"Bonus", beschreibung:"Du erhältst 130 Gold für deine Dimensionspflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:130, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:15440, anzahlfelder:null },
+
+// 🌍 Weltmarkt
+{ fortschritt:321, feld:"Weltmarkt", beschreibung:"Dimensionsfeldpflanzen können auf dem Weltmarkt verkauft werden! Seltene Sorten bringen enorme Preise.", name:"Weltmarkt", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:15500, anzahlfelder:null },
+
+
+
+// 🏠 Astralgarten freischalten
+{ fortschritt:322, feld:"Astralgarten freischalten", beschreibung:"Du hast den Astralgarten freigeschaltet! Pflanze Pflanzen, die kosmische Energie speichern.", name:"Astralgarten freischalten", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:15560, anzahlfelder:6 },
+
+// 🌱 Astralgarten – Pflanzen
+{ fortschritt:323, feld:"Astralgarten", name:"Sternenfarn", beschreibung:"Sternenfarne sammeln Energie direkt von den Sternen.", dauer:55, xp:70, kaufpreis:55, verkaufspreis:310, ansehen:34, freigeschaltet:false, wasserverbrauch:62, energieverbrauch:64, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:15620, anzahlfelder:null },
+{ fortschritt:324, feld:"Astralgarten", name:"Meteorblüte", beschreibung:"Meteorblüten speichern die Energie vorbeiziehender Meteoriten.", dauer:56, xp:71, kaufpreis:56, verkaufspreis:315, ansehen:35, freigeschaltet:false, wasserverbrauch:63, energieverbrauch:65, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:15680, anzahlfelder:null },
+{ fortschritt:325, feld:"Astralgarten", name:"Galaxienkraut", beschreibung:"Galaxienkraut enthält Energie ganzer Galaxien.", dauer:57, xp:72, kaufpreis:57, verkaufspreis:320, ansehen:36, freigeschaltet:false, wasserverbrauch:64, energieverbrauch:66, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:15740, anzahlfelder:null },
+
+// 🎁 Bonus nach 3. Pflanze
+{ fortschritt:326, feld:"Bonus", beschreibung:"Du erhältst 70 Gold für die ersten drei Astralpflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:70, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:15800, anzahlfelder:null },
+
+{ fortschritt:327, feld:"Astralgarten", name:"Kosmisches Blatt", beschreibung:"Kosmische Blätter speichern die Energie der Milchstraße.", dauer:58, xp:73, kaufpreis:58, verkaufspreis:325, ansehen:37, freigeschaltet:false, wasserverbrauch:65, energieverbrauch:67, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:15860, anzahlfelder:null },
+{ fortschritt:328, feld:"Astralgarten", name:"Supernova-Blüte", beschreibung:"Supernova-Blüten explodieren bei Ernte und geben Energie frei.", dauer:59, xp:74, kaufpreis:59, verkaufspreis:330, ansehen:38, freigeschaltet:false, wasserverbrauch:66, energieverbrauch:68, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:15920, anzahlfelder:null },
+{ fortschritt:329, feld:"Astralgarten", name:"Neutronensprosse", beschreibung:"Neutronensprossen speichern die Energie von Neutronensternen.", dauer:60, xp:75, kaufpreis:60, verkaufspreis:335, ansehen:39, freigeschaltet:false, wasserverbrauch:67, energieverbrauch:69, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:15980, anzahlfelder:null },
+
+// 🎁 Bonus nach 6. Pflanze
+{ fortschritt:330, feld:"Bonus", beschreibung:"Du erhältst 65 Energie für deine Astralpflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:65, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:16040, anzahlfelder:null },
+
+{ fortschritt:331, feld:"Astralgarten", name:"Wurmlochblüte", beschreibung:"Wurmlochblüten verbinden verschiedene Punkte im Raum.", dauer:61, xp:76, kaufpreis:61, verkaufspreis:340, ansehen:40, freigeschaltet:false, wasserverbrauch:68, energieverbrauch:70, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:16100, anzahlfelder:null },
+{ fortschritt:332, feld:"Astralgarten", name:"Schwarzes Lochkraut", beschreibung:"Schwarzes Lochkraut zieht Energie aus allem in der Nähe.", dauer:62, xp:77, kaufpreis:62, verkaufspreis:345, ansehen:41, freigeschaltet:false, wasserverbrauch:69, energieverbrauch:71, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:16160, anzahlfelder:null },
+{ fortschritt:333, feld:"Astralgarten", name:"Quasarsprosse", beschreibung:"Quasarsprossen senden Energie in die Ferne.", dauer:63, xp:78, kaufpreis:63, verkaufspreis:350, ansehen:42, freigeschaltet:false, wasserverbrauch:70, energieverbrauch:72, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:16220, anzahlfelder:null },
+{ fortschritt:334, feld:"Astralgarten", name:"Pulsarblüte", beschreibung:"Pulsarblüten senden regelmäßige Energiesignale aus.", dauer:64, xp:79, kaufpreis:64, verkaufspreis:355, ansehen:43, freigeschaltet:false, wasserverbrauch:71, energieverbrauch:73, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:16280, anzahlfelder:null },
+
+// 🎁 Bonus nach 10. Pflanze
+{ fortschritt:335, feld:"Bonus", beschreibung:"Du erhältst 150 Gold für deine Astralpflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:150, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:16340, anzahlfelder:null },
+
+// 🌍 Weltmarkt
+{ fortschritt:336, feld:"Weltmarkt", beschreibung:"Astralgartenpflanzen können auf dem Weltmarkt verkauft werden! Höchste Preise für seltene Pflanzen.", name:"Weltmarkt", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:16400, anzahlfelder:null },
+
+
+
+// 🏠 Universumfeld freischalten
+{ fortschritt:337, feld:"Universumfeld freischalten", beschreibung:"Du hast das Universumfeld freigeschaltet! Pflanze Pflanzen, die ganze Universen beeinflussen.", name:"Universumfeld freischalten", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:16460, anzahlfelder:6 },
+
+// 🌱 Universumfeld – Pflanzen
+{ fortschritt:338, feld:"Universumfeld", name:"Galaxienfarn", beschreibung:"Galaxienfarne speichern Energie ganzer Galaxienhaufen.", dauer:70, xp:90, kaufpreis:70, verkaufspreis:400, ansehen:45, freigeschaltet:false, wasserverbrauch:80, energieverbrauch:82, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:16520, anzahlfelder:null },
+{ fortschritt:339, feld:"Universumfeld", name:"Quantenblüte", beschreibung:"Quantenblüten existieren in allen Zuständen gleichzeitig.", dauer:71, xp:91, kaufpreis:71, verkaufspreis:405, ansehen:46, freigeschaltet:false, wasserverbrauch:82, energieverbrauch:84, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:16580, anzahlfelder:null },
+{ fortschritt:340, feld:"Universumfeld", name:"Singularitätsblatt", beschreibung:"Singularitätsblätter sammeln Energie wie ein kleines schwarzes Loch.", dauer:72, xp:92, kaufpreis:72, verkaufspreis:410, ansehen:47, freigeschaltet:false, wasserverbrauch:84, energieverbrauch:86, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:16640, anzahlfelder:null },
+
+// 🎁 Bonus nach 3. Pflanze
+{ fortschritt:341, feld:"Bonus", beschreibung:"Du erhältst 80 Gold für die ersten drei Universumspflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:80, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:16700, anzahlfelder:null },
+
+{ fortschritt:342, feld:"Universumfeld", name:"Kosmoskraut", beschreibung:"Kosmoskräuter verbinden Energien von Sternen und Planeten.", dauer:73, xp:93, kaufpreis:73, verkaufspreis:415, ansehen:48, freigeschaltet:false, wasserverbrauch:86, energieverbrauch:88, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:16760, anzahlfelder:null },
+{ fortschritt:343, feld:"Universumfeld", name:"Hypernova-Blüte", beschreibung:"Hypernova-Blüten explodieren bei Ernte und geben enorme Energie frei.", dauer:74, xp:94, kaufpreis:74, verkaufspreis:420, ansehen:49, freigeschaltet:false, wasserverbrauch:88, energieverbrauch:90, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:16820, anzahlfelder:null },
+{ fortschritt:344, feld:"Universumfeld", name:"Antimateriesprosse", beschreibung:"Antimateriesprossen reagieren auf jede Energiequelle.", dauer:75, xp:95, kaufpreis:75, verkaufspreis:425, ansehen:50, freigeschaltet:false, wasserverbrauch:90, energieverbrauch:92, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:16880, anzahlfelder:null },
+
+// 🎁 Bonus nach 6. Pflanze
+{ fortschritt:345, feld:"Bonus", beschreibung:"Du erhältst 70 Energie für deine Universumspflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:70, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:16940, anzahlfelder:null },
+
+{ fortschritt:346, feld:"Universumfeld", name:"Neutrino-Blatt", beschreibung:"Neutrino-Blätter interagieren kaum mit der Umgebung, speichern aber Energie.", dauer:76, xp:96, kaufpreis:76, verkaufspreis:430, ansehen:51, freigeschaltet:false, wasserverbrauch:92, energieverbrauch:94, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:17000, anzahlfelder:null },
+{ fortschritt:347, feld:"Universumfeld", name:"Galaktensprosse", beschreibung:"Galaktensprossen enthalten die Energie ganzer Galaxien.", dauer:77, xp:97, kaufpreis:77, verkaufspreis:435, ansehen:52, freigeschaltet:false, wasserverbrauch:94, energieverbrauch:96, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:17060, anzahlfelder:null },
+{ fortschritt:348, feld:"Universumfeld", name:"Hyperraumblüte", beschreibung:"Hyperraumblüten verbinden entfernte Orte in Sekunden.", dauer:78, xp:98, kaufpreis:78, verkaufspreis:440, ansehen:53, freigeschaltet:false, wasserverbrauch:96, energieverbrauch:98, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:17120, anzahlfelder:null },
+{ fortschritt:349, feld:"Universumfeld", name:"Zeitflussblatt", beschreibung:"Zeitflussblätter manipulieren kleine Zeitströme.", dauer:79, xp:99, kaufpreis:79, verkaufspreis:445, ansehen:54, freigeschaltet:false, wasserverbrauch:98, energieverbrauch:100, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:17180, anzahlfelder:null },
+
+// 🎁 Bonus nach 10. Pflanze
+{ fortschritt:350, feld:"Bonus", beschreibung:"Du erhältst 200 Gold für deine Universumspflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:200, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:17240, anzahlfelder:null },
+
+// 🌍 Weltmarkt
+{ fortschritt:351, feld:"Weltmarkt", beschreibung:"Universumfeldpflanzen können auf dem Weltmarkt verkauft werden! Extrem hohe Preise für seltene Pflanzen.", name:"Weltmarkt", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:17300, anzahlfelder:null },
+
+
+
+// 🏠 Kosmisches Urfeld freischalten
+{ fortschritt:352, feld:"Kosmisches Urfeld freischalten", beschreibung:"Du hast das Kosmische Urfeld freigeschaltet! Pflanze legendäre Pflanzen von universaler Macht.", name:"Kosmisches Urfeld freischalten", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:17360, anzahlfelder:6 },
+
+// 🌱 Kosmisches Urfeld – Pflanzen
+{ fortschritt:353, feld:"Kosmisches Urfeld", name:"Ur-Samen", beschreibung:"Ur-Samen enthalten die Essenz des gesamten Kosmos.", dauer:85, xp:110, kaufpreis:85, verkaufspreis:500, ansehen:60, freigeschaltet:false, wasserverbrauch:110, energieverbrauch:115, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:17420, anzahlfelder:null },
+{ fortschritt:354, feld:"Kosmisches Urfeld", name:"Ewigkeitssprosse", beschreibung:"Ewigkeitssprossen wachsen endlos und sammeln unermessliche Energie.", dauer:86, xp:111, kaufpreis:86, verkaufspreis:505, ansehen:61, freigeschaltet:false, wasserverbrauch:112, energieverbrauch:117, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:17480, anzahlfelder:null },
+{ fortschritt:355, feld:"Kosmisches Urfeld", name:"Galaxienblüte", beschreibung:"Galaxienblüten leuchten wie ganze Universen.", dauer:87, xp:112, kaufpreis:87, verkaufspreis:510, ansehen:62, freigeschaltet:false, wasserverbrauch:114, energieverbrauch:119, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:17540, anzahlfelder:null },
+
+// 🎁 Bonus nach 3. Pflanze
+{ fortschritt:356, feld:"Bonus", beschreibung:"Du erhältst 100 Gold für die ersten drei Urfeldpflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:100, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:17600, anzahlfelder:null },
+
+{ fortschritt:357, feld:"Kosmisches Urfeld", name:"Antimaterieblatt", beschreibung:"Antimaterieblätter erzeugen immense Energie bei Berührung.", dauer:88, xp:113, kaufpreis:88, verkaufspreis:515, ansehen:63, freigeschaltet:false, wasserverbrauch:116, energieverbrauch:121, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:17660, anzahlfelder:null },
+{ fortschritt:358, feld:"Kosmisches Urfeld", name:"Singularitätssprosse", beschreibung:"Singularitätssprossen enthalten das Potential eines ganzen Universums.", dauer:89, xp:114, kaufpreis:89, verkaufspreis:520, ansehen:64, freigeschaltet:false, wasserverbrauch:118, energieverbrauch:123, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:17720, anzahlfelder:null },
+{ fortschritt:359, feld:"Kosmisches Urfeld", name:"Zeitflussblüte", beschreibung:"Zeitflussblüten manipulieren die Zeit in kleinen Bereichen.", dauer:90, xp:115, kaufpreis:90, verkaufspreis:525, ansehen:65, freigeschaltet:false, wasserverbrauch:120, energieverbrauch:125, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:17780, anzahlfelder:null },
+
+// 🎁 Bonus nach 6. Pflanze
+{ fortschritt:360, feld:"Bonus", beschreibung:"Du erhältst 90 Energie für deine Urfeldpflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:90, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:17840, anzahlfelder:null },
+
+{ fortschritt:361, feld:"Kosmisches Urfeld", name:"Universumsprosse", beschreibung:"Universumsprossen vereinen die Kräfte ganzer Galaxien.", dauer:91, xp:116, kaufpreis:91, verkaufspreis:530, ansehen:66, freigeschaltet:false, wasserverbrauch:122, energieverbrauch:127, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:17900, anzahlfelder:null },
+{ fortschritt:362, feld:"Kosmisches Urfeld", name:"Kosmische Blüte", beschreibung:"Kosmische Blüten strahlen die Macht von Milliarden Sternen aus.", dauer:92, xp:117, kaufpreis:92, verkaufspreis:535, ansehen:67, freigeschaltet:false, wasserverbrauch:124, energieverbrauch:129, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:17960, anzahlfelder:null },
+{ fortschritt:363, feld:"Kosmisches Urfeld", name:"Ewige Sprosse", beschreibung:"Ewige Sprossen wachsen endlos und sammeln unermessliche kosmische Energie.", dauer:93, xp:118, kaufpreis:93, verkaufspreis:540, ansehen:68, freigeschaltet:false, wasserverbrauch:126, energieverbrauch:131, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:18020, anzahlfelder:null },
+{ fortschritt:364, feld:"Kosmisches Urfeld", name:"Urkraftblatt", beschreibung:"Urkraftblätter bündeln die fundamentalen Kräfte des Kosmos.", dauer:94, xp:119, kaufpreis:94, verkaufspreis:545, ansehen:69, freigeschaltet:false, wasserverbrauch:128, energieverbrauch:133, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:18080, anzahlfelder:null },
+
+// 🎁 Bonus nach 10. Pflanze
+{ fortschritt:365, feld:"Bonus", beschreibung:"Du erhältst 250 Gold für deine Kosmischen Urfeldpflanzen!", name:"Bonus", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:250, wasser:0, energie:0, samen:0, geerntet:0, bonus:true, fertiggewachsen:null, exp_fortschritt:18140, anzahlfelder:null },
+
+// 🌍 Weltmarkt
+{ fortschritt:366, feld:"Weltmarkt", beschreibung:"Kosmisches Urfeld Pflanzen können auf dem Weltmarkt verkauft werden! Höchste legendäre Preise.", name:"Weltmarkt", dauer:null, xp:null, kaufpreis:null, verkaufspreis:null, ansehen:null, freigeschaltet:false, wasserverbrauch:0, energieverbrauch:0, gold:0, wasser:0, energie:0, samen:0, geerntet:0, bonus:false, fertiggewachsen:null, exp_fortschritt:18200, anzahlfelder:null }
