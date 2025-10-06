@@ -13,7 +13,7 @@ const progression = [
     { fortschritt: 3, feld: "Gemüsegarten", beschreibung: "Tomaten reifen saftig und rot.", name: "Tomate", dauer: 3, xp: 2, kaufpreis: 2, verkaufspreis: 5, ansehen: 0, freigeschaltet: false, wasserverbrauch: 1, energieverbrauch: 0, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 15, anzahlfelder: null },
 
     // 🎁 Bonus nach 3 Pflanzen
-    { fortschritt: 4, feld: "Bonus", beschreibung: "Du erhältst 5 Gold für deine Erfolge im Garten!", name: "Bonus", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 5, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: true, fertiggewachsen: null, exp_fortschritt: 20, anzahlfelder: null },
+    { fortschritt: 4, feld: "Bonus", beschreibung: "Du erhältst 10 Ansehen für deine Erfolge im Garten!", name: "Bonus", dauer: null, xp: null, kaufpreis: null, verkaufspreis: null, ansehen: 10, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: true, fertiggewachsen: null, exp_fortschritt: 20, anzahlfelder: null },
 
     // 🌱 Pflanzen 4–7
     { fortschritt: 5, feld: "Gemüsegarten", beschreibung: "Gurken wachsen schnell und erfrischend.", name: "Gurke", dauer: 3, xp: 1, kaufpreis: 3, verkaufspreis: 6, ansehen: 0, freigeschaltet: false, wasserverbrauch: 2, energieverbrauch: 0, gold: 0, wasser: 0, energie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, exp_fortschritt: 30, anzahlfelder: null },
@@ -1140,5 +1140,6 @@ function zeigeSpielerOverlay(name, daten) {
     overlay.appendChild(dialog);
     document.body.appendChild(overlay);
 }
+
 
 
