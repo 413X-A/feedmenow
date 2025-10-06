@@ -149,10 +149,11 @@ function richtigeFreischaltung(fortschrittNummer) {
     if (!fortschritt.freigeschaltet && daten.benutzer_exp >= fortschritt.exp_fortschritt) {
         fortschritt.freigeschaltet = true;
 
+        if (fortschritt.ansehen) daten.benutzer_ansehen += fortschritt.ansehen;
         if (fortschritt.gold) daten.ressourcen.gold += fortschritt.gold;
         if (fortschritt.wasser) daten.ressourcen.wasser += fortschritt.wasser;
         if (fortschritt.energie) daten.ressourcen.energie += fortschritt.energie;
-
+        
         // Sound Effekt
         if (daten.einstellungen.effekte) {
             const purchaseSound = new Audio("deine_reise_freigeschaltet.mp3");
@@ -170,3 +171,4 @@ function richtigeFreischaltung(fortschrittNummer) {
         ueberschrift();
     }
 }
+
