@@ -1,0 +1,215 @@
+/* ----------------------------
+   Allgemeine Layouts
+---------------------------- */
+.produkte-box {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: linear-gradient(to bottom, #f3f3f3, #e0e0e0); /* neutral-grauer Hintergrund */
+    border: 3px solid #888; /* dezenter Rahmen passend zu Industrie-/Betriebsmitteln */
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.produkte-box h2 {
+    color: #333; /* dunklerer Titel */
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.gebaeude-box {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: linear-gradient(to bottom, #fff3e0, #ffd699); /* warme Gebäude-Farben */
+    border: 3px solid #d79a4c; /* goldbrauner Rahmen für Gebäude */
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.gebaeude-box h2 {
+    color: #5a3e1b; /* dunkler Titel passend zum Rahmen */
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+
+/* ----------------------------
+   Rezeptbereich
+---------------------------- */
+.rezept-container {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+#rezeptKaufenBtn {
+    padding: 0.8rem 1.5rem;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#rezeptKaufenBtn:hover {
+    background-color: #27632a;
+    transform: scale(1.05);
+}
+
+#rezeptKaufenBtn:disabled {
+    background-color: #888;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ----------------------------
+   Container für Gebäude & Betriebsmittel
+---------------------------- */
+#gebaeudeContainer,
+#betriebsmittelContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* ----------------------------
+   Boxen für Gebäude & Betriebsmittel
+---------------------------- */
+.gebaeudeBox {
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.gebaeudeBox:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.gebaeudeBox h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.gebaeudeBox p {
+    margin: 0.3rem 0;
+    text-align: center;
+}
+
+/* ----------------------------
+   Gebäude Beschreibung
+---------------------------- */
+.gebaeudeTitel {
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.gebaeudeBeschreibung {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* ----------------------------
+   Slots / Produktivität
+---------------------------- */
+.slotsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0.5rem 0;
+    gap: 0.3rem;
+}
+
+.slot {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    background-color: #ccc;
+}
+
+.slot.active {
+    background-color: orange;
+}
+
+/* ----------------------------
+   Felder (z.B. Pflanzenfelder)
+---------------------------- */
+.felderContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.feldBox {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #888;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.feldBox.leer { background-color: #ccc; }
+.feldBox.inProduktion { background-color: #ffa500; }
+.feldBox.fertig { background-color: #2e7d32; color: white; }
+
+/* ----------------------------
+   Buttons
+---------------------------- */
+.ui_unten {
+    margin: 0.3rem 0.2rem 0 0;
+    padding: 0.3rem 0.6rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 0.9rem;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.ui_unten:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.freischaltenBtn {
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.freischaltenBtn:hover {
+    background-color: #27632a;
+    transform: scale(1.05);
+}
+
+.freischaltenBtn:disabled {
+    background-color: #888;
+    cursor: not-allowed;
+    transform: none;
+}
