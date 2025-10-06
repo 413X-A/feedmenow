@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>feedmenow-deinereise</title>
+    <link rel="icon" href="icon.ico">
+    <link href="style_hauptseite.css" rel="stylesheet">
+    <link href="style_deinereise.css" rel="stylesheet">
+    <link href="style_einstellungen.css" rel="stylesheet">
+</head>
+
+<body>
+    
+    <audio id="global_music_player" loop style="display:none"></audio>
+
+    <!-- UI -->
+<div class="ui_container">
+    <div class="ui_profil">
+        <span id="benutzername"></span>
+    </div>
+
+    <div class="ressourcen-container">
+            <div class="ressource">
+                <span>Ansehen:</span>
+                <span id="menge_ansehen"></span>
+            </div>
+            <div class="ressource">
+                <span>Gold:</span>
+                <span id="menge_gold"></span>
+            </div>
+            <div class="ressource">
+                <span>Wasser:</span>
+                <span id="menge_wasser"></span>
+            </div>
+            <div class="ressource">
+                <span>Energie:</span>
+                <span id="menge_energie"></span>
+            </div>
+            <div class="ressource">
+                <span>Magie:</span>
+                <span id="menge_magie"></span>
+            </div>
+            <div class="ressource">
+                <span>[LVL] Erfahrung: </span>
+                <span id="menge_level"></span>
+            </div>
+
+            <div class="ressource">
+                <span>Pflanzen im Lager: </span>
+                <span id="menge_pflanzen"></span>
+            </div>
+            <div class="ressource">
+                <span>Produkte im Lager: </span>
+                <span id="menge_produkte"></span>
+            </div>
+        </div>
+
+    <button class="seitenwechsel" onclick="zur_startseite()">Deine Farmen</button>
+    <button class="shop_button" onclick="zum_weltmarkt()">Weltmarkt</button>
+    <button class="seitenwechsel" onclick="zu_gebaeude()">Produkte</button>
+    <button class="reise_button" onclick="zur_reise()">Deine Reise</button>
+
+    <!-- EINSTELLUNGEN -->
+    <button class="settings_button" type="button" onclick="zeige_einstellungen()">Einstellungen</button>
+
+    <p class="ueberschrift_felder" id="ueberschrift_felder"></p>
+    <div id="fortschritteContainer">
+        <!-- Felder werden mit Script erstellt -->
+    </div>
+</div>
+
+
+</body>
+
+<script src="script_ui.js"></script>
+<script src="script_deinereise.js"></script>
+<script src="script_levelsystem.js"></script>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>feedmenow-login</title>
+    <link rel="icon" href="icon.ico">
+    <link href="style_login.css" rel="stylesheet">
+</head>
+
+<body>
+    
+    <audio id="global_music_player" loop style="display:none"></audio>
+
+    <div class="container">
+        <h2>Hauptseite</h2>
+        <form id="loginForm">
+            <input id="benutzername" type="text" placeholder="Dein Benutzername" autofocus>
+            <input id="passwort" type="password" placeholder="Dein Passwort">
+            <button type="button" onclick="login()">Los geht's!</button>
+        </form>
+        <div class="info" id="info"></div>
+
+        <!-- 🏆 Box für die Top 5 Spieler -->
+        <div id="topSpielerBox"
+            style="margin-top:2rem; padding:1rem; background:#e6f0dbcc; border-radius:12px; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+            <h3>🏆 Top 5 Spieler</h3>
+            <ul id="topSpielerListe" style="list-style:none; padding-left:0; font-weight:bold;"></ul>
+        </div>
+    </div>
+
+    <script src="script_login.js"></script>
+</body>
+
+</html>
