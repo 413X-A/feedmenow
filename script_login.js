@@ -611,7 +611,7 @@ function login() {
             passwort,
             mail: null,
             einstellungen: { sound: true, song: null, sound_timestamp: null, benachrichtigung: true, effekte: true },
-            benutzer_ansehen: 1,
+            benutzer_ansehen: 0,
             benutzer_level: 1,
             benutzer_explevel: 0,
             benutzer_levelsystem: 5,
@@ -1140,4 +1140,5 @@ function zeigeSpielerOverlay(name, daten) {
     overlay.appendChild(dialog);
     document.body.appendChild(overlay);
 }
+
 
