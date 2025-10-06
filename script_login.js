@@ -569,11 +569,11 @@ const gebäudeProdukte = {
 
 
 const gebaeudeListe = [
-  { fortschritt: 650, feld: "Wasserpumpe", beschreibung: "Pumpt stetig frisches Wasser aus dem Boden.", name: "Wasserpumpe", dauer: 0.1, xp: null, benutzer_exp: 0, kaufpreis: 75, verkaufspreis: null, ansehen: 10, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, magieverbrauch: 0, gold: 0, wasser: 1, energie: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, lager: null, anzahl_slots: 15, betriebsmittel_level: 1, level: 1 },
+  { fortschritt: 650, feld: "Wasserpumpe", beschreibung: "Pumpt stetig frisches Wasser aus dem Boden.", name: "Wasserpumpe", dauer: 5, xp: null, benutzer_exp: 0, kaufpreis: 75, verkaufspreis: null, ansehen: 10, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, magieverbrauch: 0, gold: 0, wasser: 1, energie: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, lager: null, anzahl_slots: 15, betriebsmittel_level: 1, level: 1 },
 
-  { fortschritt: 651, feld: "Elektrizitätswerk", beschreibung: "Erzeugt Energie für deine Farmen.", name: "Elektrizitätswerk", dauer: 0.1, xp: null, benutzer_exp: 0, kaufpreis: 75, verkaufspreis: null, ansehen: 15, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, magieverbrauch: 0, gold: 0, wasser: 0, energie: 1, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, lager: null, anzahl_slots: 15, betriebsmittel_level: 1, level: 2 },
+  { fortschritt: 651, feld: "Elektrizitätswerk", beschreibung: "Erzeugt Energie für deine Farmen.", name: "Elektrizitätswerk", dauer: 10, xp: null, benutzer_exp: 0, kaufpreis: 75, verkaufspreis: null, ansehen: 15, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, magieverbrauch: 0, gold: 0, wasser: 0, energie: 1, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, lager: null, anzahl_slots: 15, betriebsmittel_level: 1, level: 2 },
 
-  { fortschritt: 652, feld: "Goldmine", beschreibung: "Fördert wertvolles Gold über die Zeit.", name: "Goldmine", dauer: 0.1, xp: null, benutzer_exp: 0, kaufpreis: 75, verkaufspreis: null, ansehen: 10, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, magieverbrauch: 0, gold: 1, wasser: 0, energie: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, anzahl_slots: 25, lager: null, betriebsmittel_level: 1, level: 3 }
+  { fortschritt: 652, feld: "Goldmine", beschreibung: "Fördert wertvolles Gold über die Zeit.", name: "Goldmine", dauer: 7.50, xp: null, benutzer_exp: 0, kaufpreis: 75, verkaufspreis: null, ansehen: 10, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, magieverbrauch: 0, gold: 1, wasser: 0, energie: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, anzahl_slots: 25, lager: null, betriebsmittel_level: 1, level: 3 }
 ];
 
 
@@ -611,24 +611,23 @@ function login() {
             passwort,
             mail: null,
             einstellungen: { sound: true, song: null, sound_timestamp: null, benachrichtigung: true, effekte: true },
-            benutzer_ansehen: 1000,
+            benutzer_ansehen: 1,
             benutzer_level: 1,
             benutzer_explevel: 0,
             benutzer_levelsystem: 5,
             benutzer_exp: 0,
             lagerplatz: { gold: 500, wasser: 35, energie: 35, magie: 35, duenger: 35, pflanzen: 65, produkte: 15 },
             aktuelleFarm: null,
-            ressourcen: { gold: 1000, wasser: 35, energie: 0, magie: 0, duenger: 0, anz_pflanzen: 0, anz_produkte: 0 },
+            ressourcen: { gold: 0, wasser: 35, energie: 0, magie: 0, duenger: 0, anz_pflanzen: 0, anz_produkte: 0 },
             produkte: {},
             gebaeudeFelder: {},
             pflanzenDaten: {},
             pflanzenDatenMagische: {},
             felder_tutorial: {},
             weltmarkt_tutorial: {},
-            betriebsmittel: {}   // 👈 Gebäude hier als Objekt speichern
+            betriebsmittel: {}
         };
 
-        // 📌 Gebäude-Liste so speichern wie Pflanzen/Produkte: Objekt mit Keys = fortschritt
         gebaeudeListe.forEach(geb => {
             daten.betriebsmittel[geb.fortschritt] = { ...geb };
         });
@@ -1141,3 +1140,4 @@ function zeigeSpielerOverlay(name, daten) {
     overlay.appendChild(dialog);
     document.body.appendChild(overlay);
 }
+
