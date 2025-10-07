@@ -759,7 +759,7 @@ function betriebsmittelAnzeigen() {
                 }
 
                 // 📝 Anzeige aktualisieren
-                if (info.wasser > 0) lagerText.textContent = `Im Lager: ${Math.floor(info.lager.wasser)} Wasser`;
+                if (info.wasser > 0) lagerText.textContent = `Im Lager: ${Math.floor(info.lager.wasser)} Wasser / ${daten.betriebsmittel_lager["wasser"]}`;
                 else if (info.energie > 0) lagerText.textContent = `Im Lager: ${Math.floor(info.lager.energie)} Energie`;
                 else if (info.gold > 0) lagerText.textContent = `Im Lager: ${Math.floor(info.lager.gold)} Gold`;
 
@@ -881,3 +881,4 @@ function betriebsmittelAnzeigen() {
         document.body.appendChild(overlay);
     }
 }
+
