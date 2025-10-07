@@ -396,7 +396,7 @@ function login() {
             felder_tutorial: {},
             weltmarkt_tutorial: {},
             betriebsmittel: {},
-            betriebsmittel_lager: { gold: 50, wasser: 50, energie: 50, smaragde: 25 }
+            betriebsmittel_lager: { gold: 50, wasser: 50, energie: 50 }
         };
 
         gebaeudeListe.forEach(geb => {
@@ -911,3 +911,4 @@ function zeigeSpielerOverlay(name, daten) {
     overlay.appendChild(dialog);
     document.body.appendChild(overlay);
 }
+
