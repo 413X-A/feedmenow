@@ -186,6 +186,113 @@ const magieFelder = [
 
 
 const feldfreischaltungTutorials = [
+    {
+        fortschritt: 0,
+        feld: "Gemüsegarten",
+        beschreibung_zeile1: "➡️ Freigeschaltet: Der erste Gemüsegarten!",
+        beschreibung_zeile2: "Ein kleines Stück Land, wo die ersten Karotten, Tomaten und Salate sprießen.",
+        beschreibung_zeile3: "Die Nachbarn staunen über deine ersten grünen Ernten.",
+        freigeschaltet: false
+    },
+    {
+        fortschritt: 12,
+        feld: "Obstgarten",
+        beschreibung_zeile1: "➡️ Freigeschaltet: Dein erster Obstgarten!",
+        beschreibung_zeile2: "Apfelbäume, Birnen und Kirschen schmücken dein Land und duftet verführerisch.",
+        beschreibung_zeile3: "Die Bienen summen zufrieden um deine Früchte herum.",
+        freigeschaltet: false
+    },
+    {
+        fortschritt: 22,
+        feld: "Kräutergarten",
+        beschreibung_zeile1: "➡️ Freigeschaltet: Kräuter für Küche und Gesundheit!",
+        beschreibung_zeile2: "Basilikum, Petersilie und Thymian gedeihen in deinem liebevoll gepflegten Garten.",
+        beschreibung_zeile3: "Ein Hauch von frischem Grün liegt in der Luft.",
+        freigeschaltet: false
+    },
+    {
+        fortschritt: 31,
+        feld: "Getreidefeld",
+        beschreibung_zeile1: "➡️ Freigeschaltet: Das Kornfeld wächst.",
+        beschreibung_zeile2: "Weizen, Gerste und Hafer schaukeln im Wind und versprechen reiche Ernte.",
+        beschreibung_zeile3: "Du spürst die Kraft der Natur in jedem Ährenhalm.",
+        freigeschaltet: false
+    },
+    {
+        fortschritt: 41,
+        feld: "Blumenfeld",
+        beschreibung_zeile1: "➡️ Freigeschaltet: Farbenfrohes Blumenfeld!",
+        beschreibung_zeile2: "Rosen, Tulpen und Lilien bringen Leben und Duft auf dein Land.",
+        beschreibung_zeile3: "Schmetterlinge tanzen durch die Blütenpracht.",
+        freigeschaltet: false
+    },
+    {
+        fortschritt: 51,
+        feld: "Weingut",
+        beschreibung_zeile1: "➡️ Freigeschaltet: Dein eigenes Weingut!",
+        beschreibung_zeile2: "Weinreben ranken sich elegant und versprechen edlen Traubensaft.",
+        beschreibung_zeile3: "Der Duft von reifen Trauben liegt in der Luft.",
+        freigeschaltet: false
+    },
+    {
+        fortschritt: 61,
+        feld: "Gewächshaus",
+        beschreibung_zeile1: "➡️ Freigeschaltet: Modernes Gewächshaus!",
+        beschreibung_zeile2: "Hier wachsen Gurken, Tomaten und Zucchini besonders prächtig.",
+        beschreibung_zeile3: "Die Pflanzen danken dir mit kräftigem Grün und reicher Ernte.",
+        freigeschaltet: false
+    },
+    {
+        fortschritt: 71,
+        feld: "Pilzgarten",
+        beschreibung_zeile1: "➡️ Freigeschaltet: Ein Garten voller Pilze!",
+        beschreibung_zeile2: "Champignons, Shiitake und Austernpilze wachsen im feuchten Schatten.",
+        beschreibung_zeile3: "Ein mystischer Duft liegt über deinem Pilzgarten.",
+        freigeschaltet: false
+    },
+    {
+        fortschritt: 81,
+        feld: "Tropenfarm",
+        beschreibung_zeile1: "➡️ Freigeschaltet: Exotische Tropenfarm!",
+        beschreibung_zeile2: "Bananen, Ananas und Mango gedeihen unter tropischer Sonne.",
+        beschreibung_zeile3: "Ein Hauch von Urlaub liegt in der Luft, mitten auf deinem Hof.",
+        freigeschaltet: false
+    },
+    {
+        fortschritt: 91,
+        feld: "Luxusplantage",
+        beschreibung_zeile1: "➡️ Freigeschaltet: Exklusive Luxusplantage!",
+        beschreibung_zeile2: "Premium-Gurken, exotische Früchte und seltene Kräuter wachsen hier üppig.",
+        beschreibung_zeile3: "Ein Paradies für Genießer und Sammler gleichermaßen.",
+        freigeschaltet: false
+    },
+
+
+    // MAGIE
+    {
+        fortschritt: 500,
+        feld: "Traumgarten",
+        beschreibung_zeile1: "➡️ Freigeschaltet: Pflanzen zwischen den Sternen.",
+        beschreibung_zeile2: "Silberblätter und Mondfrüchte gedeihen im sanften Licht der Sterne.",
+        beschreibung_zeile3: "Ein Ort voller Ruhe, Magie und leuchtender Pflanzen.",
+        freigeschaltet: false
+    },
+    {
+        fortschritt: 515,
+        feld: "Regenbogenfeld",
+        beschreibung_zeile1: "➡️ Freigeschaltet: Starlotus unter Vollmond.",
+        beschreibung_zeile2: "Seine leuchtenden Blüten ziehen Nachtfalter und Glühwürmchen an.",
+        beschreibung_zeile3: "Ein magischer Farbzauber erfüllt das Feld.",
+        freigeschaltet: false
+    },
+    {
+        fortschritt: 530,
+        feld: "Sternenhain",
+        beschreibung_zeile1: "➡️ Freigeschaltet: Mondbeeren unter Sternenlicht.",
+        beschreibung_zeile2: "Sie speichern das Licht der Sterne in ihren Früchten.",
+        beschreibung_zeile3: "Ein Schatz für alle Alchemisten und Magiebegabten.",
+        freigeschaltet: false
+    }
 ];
 
 
@@ -803,6 +910,7 @@ function zeigeSpielerOverlay(name, daten) {
     overlay.appendChild(dialog);
     document.body.appendChild(overlay);
 }
+
 
 
 
