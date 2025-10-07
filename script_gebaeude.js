@@ -674,7 +674,7 @@ function betriebsmittelAnzeigen() {
         const box = document.createElement("div");
         box.className = "gebaeudeBox";
 
-        // Name
+        // 🏷 Titel
         const title = document.createElement("h2");
         title.textContent = info.name || betriebsmittelName;
         box.appendChild(title);
@@ -684,6 +684,7 @@ function betriebsmittelAnzeigen() {
         btnContainer.style.gap = "8px";
         btnContainer.style.marginTop = "8px";
 
+        // 🟠 Noch nicht freigeschaltet
         if (!info.freigeschaltet) {
             const freischaltenBtn = document.createElement("button");
             freischaltenBtn.textContent = `Freischalten für ${info.ansehen} Ansehen`;
@@ -695,6 +696,10 @@ function betriebsmittelAnzeigen() {
                     info.freigeschaltet = true;
                     info.lager = { wasser: 0, energie: 0, gold: 0 };
                     info.letzteBerechnung = Date.now();
+
+                    // Basisdauer speichern, falls noch nicht vorhanden
+                    if (!info.basisDauer) info.basisDauer = info.dauer;
+
                     alleBenutzer[aktuellerBenutzer] = daten;
                     localStorage.setItem("benutzer", JSON.stringify(alleBenutzer));
                     betriebsmittelAnzeigen();
@@ -707,170 +712,139 @@ function betriebsmittelAnzeigen() {
             });
 
             btnContainer.appendChild(freischaltenBtn);
-        } else {
-            // Slots
-            const slotsContainer = document.createElement("div");
-            slotsContainer.style.display = "flex";
-            slotsContainer.style.flexWrap = "wrap";
-            slotsContainer.style.gap = "4px";
-            slotsContainer.style.marginBottom = "8px";
+        } 
+        else {
+            // ✅ Basisdauer sichern
+            if (!info.basisDauer) info.basisDauer = info.dauer;
 
-            for (let i = 1; i <= info.anzahl_slots; i++) {
-                const slot = document.createElement("div");
-                slot.style.width = "20px";
-                slot.style.height = "20px";
-                slot.style.border = "1px solid #999";
-                slot.style.borderRadius = "4px";
-                slot.style.backgroundColor = i <= info.betriebsmittel_level ? "orange" : "#ccc";
-                slotsContainer.appendChild(slot);
-            }
-            box.appendChild(slotsContainer);
+            // ⏱ Effektive Produktionsdauer berechnen (wird pro Level schneller)
+            const effektiveDauer = Math.max(0.25, info.basisDauer - ((info.betriebsmittel_level - 1) * 0.03));
 
-            // Lageranzeige für die produzierte Ressource
+            // 📊 Effizienz anzeigen
+            const effizienzText = document.createElement("p");
+            effizienzText.style.fontWeight = "bold";
+            effizienzText.textContent = `⏱ Effizienz: ${effektiveDauer.toFixed(2)} min / +1 Produktion`;
+            box.appendChild(effizienzText);
+
+            // 📦 Lageranzeige
             const lagerText = document.createElement("p");
             box.appendChild(lagerText);
 
-            // Funktion zur Berechnung und Anzeige der Produktion
+            // ⏲ Countdown Anzeige
+            const countdownText = document.createElement("p");
+            countdownText.style.fontSize = "0.9em";
+            countdownText.style.color = "#666";
+            box.appendChild(countdownText);
+
+            // 🧮 Produktionsberechnung
             const updateLager = () => {
                 const jetzt = Date.now();
 
-                if (jetzt >= info.fertiggewachsen) {
-                    if (info.wasser > 0) {
-                        info.lager.wasser = Math.min(100, info.lager.wasser + info.wasser * info.betriebsmittel_level);
-                    } else if (info.energie > 0) {
-                        info.lager.energie = Math.min(100, info.lager.energie + info.energie * info.betriebsmittel_level);
-                    } else if (info.gold > 0) {
-                        info.lager.gold = Math.min(100, info.lager.gold + info.gold * info.betriebsmittel_level);
-                    }
-
-                    // Nächsten Produktionszeitpunkt setzen
-                    info.fertiggewachsen = jetzt + info.dauer * 60000;
+                if (!info.fertiggewachsen) {
+                    info.fertiggewachsen = jetzt + effektiveDauer * 60000;
                 }
 
-                // Lageranzeige aktualisieren
+                if (jetzt >= info.fertiggewachsen) {
+                    // ⬆️ Immer nur +1 Ressource pro Zyklus
+                    if (info.wasser > 0) {
+                        info.lager.wasser = Math.min(daten.betriebsmittel_lager["wasser"], info.lager.wasser + 1);
+                    } else if (info.energie > 0) {
+                        info.lager.energie = Math.min(daten.betriebsmittel_lager["energie"], info.lager.energie + 1);
+                    } else if (info.gold > 0) {
+                        info.lager.gold = Math.min(daten.betriebsmittel_lager["gold"], info.lager.gold + 1);
+                    }
+
+                    // Nächster Produktionszeitpunkt
+                    info.fertiggewachsen = jetzt + effektiveDauer * 60000;
+                }
+
+                // 📝 Anzeige aktualisieren
                 if (info.wasser > 0) lagerText.textContent = `Im Lager: ${Math.floor(info.lager.wasser)} Wasser`;
                 else if (info.energie > 0) lagerText.textContent = `Im Lager: ${Math.floor(info.lager.energie)} Energie`;
                 else if (info.gold > 0) lagerText.textContent = `Im Lager: ${Math.floor(info.lager.gold)} Gold`;
 
-                // Speichern
+                // Countdown anzeigen
+                const rest = Math.max(0, info.fertiggewachsen - jetzt);
+                const min = Math.floor(rest / 60000);
+                const sek = Math.floor((rest % 60000) / 1000);
+                countdownText.textContent = `Nächste Produktion in: ${min}:${sek.toString().padStart(2, "0")} min`;
+
                 alleBenutzer[aktuellerBenutzer] = daten;
                 localStorage.setItem("benutzer", JSON.stringify(alleBenutzer));
             };
-            updateLager(); // Sofort aufrufen
 
-            // Einsammeln Button
+            // ⏰ Timer für Live-Update
+            setInterval(updateLager, 1000);
+            updateLager();
+
+            // 🧺 Einsammeln
             const einsammelnBtn = document.createElement("button");
             einsammelnBtn.textContent = "Einsammeln";
             einsammelnBtn.className = "ui_unten";
             btnContainer.appendChild(einsammelnBtn);
 
             einsammelnBtn.addEventListener("click", () => {
-    let gesammelt = 0;
+                let gesammelt = 0;
 
-    if (info.wasser > 0 && info.lager.wasser > 0) {
-        gesammelt = Math.floor(info.lager.wasser);
-        daten.ressourcen.wasser = (daten.ressourcen.wasser || 0) + gesammelt;
-        info.lager.wasser = 0;
-    } else if (info.energie > 0 && info.lager.energie > 0) {
-        gesammelt = Math.floor(info.lager.energie);
-        daten.ressourcen.energie = (daten.ressourcen.energie || 0) + gesammelt;
-        info.lager.energie = 0;
-    } else if (info.gold > 0 && info.lager.gold > 0) {
-        gesammelt = Math.floor(info.lager.gold);
-        daten.ressourcen.gold = (daten.ressourcen.gold || 0) + gesammelt;
-        info.lager.gold = 0;
-    }
+                if (info.wasser > 0 && info.lager.wasser > 0) {
+                    gesammelt = Math.floor(info.lager.wasser);
+                    daten.ressourcen.wasser = (daten.ressourcen.wasser || 0) + gesammelt;
+                    info.lager.wasser = 0;
+                } else if (info.energie > 0 && info.lager.energie > 0) {
+                    gesammelt = Math.floor(info.lager.energie);
+                    daten.ressourcen.energie = (daten.ressourcen.energie || 0) + gesammelt;
+                    info.lager.energie = 0;
+                } else if (info.gold > 0 && info.lager.gold > 0) {
+                    gesammelt = Math.floor(info.lager.gold);
+                    daten.ressourcen.gold = (daten.ressourcen.gold || 0) + gesammelt;
+                    info.lager.gold = 0;
+                }
 
-    if (gesammelt > 0) {
-        // Overlay anzeigen
-        showOverlay("Eingesammelt!", `Du hast ${gesammelt} der Ressource eingesammelt.`);
-        
-        // Nächsten Produktionszeitpunkt ab jetzt setzen
-        info.fertiggewachsen = Date.now() + info.dauer * 60000;
-    }
+                if (gesammelt > 0) {
+                    showOverlay("Eingesammelt!", `Du hast ${gesammelt} der Ressource eingesammelt.`);
+                }
 
-    // Speichern
-    alleBenutzer[aktuellerBenutzer] = daten;
-    localStorage.setItem("benutzer", JSON.stringify(alleBenutzer));
-    
-    updateLager();
-});
+                alleBenutzer[aktuellerBenutzer] = daten;
+                localStorage.setItem("benutzer", JSON.stringify(alleBenutzer));
+                updateLager();
+            });
 
-
+            // 🛠 Verbesserung
             const verbessernBtn = document.createElement("button");
-verbessernBtn.className = "ui_unten";
+            verbessernBtn.className = "ui_unten";
 
-// Prüfen, ob max Level erreicht
-if (info.betriebsmittel_level >= info.anzahl_slots) {
-    verbessernBtn.textContent = "Ausgebaut";
-    verbessernBtn.style.backgroundColor = "gray";
-    verbessernBtn.disabled = true;
-} else {
-    const aktuelleKosten = info.ansehen + (info.betriebsmittel_level * 5);
-    verbessernBtn.textContent = `Verbessern (${aktuelleKosten} Ansehen)`;
-
-    verbessernBtn.addEventListener("click", () => {
-        const kosten = info.ansehen + (info.betriebsmittel_level * 5);
-
-        if (daten.benutzer_ansehen >= kosten) {
-            // Produktion einsammeln vor Verbesserung
-            let gesammelt = 0;
-            if (info.wasser > 0 && info.lager.wasser > 0) {
-                gesammelt = Math.floor(info.lager.wasser);
-                daten.ressourcen.wasser = (daten.ressourcen.wasser || 0) + gesammelt;
-                info.lager.wasser = 0;
-            } else if (info.energie > 0 && info.lager.energie > 0) {
-                gesammelt = Math.floor(info.lager.energie);
-                daten.ressourcen.energie = (daten.ressourcen.energie || 0) + gesammelt;
-                info.lager.energie = 0;
-            } else if (info.gold > 0 && info.lager.gold > 0) {
-                gesammelt = Math.floor(info.lager.gold);
-                daten.ressourcen.gold = (daten.ressourcen.gold || 0) + gesammelt;
-                info.lager.gold = 0;
-            }
-
-            // Nur wenn tatsächlich etwas eingesammelt wurde, Produktionszeit zurücksetzen
-            if (gesammelt > 0) {
-                info.fertiggewachsen = Date.now() + info.dauer * 60000;
-            }
-
-            // Upgrade durchführen
-            daten.benutzer_ansehen -= kosten;
-            info.betriebsmittel_level += 1;
-
-            alleBenutzer[aktuellerBenutzer] = daten;
-            localStorage.setItem("benutzer", JSON.stringify(alleBenutzer));
-
-            // UI aktualisieren
-            betriebsmittelAnzeigen();
-            showOverlay("Verbessert!", `Du hast erfolgreich verbessert und ${gesammelt} der Ressource eingesammelt.`);
-
-            // Button-Text aktualisieren
             if (info.betriebsmittel_level >= info.anzahl_slots) {
                 verbessernBtn.textContent = "Ausgebaut";
                 verbessernBtn.style.backgroundColor = "gray";
                 verbessernBtn.disabled = true;
             } else {
-                const neueKosten = info.ansehen + (info.betriebsmittel_level * 5);
-                verbessernBtn.textContent = `⬆️ Verbessern (${neueKosten} Ansehen)`;
+                const kosten = info.ansehen + (info.betriebsmittel_level * 3);
+                verbessernBtn.textContent = `Verbessern (${kosten} Ansehen)`;
+
+                verbessernBtn.addEventListener("click", () => {
+                    if (daten.benutzer_ansehen >= kosten) {
+                        daten.benutzer_ansehen -= kosten;
+                        info.betriebsmittel_level += 1;
+
+                        alleBenutzer[aktuellerBenutzer] = daten;
+                        localStorage.setItem("benutzer", JSON.stringify(alleBenutzer));
+
+                        betriebsmittelAnzeigen();
+                        showOverlay(`${info.name} verbessert!`, `Produktion läuft jetzt schneller!`);
+                    } else {
+                        showOverlay("Zu wenig Ansehen!", `Du benötigst ${kosten} Ansehen, um dieses Betriebsmittel zu verbessern.`);
+                    }
+                });
             }
 
-            updateLager();
-        } else {
-            showOverlay("Zu wenig Ansehen!", `Du benötigst ${kosten} Ansehen, um dieses Betriebsmittel zu verbessern.`);
-        }
-    });
-}
-
-btnContainer.appendChild(verbessernBtn);
-
-
+            btnContainer.appendChild(verbessernBtn);
         }
 
         box.appendChild(btnContainer);
         container.appendChild(box);
     });
 
+    // 🪄 Overlay-Helfer
     function showOverlay(titel, text) {
         const overlay = document.createElement("div");
         Object.assign(overlay.style, {
