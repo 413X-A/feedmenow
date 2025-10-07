@@ -388,7 +388,7 @@ function login() {
             benutzer_exp: 0,
             lagerplatz: { gold: 500, wasser: 35, energie: 35, magie: 35, duenger: 35, pflanzen: 65, produkte: 15 },
             aktuelleFarm: null,
-            ressourcen: { gold: 0, wasser: 35, energie: 0, magie: 0, duenger: 0, anz_pflanzen: 0, anz_produkte: 0 },
+            ressourcen: { gold: 0, wasser: 35, energie: 0, juwelen: 0, magie: 0, duenger: 0, anz_pflanzen: 0, anz_produkte: 0 },
             produkte: {},
             gebaeudeFelder: {},
             pflanzenDaten: {},
@@ -911,6 +911,7 @@ function zeigeSpielerOverlay(name, daten) {
     overlay.appendChild(dialog);
     document.body.appendChild(overlay);
 }
+
 
 
 
