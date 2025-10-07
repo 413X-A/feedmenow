@@ -1,6 +1,6 @@
 window.onload = function () {
     // localStorage.clear();
-    zeigeTopSpieler()
+    zeigeTopSpieler();
 }
 
 const progression = [
@@ -911,4 +911,5 @@ function zeigeSpielerOverlay(name, daten) {
     overlay.appendChild(dialog);
     document.body.appendChild(overlay);
 }
+
 
