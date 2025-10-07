@@ -340,9 +340,9 @@ const gebäudeProdukte = {
 
 
 const gebaeudeListe = [
-    { fortschritt: 1000, feld: "Goldmine", beschreibung: "Fördert wertvolles Gold über die Zeit.", name: "Goldmine", dauer: 7.50, xp: null, benutzer_exp: 0, kaufpreis: 75, verkaufspreis: null, ansehen: 10, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, magieverbrauch: 0, gold: 1, wasser: 0, energie: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, anzahl_slots: 5, lager: null, betriebsmittel_level: 1, level: 1 },
-    { fortschritt: 1001, feld: "Wasserpumpe", beschreibung: "Pumpt stetig frisches Wasser aus dem Boden.", name: "Wasserpumpe", dauer: 5, xp: null, benutzer_exp: 0, kaufpreis: 75, verkaufspreis: null, ansehen: 12, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, magieverbrauch: 0, gold: 0, wasser: 1, energie: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, lager: null, anzahl_slots: 5, betriebsmittel_level: 1, level: 2 },
-    { fortschritt: 1002, feld: "Elektrizitätswerk", beschreibung: "Erzeugt Energie für deine Farmen.", name: "Elektrizitätswerk", dauer: 10, xp: null, benutzer_exp: 0, kaufpreis: 75, verkaufspreis: null, ansehen: 15, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, magieverbrauch: 0, gold: 0, wasser: 0, energie: 1, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, lager: null, anzahl_slots: 5, betriebsmittel_level: 1, level: 3 },
+    { fortschritt: 1000, feld: "Goldmine", beschreibung: "Fördert wertvolles Gold über die Zeit.", name: "Goldmine", dauer: 10, xp: null, benutzer_exp: 0, kaufpreis: 75, verkaufspreis: null, ansehen: 10, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, magieverbrauch: 0, gold: 1, wasser: 0, energie: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, anzahl_slots: 30, lager: null, betriebsmittel_level: 1, level: 1 },
+    { fortschritt: 1001, feld: "Wasserpumpe", beschreibung: "Pumpt stetig frisches Wasser aus dem Boden.", name: "Wasserpumpe", dauer: 15, xp: null, benutzer_exp: 0, kaufpreis: 75, verkaufspreis: null, ansehen: 12, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, magieverbrauch: 0, gold: 0, wasser: 1, energie: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, lager: null, anzahl_slots: 45, betriebsmittel_level: 1, level: 2 },
+    { fortschritt: 1002, feld: "Elektrizitätswerk", beschreibung: "Erzeugt Energie für deine Farmen.", name: "Elektrizitätswerk", dauer: 17.50, xp: null, benutzer_exp: 0, kaufpreis: 75, verkaufspreis: null, ansehen: 15, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, magieverbrauch: 0, gold: 0, wasser: 0, energie: 1, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, lager: null, anzahl_slots: 50, betriebsmittel_level: 1, level: 3 },
 ];
 
 
@@ -381,7 +381,7 @@ function login() {
             mail: null,
             intros: {login: 0, weltmarkt: 0, betriebsmittel: 0 },
             einstellungen: { sound: true, song: null, sound_timestamp: null, benachrichtigung: true, effekte: true },
-            benutzer_ansehen: 0,
+            benutzer_ansehen: 100,
             benutzer_level: 1,
             benutzer_explevel: 0,
             benutzer_levelsystem: 5,
@@ -395,7 +395,8 @@ function login() {
             pflanzenDatenMagische: {},
             felder_tutorial: {},
             weltmarkt_tutorial: {},
-            betriebsmittel: {}
+            betriebsmittel: {},
+            betriebsmittel_lager: { gold: 50, wasser: 50, energie: 50, smaragde: 25 }
         };
 
         gebaeudeListe.forEach(geb => {
