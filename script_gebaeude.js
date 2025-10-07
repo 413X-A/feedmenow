@@ -752,6 +752,8 @@ function betriebsmittelAnzeigen() {
                         info.lager.energie = Math.min(daten.betriebsmittel_lager["energie"], info.lager.energie + 1);
                     } else if (info.gold > 0) {
                         info.lager.gold = Math.min(daten.betriebsmittel_lager["gold"], info.lager.gold + 1);
+                    } else if (info.juwelen > 0) {
+                        info.lager.juwelen = Math.min(daten.betriebsmittel_lager["juwelen"], info.lager.juwelen + 1);
                     }
 
                     // Nächster Produktionszeitpunkt
@@ -762,6 +764,7 @@ function betriebsmittelAnzeigen() {
                 if (info.wasser > 0) lagerText.textContent = `Im Lager: ${Math.floor(info.lager.wasser)} Wasser / ${daten.betriebsmittel_lager["wasser"]}`;
                 else if (info.energie > 0) lagerText.textContent = `Im Lager: ${Math.floor(info.lager.energie)} Energie / ${daten.betriebsmittel_lager["energie"]}`;
                 else if (info.gold > 0) lagerText.textContent = `Im Lager: ${Math.floor(info.lager.gold)} Gold / ${daten.betriebsmittel_lager["gold"]}`;
+                else if (info.juwelen > 0) lagerText.textContent = `Im Lager: ${Math.floor(info.lager.juwelen)} Juwelen / ${daten.betriebsmittel_lager["juwelen"]}`;
 
                 // Countdown anzeigen
                 const rest = Math.max(0, info.fertiggewachsen - jetzt);
@@ -798,6 +801,10 @@ function betriebsmittelAnzeigen() {
                     gesammelt = Math.floor(info.lager.gold);
                     daten.ressourcen.gold = (daten.ressourcen.gold || 0) + gesammelt;
                     info.lager.gold = 0;
+                } else if (info.juwelen > 0 && info.lager.juwelen > 0) {
+                    gesammelt = Math.floor(info.lager.juwelen);
+                    daten.ressourcen.juwelen = (daten.ressourcenjuwelen || 0) + gesammelt;
+                    info.lager.juwelen = 0;
                 }
 
                 if (gesammelt > 0) {
@@ -881,6 +888,7 @@ function betriebsmittelAnzeigen() {
         document.body.appendChild(overlay);
     }
 }
+
 
 
 
