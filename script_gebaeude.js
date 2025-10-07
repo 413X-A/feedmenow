@@ -760,8 +760,8 @@ function betriebsmittelAnzeigen() {
 
                 // 📝 Anzeige aktualisieren
                 if (info.wasser > 0) lagerText.textContent = `Im Lager: ${Math.floor(info.lager.wasser)} Wasser / ${daten.betriebsmittel_lager["wasser"]}`;
-                else if (info.energie > 0) lagerText.textContent = `Im Lager: ${Math.floor(info.lager.energie)} Energie`;
-                else if (info.gold > 0) lagerText.textContent = `Im Lager: ${Math.floor(info.lager.gold)} Gold`;
+                else if (info.energie > 0) lagerText.textContent = `Im Lager: ${Math.floor(info.lager.energie)} Energie / ${(daten.betriebsmittel_lager["energie"]} `;
+                else if (info.gold > 0) lagerText.textContent = `Im Lager: ${Math.floor(info.lager.gold)} Gold / ${(daten.betriebsmittel_lager["gold"]}`;
 
                 // Countdown anzeigen
                 const rest = Math.max(0, info.fertiggewachsen - jetzt);
@@ -881,4 +881,5 @@ function betriebsmittelAnzeigen() {
         document.body.appendChild(overlay);
     }
 }
+
 
