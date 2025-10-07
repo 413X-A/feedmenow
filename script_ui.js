@@ -549,6 +549,15 @@ function zeige_einstellungen() {
 
 }
 
+// Enter-Taste abfangen
+document.getElementById('loesch_code_input').addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // verhindert evtl. Standardaktionen (z. B. Formular senden)
+        document.getElementById('confirmBtn').click(); // simuliert Button-Klick
+    }
+});
+
+
 
 
 // // // // // // // //
@@ -610,3 +619,4 @@ function startPersistentMusic() {
 }
 
 startPersistentMusic();
+
