@@ -512,23 +512,24 @@ function zeige_einstellungen() {
         // Abbrechen
         cancelBtn.addEventListener("click", () => overlayCode.remove());
 
-        // Bestätigen
-        confirmBtn.addEventListener("click", () => {
-            const alleBenutzerAktuell = JSON.parse(localStorage.getItem("benutzer")) || {};
-            const aktuellerBenutzerAktuell = localStorage.getItem("aktuellerBenutzer");
+        // Bestätigen 
+function benutzerLoeschen() {
+    const alleBenutzerAktuell = JSON.parse(localStorage.getItem("benutzer")) || {};
+    const aktuellerBenutzerAktuell = localStorage.getItem("aktuellerBenutzer");
 
-            if (codeInput.value.trim() === code.toString()) {
-                // Benutzer löschen
-                delete alleBenutzerAktuell[aktuellerBenutzerAktuell];
-                localStorage.setItem("benutzer", JSON.stringify(alleBenutzerAktuell));
-                localStorage.removeItem("aktuellerBenutzer");
+    if (codeInput.value.trim() === code.toString()) {
+        // Benutzer löschen
+        delete alleBenutzerAktuell[aktuellerBenutzerAktuell];
+        localStorage.setItem("benutzer", JSON.stringify(alleBenutzerAktuell));
+        localStorage.removeItem("aktuellerBenutzer");
 
-                // Erfolgs-Overlay
-                dialogCode.innerHTML = `
+        // Erfolgs-Overlay anzeigen
+        dialogCode.innerHTML = `
             <h2>Benutzer erfolgreich gelöscht</h2>
-            <p>Dein Benutzerkonto wurde erfolgreich entfernt. Du wirst abgemeldet !</p>
+            <p>Dein Benutzerkonto wurde erfolgreich entfernt. Du wirst abgemeldet!</p>
         `;
-                setTimeout(() => {
+    }
+    setTimeout(() => {
                     window.location.href = "index.html";
                 }, 2500);
             } else {
@@ -544,16 +545,20 @@ function zeige_einstellungen() {
         });
 
     });
+}
+
+// Klick-Event für Bestätigen-Button
+confirmBtn.addEventListener("click", benutzerLoeschen);
 
     dialog.appendChild(loeschenBtn);
 
 }
 
-// Enter-Taste abfangen
+// Enter-Taste im Eingabefeld löst denselben Vorgang aus
 document.getElementById('loesch_code_input').addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
-        event.preventDefault(); // verhindert evtl. Standardaktionen (z. B. Formular senden)
-        document.getElementById('confirmBtn').click(); // simuliert Button-Klick
+        event.preventDefault();
+        benutzerLoeschen();
     }
 });
 
@@ -619,4 +624,5 @@ function startPersistentMusic() {
 }
 
 startPersistentMusic();
+
 
