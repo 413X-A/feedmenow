@@ -468,9 +468,14 @@ loeschenBtn.style.marginTop = "1rem";
 loeschenBtn.addEventListener("click", () => {
     const code = Math.floor(1000 + Math.random() * 9000);
 
+    document.querySelectorAll("div").forEach(el => {
+        const style = getComputedStyle(el);
+        if (style.position === "fixed" && parseFloat(style.zIndex) >= 9990) {
+            el.remove();
+        }
+    });
     // Overlay-Hintergrund
     const overlayCode = document.createElement("div");
-    overlayCode.remove();
     
     Object.assign(overlayCode.style, {
         position: "fixed",
@@ -628,6 +633,7 @@ function startPersistentMusic() {
 }
 
 startPersistentMusic();
+
 
 
 
