@@ -468,10 +468,10 @@ loeschenBtn.style.marginTop = "1rem";
 loeschenBtn.addEventListener("click", () => {
     const code = Math.floor(1000 + Math.random() * 9000);
 
-    document.querySelectorAll(".overlay-loeschen").forEach(el => el.remove());
-
     // Overlay-Hintergrund
     const overlayCode = document.createElement("div");
+    if (overlayCode) overlayCode.remove();
+    
     Object.assign(overlayCode.style, {
         position: "fixed",
         top: 0,
@@ -628,6 +628,7 @@ function startPersistentMusic() {
 }
 
 startPersistentMusic();
+
 
 
 
