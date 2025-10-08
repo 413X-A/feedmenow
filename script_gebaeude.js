@@ -15,6 +15,8 @@ function ueberschrift() {
 
 function gebaeude_felder_faerben() {
     const aktuellerBenutzer = localStorage.getItem("aktuellerBenutzer");
+    if (!aktuellerBenutzer) return;
+
     const alleBenutzer = JSON.parse(localStorage.getItem("benutzer")) || {};
     const daten = alleBenutzer[aktuellerBenutzer];
     if (!daten || !daten.gebaeudeFelder) return;
@@ -26,36 +28,25 @@ function gebaeude_felder_faerben() {
         const container = document.getElementById(`gebaeudeFelder_${gebaeudeID}`);
         if (!container) return;
 
-        Object.keys(felder).forEach(feldNummer => {
+        Object.keys(felder).forEach((feldNummer, index) => {
             const feldObjekt = felder[feldNummer];
-            const item = container.children[parseInt(feldNummer) - 1];
+            const item = container.children[index]; // Index nutzen, kein -1
             if (!feldObjekt || !item) return;
 
-            switch (feldObjekt.status) {
-                case "leer":
-                    item.style.backgroundColor = "#b0b0b0"; // Grau
-                    break;
-
-                case "inProduktion":
-                    if (Date.now() >= feldObjekt.zeit_fertig) {
-                        item.style.backgroundColor = "#2e7d32"; // Fertig -> Dunkelgrün
-                    } else {
-                        item.style.backgroundColor = "#ffa500"; // Läuft -> Orange
-                    }
-                    break;
-
-                case "fertig":
-                    item.style.backgroundColor = "#2e7d32"; // Fertig
-                    break;
-
-                default:
-                    item.style.backgroundColor = "#b0b0b0"; // Standard Grau
-                    break;
+            // Status-Färbung
+            if (feldObjekt.status === "leer") {
+                item.style.backgroundColor = "#b0b0b0"; // Grau
+            } else if (feldObjekt.status === "inProduktion") {
+                item.style.backgroundColor = (Date.now() >= feldObjekt.zeit_fertig) ? "#2e7d32" : "#ffa500";
+            } else if (feldObjekt.status === "fertig") {
+                item.style.backgroundColor = "#2e7d32";
+            } else {
+                item.style.backgroundColor = "#b0b0b0"; // Standard
             }
         });
     });
 }
-setInterval(gebaeude_felder_faerben, 100);
+setInterval(gebaeude_felder_faerben, 500);
 
 
 function gebaeudeAnzeigen() {
@@ -120,10 +111,10 @@ function gebaeudeAnzeigen() {
             freischaltenBtn.addEventListener("click", () => {
                 if (daten.ressourcen.gold >= preis && daten.benutzer_level >= gebaeudeInfo.level) {
                     daten.ressourcen.gold -= preis;
-                    gebaeudeInfo.freigeschaltet = true;
+                    daten.produkte[gebaeudeName][0].freigeschaltet = true;
                     alleBenutzer[aktuellerBenutzer] = daten;
                     localStorage.setItem("benutzer", JSON.stringify(alleBenutzer));
-                    gebaeudeAnzeigen(); // Neu rendern
+                    gebaeudeAnzeigen();
                 } else {
                     const overlay = document.createElement("div");
                     Object.assign(overlay.style, {
@@ -658,15 +649,67 @@ function rezeptKaufen() {
 }
 
 
-// BETRIEBSMITTEL
+// 🏭 BETRIEBSMITTEL
+let betriebsmittelTimer = [];
+
 function betriebsmittelAnzeigen() {
     const container = document.getElementById("betriebsmittelContainer");
     container.innerHTML = "";
+
+    // ⏹ Alle alten Timer stoppen
+    betriebsmittelTimer.forEach(id => clearInterval(id));
+    betriebsmittelTimer = [];
 
     const aktuellerBenutzer = localStorage.getItem("aktuellerBenutzer");
     const alleBenutzer = JSON.parse(localStorage.getItem("benutzer")) || {};
     const daten = alleBenutzer[aktuellerBenutzer];
 
+    // 🕓 Offline-Earnings berechnen (einmal beim Laden!)
+    const letzteSitzung = daten.letzterBesuch || Date.now();
+    const jetzt = Date.now();
+    const offlineDauerMinuten = Math.floor((jetzt - letzteSitzung) / 60000); // ganze Minuten
+
+    if (offlineDauerMinuten > 0) {
+        Object.keys(daten.betriebsmittel).forEach(betriebsmittelName => {
+            const info = daten.betriebsmittel[betriebsmittelName];
+            if (!info || !info.freigeschaltet) return;
+
+            if (!info.basisDauer) info.basisDauer = info.dauer;
+            const effektiveDauer = Math.max(0.25, info.basisDauer - ((info.betriebsmittel_level - 1) * 0.03));
+            const möglicheZyklen = Math.floor(offlineDauerMinuten / effektiveDauer);
+
+            if (möglicheZyklen > 0) {
+                if (info.wasser > 0) {
+                    info.lager.wasser = Math.min(
+                        daten.betriebsmittel_lager["wasser"],
+                        info.lager.wasser + möglicheZyklen
+                    );
+                } else if (info.energie > 0) {
+                    info.lager.energie = Math.min(
+                        daten.betriebsmittel_lager["energie"],
+                        info.lager.energie + möglicheZyklen
+                    );
+                } else if (info.gold > 0) {
+                    info.lager.gold = Math.min(
+                        daten.betriebsmittel_lager["gold"],
+                        info.lager.gold + möglicheZyklen
+                    );
+                } else if (info.juwelen > 0) {
+                    info.lager.juwelen = Math.min(
+                        daten.betriebsmittel_lager["juwelen"],
+                        info.lager.juwelen + möglicheZyklen
+                    );
+                }
+            }
+        });
+    }
+
+    // 📝 neuen letzten Besuch setzen
+    daten.letzterBesuch = jetzt;
+    alleBenutzer[aktuellerBenutzer] = daten;
+    localStorage.setItem("benutzer", JSON.stringify(alleBenutzer));
+
+    // 🧱 Anzeige bauen
     Object.keys(daten.betriebsmittel).forEach(betriebsmittelName => {
         const info = daten.betriebsmittel[betriebsmittelName];
         if (!info) return;
@@ -674,9 +717,9 @@ function betriebsmittelAnzeigen() {
         const box = document.createElement("div");
         box.className = "gebaeudeBox";
 
-        // 🏷 Titel
+        // Titel
         const title = document.createElement("h2");
-        title.textContent = info.name || betriebsmittelName;
+        title.textContent = `${info.name || betriebsmittelName}`;
         box.appendChild(title);
 
         const btnContainer = document.createElement("div");
@@ -684,20 +727,17 @@ function betriebsmittelAnzeigen() {
         btnContainer.style.gap = "8px";
         btnContainer.style.marginTop = "8px";
 
-        // 🟠 Noch nicht freigeschaltet
+        // 🟠 Freischalten
         if (!info.freigeschaltet) {
             const freischaltenBtn = document.createElement("button");
             freischaltenBtn.textContent = `Freischalten für ${info.ansehen} Ansehen`;
             freischaltenBtn.className = "ui_unten";
-
             freischaltenBtn.addEventListener("click", () => {
                 if (daten.benutzer_ansehen >= info.ansehen && daten.benutzer_level >= info.level) {
                     daten.benutzer_ansehen -= info.ansehen;
                     info.freigeschaltet = true;
-                    info.lager = { wasser: 0, energie: 0, gold: 0 };
+                    info.lager = { wasser: 0, energie: 0, gold: 0, juwelen: 0 };
                     info.letzteBerechnung = Date.now();
-
-                    // Basisdauer speichern, falls noch nicht vorhanden
                     if (!info.basisDauer) info.basisDauer = info.dauer;
 
                     alleBenutzer[aktuellerBenutzer] = daten;
@@ -710,113 +750,142 @@ function betriebsmittelAnzeigen() {
                             `Level zu niedrig! Du benötigst Level ${info.level}.`);
                 }
             });
-
             btnContainer.appendChild(freischaltenBtn);
-        } 
+        }
         else {
-            // ✅ Basisdauer sichern
+            // Effizienz
             if (!info.basisDauer) info.basisDauer = info.dauer;
-
-            // ⏱ Effektive Produktionsdauer berechnen (wird pro Level schneller)
             const effektiveDauer = Math.max(0.25, info.basisDauer - ((info.betriebsmittel_level - 1) * 0.03));
 
-            // 📊 Effizienz anzeigen
             const effizienzText = document.createElement("p");
             effizienzText.style.fontWeight = "bold";
-            effizienzText.textContent = `⏱ Effizienz: ${effektiveDauer.toFixed(2)} min / +1 Produktion`;
+            effizienzText.textContent = `⏱ Effizienz: ${effektiveDauer.toFixed(2)} min / +1`;
             box.appendChild(effizienzText);
 
-            // 📦 Lageranzeige
+            // Lager
             const lagerText = document.createElement("p");
             box.appendChild(lagerText);
 
-            // ⏲ Countdown Anzeige
+            // Countdown
             const countdownText = document.createElement("p");
             countdownText.style.fontSize = "0.9em";
             countdownText.style.color = "#666";
             box.appendChild(countdownText);
 
-            // 🧮 Produktionsberechnung
+            // 🧠 Hilfsfunktion Lager prüfen
+            function istLagerVoll() {
+                if (info.wasser > 0) return info.lager.wasser >= daten.betriebsmittel_lager["wasser"];
+                if (info.energie > 0) return info.lager.energie >= daten.betriebsmittel_lager["energie"];
+                if (info.gold > 0) return info.lager.gold >= daten.betriebsmittel_lager["gold"];
+                if (info.juwelen > 0) return info.lager.juwelen >= daten.betriebsmittel_lager["juwelen"];
+                return false;
+            }
+
             const updateLager = () => {
                 const jetzt = Date.now();
+
+                // ⛔ Lager voll → Timer pausieren
+                if (istLagerVoll()) {
+                    countdownText.textContent = "🔴 Produktion wurde pausiert !";
+
+                    // Lagerstand trotzdem anzeigen
+                    if (info.wasser > 0) lagerText.textContent = `Im Lager: ${Math.floor(info.lager.wasser)} / ${daten.betriebsmittel_lager["wasser"]}`;
+                    else if (info.energie > 0) lagerText.textContent = `Im Lager: ${Math.floor(info.lager.energie)} / ${daten.betriebsmittel_lager["energie"]}`;
+                    else if (info.gold > 0) lagerText.textContent = `Im Lager: ${Math.floor(info.lager.gold)} / ${daten.betriebsmittel_lager["gold"]}`;
+                    else if (info.juwelen > 0) lagerText.textContent = `Im Lager: ${Math.floor(info.lager.juwelen)} / ${daten.betriebsmittel_lager["juwelen"]}`;
+
+                    if (info._timerId) {
+                        clearInterval(info._timerId);
+                        info._timerId = null;
+                    }
+                    return;
+                }
+
 
                 if (!info.fertiggewachsen) {
                     info.fertiggewachsen = jetzt + effektiveDauer * 60000;
                 }
 
                 if (jetzt >= info.fertiggewachsen) {
-                    // ⬆️ Immer nur +1 Ressource pro Zyklus
-                    if (info.wasser > 0) {
-                        info.lager.wasser = Math.min(daten.betriebsmittel_lager["wasser"], info.lager.wasser + 1);
-                    } else if (info.energie > 0) {
-                        info.lager.energie = Math.min(daten.betriebsmittel_lager["energie"], info.lager.energie + 1);
-                    } else if (info.gold > 0) {
-                        info.lager.gold = Math.min(daten.betriebsmittel_lager["gold"], info.lager.gold + 1);
-                    } else if (info.juwelen > 0) {
-                        info.lager.juwelen = Math.min(daten.betriebsmittel_lager["juwelen"], info.lager.juwelen + 1);
-                    }
+                    if (info.wasser > 0) info.lager.wasser = Math.min(daten.betriebsmittel_lager["wasser"], info.lager.wasser + 1);
+                    else if (info.energie > 0) info.lager.energie = Math.min(daten.betriebsmittel_lager["energie"], info.lager.energie + 1);
+                    else if (info.gold > 0) info.lager.gold = Math.min(daten.betriebsmittel_lager["gold"], info.lager.gold + 1);
+                    else if (info.juwelen > 0) info.lager.juwelen = Math.min(daten.betriebsmittel_lager["juwelen"], info.lager.juwelen + 1);
 
-                    // Nächster Produktionszeitpunkt
                     info.fertiggewachsen = jetzt + effektiveDauer * 60000;
                 }
 
-                // 📝 Anzeige aktualisieren
+                // Lagertext
                 if (info.wasser > 0) lagerText.textContent = `Im Lager: ${Math.floor(info.lager.wasser)} Wasser / ${daten.betriebsmittel_lager["wasser"]}`;
                 else if (info.energie > 0) lagerText.textContent = `Im Lager: ${Math.floor(info.lager.energie)} Energie / ${daten.betriebsmittel_lager["energie"]}`;
                 else if (info.gold > 0) lagerText.textContent = `Im Lager: ${Math.floor(info.lager.gold)} Gold / ${daten.betriebsmittel_lager["gold"]}`;
                 else if (info.juwelen > 0) lagerText.textContent = `Im Lager: ${Math.floor(info.lager.juwelen)} Juwelen / ${daten.betriebsmittel_lager["juwelen"]}`;
 
-                // Countdown anzeigen
+                // Countdown
                 const rest = Math.max(0, info.fertiggewachsen - jetzt);
                 const min = Math.floor(rest / 60000);
                 const sek = Math.floor((rest % 60000) / 1000);
-                countdownText.textContent = `Nächste Produktion in: ${min}:${sek.toString().padStart(2, "0")} min`;
+                countdownText.textContent = `🟢 Produziert in: ${min}:${sek.toString().padStart(2, "0")} min`;
 
                 alleBenutzer[aktuellerBenutzer] = daten;
                 localStorage.setItem("benutzer", JSON.stringify(alleBenutzer));
             };
 
-            // ⏰ Timer für Live-Update
-            setInterval(updateLager, 1000);
+            const intervalId = setInterval(updateLager, 1000);
+            betriebsmittelTimer.push(intervalId);
             updateLager();
 
-            // 🧺 Einsammeln
+            // 🟢 Einsammeln
             const einsammelnBtn = document.createElement("button");
             einsammelnBtn.textContent = "Einsammeln";
             einsammelnBtn.className = "ui_unten";
-            btnContainer.appendChild(einsammelnBtn);
-
             einsammelnBtn.addEventListener("click", () => {
                 let gesammelt = 0;
 
-                if (info.wasser > 0 && info.lager.wasser > 0) {
-                    gesammelt = Math.floor(info.lager.wasser);
-                    daten.ressourcen.wasser = (daten.ressourcen.wasser || 0) + gesammelt;
-                    info.lager.wasser = 0;
-                } else if (info.energie > 0 && info.lager.energie > 0) {
-                    gesammelt = Math.floor(info.lager.energie);
-                    daten.ressourcen.energie = (daten.ressourcen.energie || 0) + gesammelt;
-                    info.lager.energie = 0;
-                } else if (info.gold > 0 && info.lager.gold > 0) {
-                    gesammelt = Math.floor(info.lager.gold);
-                    daten.ressourcen.gold = (daten.ressourcen.gold || 0) + gesammelt;
-                    info.lager.gold = 0;
-                } else if (info.juwelen > 0 && info.lager.juwelen > 0) {
-                    gesammelt = Math.floor(info.lager.juwelen);
-                    daten.ressourcen.juwelen = (daten.ressourcenjuwelen || 0) + gesammelt;
-                    info.lager.juwelen = 0;
+                function einsammelnRessource(typ) {
+                    const imLager = info.lager[typ];
+                    if (imLager <= 0) return 0;
+
+                    const aktuell = daten.ressourcen[typ] || 0;
+                    const max = daten.lagerplatz[typ];
+                    const frei = max - aktuell;
+                    if (frei <= 0) return 0;
+
+                    const menge = Math.min(imLager, frei);
+                    daten.ressourcen[typ] = aktuell + menge;
+                    info.lager[typ] -= menge;
+                    return menge;
                 }
+
+                if (info.wasser > 0) gesammelt = einsammelnRessource("wasser");
+                else if (info.energie > 0) gesammelt = einsammelnRessource("energie");
+                else if (info.gold > 0) gesammelt = einsammelnRessource("gold");
+                else if (info.juwelen > 0) gesammelt = einsammelnRessource("juwelen");
 
                 if (gesammelt > 0) {
                     showOverlay("Eingesammelt!", `Du hast ${gesammelt} der Ressource eingesammelt.`);
+                } else {
+                    showOverlay("Lager voll!", `Du kannst keine weiteren Ressourcen einlagern.`);
                 }
 
                 alleBenutzer[aktuellerBenutzer] = daten;
                 localStorage.setItem("benutzer", JSON.stringify(alleBenutzer));
+
+                // 🟢 Timer neu starten, falls pausiert
+                if (!info._timerId) {
+                    info.fertiggewachsen = Date.now() + effektiveDauer * 60000;
+
+                    const newTimerId = setInterval(updateLager, 1000);
+                    info._timerId = newTimerId;
+                    betriebsmittelTimer.push(newTimerId);
+                }
                 updateLager();
             });
 
-            // 🛠 Verbesserung
+
+            btnContainer.appendChild(einsammelnBtn);
+
+            // 🛠 Verbessern
             const verbessernBtn = document.createElement("button");
             verbessernBtn.className = "ui_unten";
 
@@ -839,11 +908,10 @@ function betriebsmittelAnzeigen() {
                         betriebsmittelAnzeigen();
                         showOverlay(`${info.name} verbessert!`, `Produktion läuft jetzt schneller!`);
                     } else {
-                        showOverlay("Zu wenig Ansehen!", `Du benötigst ${kosten} Ansehen, um dieses Betriebsmittel zu verbessern.`);
+                        showOverlay("Zu wenig Ansehen!", `Du benötigst ${kosten} Ansehen.`);
                     }
                 });
             }
-
             btnContainer.appendChild(verbessernBtn);
         }
 
@@ -879,7 +947,7 @@ function betriebsmittelAnzeigen() {
         dialog.innerHTML = `<h2>${titel}</h2><p>${text}</p>`;
 
         const closeBtn = document.createElement("button");
-        closeBtn.textContent = "Zurück";
+        closeBtn.textContent = "Bestätigen";
         closeBtn.className = "ui_unten";
         closeBtn.addEventListener("click", () => overlay.remove());
 
@@ -888,8 +956,3 @@ function betriebsmittelAnzeigen() {
         document.body.appendChild(overlay);
     }
 }
-
-
-
-
-
