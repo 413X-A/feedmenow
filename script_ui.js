@@ -470,7 +470,7 @@ loeschenBtn.addEventListener("click", () => {
 
     // Overlay-Hintergrund
     const overlayCode = document.createElement("div");
-    if (overlayCode) overlayCode.remove();
+    overlayCode.remove();
     
     Object.assign(overlayCode.style, {
         position: "fixed",
@@ -628,6 +628,7 @@ function startPersistentMusic() {
 }
 
 startPersistentMusic();
+
 
 
 
