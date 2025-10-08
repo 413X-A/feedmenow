@@ -458,109 +458,111 @@ function zeige_einstellungen() {
     overlay.appendChild(dialog);
     document.body.appendChild(overlay);
 
-    // --- Button: Benutzer löschen ---
-    const loeschenBtn = document.createElement("button");
-    loeschenBtn.textContent = "Benutzerkonto löschen";
-    loeschenBtn.className = "save-btn";
-    loeschenBtn.style.backgroundColor = "#ff4d4d";
-    loeschenBtn.style.marginTop = "1rem";
+// --- Button: Benutzer löschen ---
+const loeschenBtn = document.createElement("button");
+loeschenBtn.textContent = "Benutzerkonto löschen";
+loeschenBtn.className = "save-btn";
+loeschenBtn.style.backgroundColor = "#ff4d4d";
+loeschenBtn.style.marginTop = "1rem";
 
-    loeschenBtn.addEventListener("click", () => {
-        const code = Math.floor(1000 + Math.random() * 9000);
+loeschenBtn.addEventListener("click", () => {
+    const code = Math.floor(1000 + Math.random() * 9000);
 
-        const overlayCode = document.createElement("div");
-        Object.assign(overlayCode.style, {
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100vw",
-            height: "100vh",
-            backgroundColor: "rgba(0,0,0,0.5)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            zIndex: 9999
-        });
+    // Overlay-Hintergrund
+    const overlayCode = document.createElement("div");
+    Object.assign(overlayCode.style, {
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100vh",
+        backgroundColor: "rgba(0,0,0,0.5)",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        zIndex: 9999
+    });
 
-        const dialogCode = document.createElement("div");
-        Object.assign(dialogCode.style, {
-            backgroundColor: "white",
-            padding: "2rem",
-            borderRadius: "12px",
-            textAlign: "center",
-            minWidth: "320px",
-            maxWidth: "400px"
-        });
+    // Dialogfeld
+    const dialogCode = document.createElement("div");
+    Object.assign(dialogCode.style, {
+        backgroundColor: "white",
+        padding: "2rem",
+        borderRadius: "12px",
+        textAlign: "center",
+        minWidth: "320px",
+        maxWidth: "400px"
+    });
 
-        dialogCode.innerHTML = `
+    dialogCode.innerHTML = `
         <h2>Benutzer löschen</h2>
         <p>Zur Bestätigung wird ein Sicherheitscode angezeigt. Bitte geben Sie diesen unten ein, um Ihren Account zu löschen.</p>
         <p style="font-size:1.2rem; font-weight:bold;">Sicherheitscode: ${code}</p>
-        <input type="text" id="loesch_code_input" placeholder="Code hier eingeben" style="width:100%; margin-top:0.5rem; padding:0.5rem; font-size:1rem;">
+        <input type="text" id="loesch_code_input" placeholder="Code hier eingeben"
+               style="width:100%; margin-top:0.5rem; padding:0.5rem; font-size:1rem;">
         <br><br>
         <button id="cancel_loesch" class="ui_unten" style="margin-right:8px;">Abbrechen</button>
         <button id="confirm_loesch" class="ui_unten" style="background-color:#ff4d4d;">Bestätigen</button>
     `;
 
-        overlayCode.appendChild(dialogCode);
-        document.body.appendChild(overlayCode);
+    overlayCode.appendChild(dialogCode);
+    document.body.appendChild(overlayCode);
 
-        const confirmBtn = dialogCode.querySelector("#confirm_loesch");
-        const cancelBtn = dialogCode.querySelector("#cancel_loesch");
-        const codeInput = dialogCode.querySelector("#loesch_code_input");
+    const confirmBtn = dialogCode.querySelector("#confirm_loesch");
+    const cancelBtn = dialogCode.querySelector("#cancel_loesch");
+    const codeInput = dialogCode.querySelector("#loesch_code_input");
 
-        // Abbrechen
-        cancelBtn.addEventListener("click", () => overlayCode.remove());
+    // --- Funktion: Benutzer löschen ---
+    function benutzerLoeschen() {
+        const alleBenutzerAktuell = JSON.parse(localStorage.getItem("benutzer")) || {};
+        const aktuellerBenutzerAktuell = localStorage.getItem("aktuellerBenutzer");
 
-        // Bestätigen 
-function benutzerLoeschen() {
-    const alleBenutzerAktuell = JSON.parse(localStorage.getItem("benutzer")) || {};
-    const aktuellerBenutzerAktuell = localStorage.getItem("aktuellerBenutzer");
+        if (codeInput.value.trim() === code.toString()) {
+            // Benutzer löschen
+            delete alleBenutzerAktuell[aktuellerBenutzerAktuell];
+            localStorage.setItem("benutzer", JSON.stringify(alleBenutzerAktuell));
+            localStorage.removeItem("aktuellerBenutzer");
 
-    if (codeInput.value.trim() === code.toString()) {
-        // Benutzer löschen
-        delete alleBenutzerAktuell[aktuellerBenutzerAktuell];
-        localStorage.setItem("benutzer", JSON.stringify(alleBenutzerAktuell));
-        localStorage.removeItem("aktuellerBenutzer");
+            // Erfolgsanzeige
+            dialogCode.innerHTML = `
+                <h2>Benutzer erfolgreich gelöscht</h2>
+                <p>Dein Benutzerkonto wurde erfolgreich entfernt. Du wirst abgemeldet!</p>
+            `;
 
-        // Erfolgs-Overlay anzeigen
-        dialogCode.innerHTML = `
-            <h2>Benutzer erfolgreich gelöscht</h2>
-            <p>Dein Benutzerkonto wurde erfolgreich entfernt. Du wirst abgemeldet!</p>
-        `;
+            // Weiterleitung nach kurzer Verzögerung
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 2500);
+
+        } else {
+            // Fehleranzeige
+            dialogCode.innerHTML = `
+                <h2>Falscher Sicherheitscode</h2>
+                <p>Der eingegebene Code stimmt nicht mit dem angezeigten Sicherheitscode überein.</p>
+                <button id="close_error" class="ui_unten" style="margin-top:1rem;">Schließen</button>
+            `;
+            const closeErrorBtn = dialogCode.querySelector("#close_error");
+            closeErrorBtn.addEventListener("click", () => overlayCode.remove());
+        }
     }
-    setTimeout(() => {
-                    window.location.href = "index.html";
-                }, 2500);
-            } else {
-                // Fehler-Overlay
-                dialogCode.innerHTML = `
-            <h2>Falscher Sicherheitscode</h2>
-            <p>Der eingegebene Code stimmt nicht mit dem angezeigten Sicherheitscode überein.</p>
-            <button id="close_error" class="ui_unten" style="margin-top:1rem;">Schließen</button>
-        `;
-                const closeErrorBtn = dialogCode.querySelector("#close_error");
-                closeErrorBtn.addEventListener("click", () => overlayCode.remove());
-            }
-        });
 
+    // --- Button-Events ---
+    confirmBtn.addEventListener("click", benutzerLoeschen);
+    cancelBtn.addEventListener("click", () => overlayCode.remove());
+
+    // --- Enter-Taste löst ebenfalls Löschung aus ---
+    codeInput.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            benutzerLoeschen();
+        }
     });
-}
-
-// Klick-Event für Bestätigen-Button
-confirmBtn.addEventListener("click", benutzerLoeschen);
-
-    dialog.appendChild(loeschenBtn);
-
-}
-
-// Enter-Taste im Eingabefeld löst denselben Vorgang aus
-document.getElementById('loesch_code_input').addEventListener('keydown', function (event) {
-    if (event.key === 'Enter') {
-        event.preventDefault();
-        benutzerLoeschen();
-    }
 });
+
+// Den Lösch-Button ins gewünschte Dialog-Element einfügen
+dialog.appendChild(loeschenBtn);
+
+}
 
 
 
@@ -624,5 +626,6 @@ function startPersistentMusic() {
 }
 
 startPersistentMusic();
+
 
 
