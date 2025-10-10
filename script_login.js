@@ -298,50 +298,50 @@ const feldfreischaltungTutorials = [
 
 const gebäudeProdukte = {
     "Fermentierkeller": [
-        { fortschritt: 700, feld: "Fermentierkeller freischalten", beschreibung: "Im Fermentierkeller entstehen köstliche, haltbare Spezialitäten.", name: "Fermentierkeller", dauer: null, xp: null, benutzer_exp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: null, energieverbrauch: null, magieverbrauch: null, gold: null, wasser: null, energie: null, magie: null, samen: null, geerntet: null, bonus: false, fertiggewachsen: null, anzahlfelder: 3, level: 1 },
+        { fortschritt: 700, feld: "Fermentierkeller freischalten", beschreibung: "Im Fermentierkeller entstehen köstliche, haltbare Spezialitäten.", name: "Fermentierkeller", dauer: null, xp: null, benutzer_exp: null, kaufpreis: 100, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: null, energieverbrauch: null, magieverbrauch: null, gold: null, wasser: null, energie: null, magie: null, samen: null, geerntet: null, bonus: false, fertiggewachsen: null, anzahlfelder: 3, level: 1 },
 
-        { fortschritt: 701, feld: "Fermentierkeller", beschreibung: "Knackiges Sauerkraut, traditionell fermentiert.", name: "Sauerkraut", dauer: 20, xp: 25, benutzer_exp: 0, kaufpreis: null, verkaufspreis: 65, ansehen: 0, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 8, magieverbrauch: 0, gold: 0, wasser: 0, energie: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, anzahlfelder: null, level: null, pflanzen: { "Kohl": 3, "Salz": 1 } },
+        { fortschritt: 701, feld: "Fermentierkeller", beschreibung: "Knackiges Sauerkraut, traditionell fermentiert.", name: "Sauerkraut", dauer: 20, xp: 1, benutzer_exp: 0, kaufpreis: null, verkaufspreis: 65, ansehen: 0, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 8, magieverbrauch: 0, gold: 0, wasser: 0, energie: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, anzahlfelder: null, level: null, pflanzen: { "Kohl": 3, "Salz": 1 } },
 
-        { fortschritt: 702, feld: "Fermentierkeller", beschreibung: "Erfrischender Kombucha-Tee mit Kräutern.", name: "Kombucha", dauer: 25, xp: 30, benutzer_exp: 0, kaufpreis: null, verkaufspreis: 75, ansehen: 0, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 10, magieverbrauch: 0, gold: 0, wasser: 0, energie: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, anzahlfelder: null, level: null, pflanzen: { "Tee": 2, "Minze": 1, "Zuckerrohr": 1 } }
+        { fortschritt: 702, feld: "Fermentierkeller", beschreibung: "Erfrischender Kombucha-Tee mit Kräutern.", name: "Kombucha", dauer: 25, xp: 1, benutzer_exp: 0, kaufpreis: null, verkaufspreis: 75, ansehen: 0, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 10, magieverbrauch: 0, gold: 0, wasser: 0, energie: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, anzahlfelder: null, level: null, pflanzen: { "Tee": 2, "Minze": 1, "Zuckerrohr": 1 } }
     ],
 
     "Marmeladenküche": [
-        { fortschritt: 710, feld: "Marmeladenküche freischalten", beschreibung: "Süße Früchte werden hier zu feinen Aufstrichen verarbeitet.", name: "Marmeladenküche", dauer: null, xp: null, benutzer_exp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: null, energieverbrauch: null, magieverbrauch: null, gold: null, wasser: null, energie: null, magie: null, samen: null, geerntet: null, bonus: false, fertiggewachsen: null, anzahlfelder: 3, level: 2 },
+        { fortschritt: 710, feld: "Marmeladenküche freischalten", beschreibung: "Süße Früchte werden hier zu feinen Aufstrichen verarbeitet.", name: "Marmeladenküche", dauer: null, xp: null, benutzer_exp: null, kaufpreis: 135, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: null, energieverbrauch: null, magieverbrauch: null, gold: null, wasser: null, energie: null, magie: null, samen: null, geerntet: null, bonus: false, fertiggewachsen: null, anzahlfelder: 3, level: 2 },
 
-        { fortschritt: 711, feld: "Marmeladenküche", beschreibung: "Samtige Erdbeer-Himbeer-Marmelade für den perfekten Morgen.", name: "Beerenmarmelade", dauer: 18, xp: 22, benutzer_exp: 0, kaufpreis: null, verkaufspreis: 60, ansehen: 0, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 10, magieverbrauch: 0, gold: 0, wasser: 0, energie: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, anzahlfelder: null, level: null, pflanzen: { "Erdbeere": 2, "Himbeere": 1, "Zuckerrohr": 1 } },
+        { fortschritt: 711, feld: "Marmeladenküche", beschreibung: "Samtige Erdbeer-Himbeer-Marmelade für den perfekten Morgen.", name: "Beerenmarmelade", dauer: 18, xp: 1, benutzer_exp: 0, kaufpreis: null, verkaufspreis: 60, ansehen: 0, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 10, magieverbrauch: 0, gold: 0, wasser: 0, energie: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, anzahlfelder: null, level: null, pflanzen: { "Erdbeere": 2, "Himbeere": 1, "Zuckerrohr": 1 } },
 
-        { fortschritt: 712, feld: "Marmeladenküche", beschreibung: "Exotische Mango-Orangen-Marmelade, süß und spritzig.", name: "Tropenmarmelade", dauer: 22, xp: 26, benutzer_exp: 0, kaufpreis: null, verkaufspreis: 70, ansehen: 0, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 11, magieverbrauch: 0, gold: 0, wasser: 0, energie: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, anzahlfelder: null, level: null, pflanzen: { "Mango": 1, "Orange": 2, "Zitrone": 1 } }
+        { fortschritt: 712, feld: "Marmeladenküche", beschreibung: "Exotische Mango-Orangen-Marmelade, süß und spritzig.", name: "Tropenmarmelade", dauer: 22, xp: 1, benutzer_exp: 0, kaufpreis: null, verkaufspreis: 70, ansehen: 0, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 11, magieverbrauch: 0, gold: 0, wasser: 0, energie: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, anzahlfelder: null, level: null, pflanzen: { "Mango": 1, "Orange": 2, "Zitrone": 1 } }
     ],
 
     "Teehaus": [
-        { fortschritt: 720, feld: "Teehaus freischalten", beschreibung: "Im Teehaus entstehen aromatische Teemischungen.", name: "Teehaus", dauer: null, xp: null, benutzer_exp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: null, energieverbrauch: null, magieverbrauch: null, gold: null, wasser: null, energie: null, magie: null, samen: null, geerntet: null, bonus: false, fertiggewachsen: null, anzahlfelder: 3, level: 3 },
+        { fortschritt: 720, feld: "Teehaus freischalten", beschreibung: "Im Teehaus entstehen aromatische Teemischungen.", name: "Teehaus", dauer: null, xp: null, benutzer_exp: null, kaufpreis: 180, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: null, energieverbrauch: null, magieverbrauch: null, gold: null, wasser: null, energie: null, magie: null, samen: null, geerntet: null, bonus: false, fertiggewachsen: null, anzahlfelder: 3, level: 3 },
 
-        { fortschritt: 721, feld: "Teehaus", beschreibung: "Beruhigender Kräutertee mit frischer Note.", name: "Kräutertee", dauer: 15, xp: 20, benutzer_exp: 0, kaufpreis: null, verkaufspreis: 55, ansehen: 0, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 8, magieverbrauch: 0, gold: 0, wasser: 0, energie: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, anzahlfelder: null, level: null, pflanzen: { "Minze": 1, "Salbei": 1, "Lavendel": 1 } },
+        { fortschritt: 721, feld: "Teehaus", beschreibung: "Beruhigender Kräutertee mit frischer Note.", name: "Kräutertee", dauer: 15, xp: 1, benutzer_exp: 0, kaufpreis: null, verkaufspreis: 55, ansehen: 0, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 8, magieverbrauch: 0, gold: 0, wasser: 0, energie: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, anzahlfelder: null, level: null, pflanzen: { "Minze": 1, "Salbei": 1, "Lavendel": 1 } },
 
-        { fortschritt: 722, feld: "Teehaus", beschreibung: "Fruchtig-frischer Beeren-Tee für den Nachmittag.", name: "Beeren-Tee", dauer: 20, xp: 24, benutzer_exp: 0, kaufpreis: null, verkaufspreis: 65, ansehen: 0, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 10, magieverbrauch: 0, gold: 0, wasser: 0, energie: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, anzahlfelder: null, level: null, pflanzen: { "Heidelbeere": 1, "Cranberry": 1, "Himbeere": 1 } }
+        { fortschritt: 722, feld: "Teehaus", beschreibung: "Fruchtig-frischer Beeren-Tee für den Nachmittag.", name: "Beeren-Tee", dauer: 20, xp: 1, benutzer_exp: 0, kaufpreis: null, verkaufspreis: 65, ansehen: 0, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 10, magieverbrauch: 0, gold: 0, wasser: 0, energie: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, anzahlfelder: null, level: null, pflanzen: { "Heidelbeere": 1, "Cranberry": 1, "Himbeere": 1 } }
     ],
 
     "Backstube": [
-        { fortschritt: 730, feld: "Backstube freischalten", beschreibung: "In der Backstube duftet es nach frischen Köstlichkeiten.", name: "Backstube", dauer: null, xp: null, benutzer_exp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: null, energieverbrauch: null, magieverbrauch: null, gold: null, wasser: null, energie: null, magie: null, samen: null, geerntet: null, bonus: false, fertiggewachsen: null, anzahlfelder: 3, level: 4 },
+        { fortschritt: 730, feld: "Backstube freischalten", beschreibung: "In der Backstube duftet es nach frischen Köstlichkeiten.", name: "Backstube", dauer: null, xp: null, benutzer_exp: null, kaufpreis: 250, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: null, energieverbrauch: null, magieverbrauch: null, gold: null, wasser: null, energie: null, magie: null, samen: null, geerntet: null, bonus: false, fertiggewachsen: null, anzahlfelder: 3, level: 4 },
 
-        { fortschritt: 731, feld: "Backstube", beschreibung: "Knuspriges Bauernbrot, frisch aus dem Ofen.", name: "Bauernbrot", dauer: 25, xp: 28, benutzer_exp: 0, kaufpreis: null, verkaufspreis: 80, ansehen: 0, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 14, magieverbrauch: 0, gold: 0, wasser: 0, energie: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, anzahlfelder: null, level: null, pflanzen: { "Weizen": 2, "Roggen": 1 } },
+        { fortschritt: 731, feld: "Backstube", beschreibung: "Knuspriges Bauernbrot, frisch aus dem Ofen.", name: "Bauernbrot", dauer: 25, xp: 1, benutzer_exp: 0, kaufpreis: null, verkaufspreis: 80, ansehen: 0, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 14, magieverbrauch: 0, gold: 0, wasser: 0, energie: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, anzahlfelder: null, level: null, pflanzen: { "Weizen": 2, "Roggen": 1 } },
 
-        { fortschritt: 732, feld: "Backstube", beschreibung: "Süßer Fruchtkuchen mit Beeren und Mango.", name: "Fruchtkuchen", dauer: 30, xp: 35, benutzer_exp: 0, kaufpreis: null, verkaufspreis: 95, ansehen: 0, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 16, magieverbrauch: 0, gold: 0, wasser: 0, energie: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, anzahlfelder: null, level: null, pflanzen: { "Weizen": 1, "Himbeere": 2, "Mango": 1 } }
+        { fortschritt: 732, feld: "Backstube", beschreibung: "Süßer Fruchtkuchen mit Beeren und Mango.", name: "Fruchtkuchen", dauer: 30, xp: 1, benutzer_exp: 0, kaufpreis: null, verkaufspreis: 95, ansehen: 0, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 16, magieverbrauch: 0, gold: 0, wasser: 0, energie: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, anzahlfelder: null, level: null, pflanzen: { "Weizen": 1, "Himbeere": 2, "Mango": 1 } }
     ],
 
     "Ölpresse": [
-        { fortschritt: 740, feld: "Ölpresse freischalten", beschreibung: "Hier werden wertvolle Öle aus Samen und Pflanzen gewonnen.", name: "Ölpresse", dauer: null, xp: null, benutzer_exp: null, kaufpreis: null, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: null, energieverbrauch: null, magieverbrauch: null, gold: null, wasser: null, energie: null, magie: null, samen: null, geerntet: null, bonus: false, fertiggewachsen: null, anzahlfelder: 3, level: 5 },
+        { fortschritt: 740, feld: "Ölpresse freischalten", beschreibung: "Hier werden wertvolle Öle aus Samen und Pflanzen gewonnen.", name: "Ölpresse", dauer: null, xp: null, benutzer_exp: null, kaufpreis: 350, verkaufspreis: null, ansehen: null, freigeschaltet: false, wasserverbrauch: null, energieverbrauch: null, magieverbrauch: null, gold: null, wasser: null, energie: null, magie: null, samen: null, geerntet: null, bonus: false, fertiggewachsen: null, anzahlfelder: 3, level: 5 },
 
-        { fortschritt: 741, feld: "Ölpresse", beschreibung: "Sonnenblumenöl für die Küche.", name: "Sonnenblumenöl", dauer: 18, xp: 22, benutzer_exp: 0, kaufpreis: null, verkaufspreis: 60, ansehen: 0, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 9, magieverbrauch: 0, gold: 0, wasser: 0, energie: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, anzahlfelder: null, level: null, pflanzen: { "Sonnenblume": 3 } },
+        { fortschritt: 741, feld: "Ölpresse", beschreibung: "Sonnenblumenöl für die Küche.", name: "Sonnenblumenöl", dauer: 18, xp: 1, benutzer_exp: 0, kaufpreis: null, verkaufspreis: 60, ansehen: 0, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 9, magieverbrauch: 0, gold: 0, wasser: 0, energie: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, anzahlfelder: null, level: null, pflanzen: { "Sonnenblume": 3 } },
 
-        { fortschritt: 742, feld: "Ölpresse", beschreibung: "Kürbiskernöl mit intensivem Aroma.", name: "Kürbiskernöl", dauer: 22, xp: 26, benutzer_exp: 0, kaufpreis: null, verkaufspreis: 70, ansehen: 0, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 11, magieverbrauch: 0, gold: 0, wasser: 0, energie: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, anzahlfelder: null, level: null, pflanzen: { "Kürbis": 2, "Sonnenblume": 1 } }
+        { fortschritt: 742, feld: "Ölpresse", beschreibung: "Kürbiskernöl mit intensivem Aroma.", name: "Kürbiskernöl", dauer: 22, xp: 1, benutzer_exp: 0, kaufpreis: null, verkaufspreis: 70, ansehen: 0, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 11, magieverbrauch: 0, gold: 0, wasser: 0, energie: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, anzahlfelder: null, level: null, pflanzen: { "Kürbis": 2, "Sonnenblume": 1 } }
     ]
 };
 
 
 const gebaeudeListe = [
     { fortschritt: 1000, feld: "Goldmine", beschreibung: "Fördert wertvolles Gold über die Zeit.", name: "Goldmine", dauer: 10.00, xp: null, benutzer_exp: 0, kaufpreis: 75, verkaufspreis: null, ansehen: 5, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, magieverbrauch: 0, gold: 1, wasser: 0, energie: 0, juwelen: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, anzahl_slots: 30, lager: null, betriebsmittel_level: 1, level: 1 },
-    { fortschritt: 1001, feld: "Wasserpumpe", beschreibung: "Pumpt stetig frisches Wasser aus dem Boden.", name: "Wasserpumpe", dauer: 15.00, xp: null, benutzer_exp: 0, kaufpreis: 75, verkaufspreis: null, ansehen: 8, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, magieverbrauch: 0, gold: 0, wasser: 1, energie: 0, juwelen: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, lager: null, anzahl_slots: 45, betriebsmittel_level: 1, level: 2 },
+    { fortschritt: 1001, feld: "Wasserpumpe", beschreibung: "Pumpt stetig frisches Wasser aus dem Boden.", name: "Wasserpumpe", dauer: 12.00, xp: null, benutzer_exp: 0, kaufpreis: 75, verkaufspreis: null, ansehen: 8, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, magieverbrauch: 0, gold: 0, wasser: 1, energie: 0, juwelen: 0, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, lager: null, anzahl_slots: 45, betriebsmittel_level: 1, level: 2 },
     { fortschritt: 1002, feld: "Elektrizitätswerk", beschreibung: "Erzeugt Energie für deine Farmen.", name: "Elektrizitätswerk", dauer: 17.50, xp: null, benutzer_exp: 0, kaufpreis: 75, verkaufspreis: null, ansehen: 11, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, magieverbrauch: 0, gold: 0, wasser: 0, energie: 1, juwelen: 0, magie: 0,  samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, lager: null, anzahl_slots: 50, betriebsmittel_level: 1, level: 3 },
     { fortschritt: 1003, feld: "Juwelenmine", beschreibung: "Fördert wertvolle Juwelen über die Zeit.", name: "Juwelenmine", dauer: 20.00, xp: null, benutzer_exp: 0, kaufpreis: 75, verkaufspreis: null, ansehen: 15, freigeschaltet: false, wasserverbrauch: 0, energieverbrauch: 0, magieverbrauch: 0, gold: 0, wasser: 0, energie: 0, juwelen: 1, magie: 0, samen: 0, geerntet: 0, bonus: false, fertiggewachsen: null, lager: null, anzahl_slots: 60, betriebsmittel_level: 1, level: 5 }
 ];
@@ -380,7 +380,7 @@ function login() {
             mail: null,
             intros: {login: 0, weltmarkt: 0, betriebsmittel: 0 },
             einstellungen: { sound: true, song: null, sound_timestamp: null, benachrichtigung: true, effekte: true },
-            benutzer_ansehen: 100,
+            benutzer_ansehen: 0,
             benutzer_level: 1,
             benutzer_explevel: 0,
             benutzer_levelsystem: 5,
@@ -395,7 +395,8 @@ function login() {
             felder_tutorial: {},
             weltmarkt_tutorial: {},
             betriebsmittel: {},
-            betriebsmittel_lager: { gold: 50, wasser: 50, energie: 50, juwelen: 25 }
+            betriebsmittel_lager: { gold: 50, wasser: 50, energie: 50, juwelen: 25 },
+            letzterBesuch: null
         };
 
         gebaeudeListe.forEach(geb => {
@@ -626,46 +627,54 @@ function prüfeUndAktualisiereBenutzerDaten(alleBenutzer, benutzername) {
     }
 
     function aktualisiereProdukte(speicher, quelle) {
-        const keysToIgnore = ["hergestellt", "anzahlprodukte", "freigeschaltet"];
+    const keysToIgnore = ["hergestellt", "anzahlprodukte", "freigeschaltet"];
 
-        Object.keys(quelle).forEach(gebaeude => {
-            if (!speicher[gebaeude]) {
-                speicher[gebaeude] = quelle[gebaeude].map(p => ({ ...p }));
-                hinzugefügt.push(`Neue Produkte im Gebäude: ${gebaeude}`);
-            } else {
-                const aktuelleMap = {};
-                quelle[gebaeude].forEach(p => aktuelleMap[p.name] = p);
+    Object.keys(quelle).forEach(gebaeude => {
+        if (!speicher[gebaeude]) {
+            speicher[gebaeude] = quelle[gebaeude].map(p => ({ ...p }));
+            hinzugefügt.push(`Neue Produkte im Gebäude: ${gebaeude}`);
+        } else {
+            const aktuelleMap = {};
+            quelle[gebaeude].forEach(p => aktuelleMap[p.name] = p);
 
-                speicher[gebaeude] = speicher[gebaeude].map(prod => {
-                    const quelleProd = aktuelleMap[prod.name];
-                    if (!quelleProd) return prod;
+            speicher[gebaeude] = speicher[gebaeude].map(prod => {
+                const quelleProd = aktuelleMap[prod.name];
+                if (!quelleProd) return prod;
 
-                    const prodFiltered = Object.fromEntries(Object.entries(prod).filter(([k]) => !keysToIgnore.includes(k)));
-                    const quelleFiltered = Object.fromEntries(Object.entries(quelleProd).filter(([k]) => !keysToIgnore.includes(k)));
+                const prodFiltered = Object.fromEntries(Object.entries(prod).filter(([k]) => !keysToIgnore.includes(k)));
+                const quelleFiltered = Object.fromEntries(Object.entries(quelleProd).filter(([k]) => !keysToIgnore.includes(k)));
 
-                    if (!deepEqual(prodFiltered, quelleFiltered)) {
-                        const hergestelltAlt = prod.hergestellt ?? 0;
-                        const anzahlAlt = prod.anzahlprodukte ?? 0;
-                        const neuesProdukt = { ...quelleProd, hergestellt: hergestelltAlt, anzahlprodukte: anzahlAlt };
-                        verändert.push(`Produkt aktualisiert: ${prod.name} in ${gebaeude}`);
-                        delete aktuelleMap[prod.name];
-                        return neuesProdukt;
-                    } else {
-                        delete aktuelleMap[prod.name];
-                        return prod;
-                    }
-                });
+                if (!deepEqual(prodFiltered, quelleFiltered)) {
+                    const hergestelltAlt = prod.hergestellt ?? 0;
+                    const anzahlAlt = prod.anzahlprodukte ?? 0;
+                    const freigeschaltetAlt = prod.freigeschaltet;
 
-                Object.values(aktuelleMap).forEach(p => {
-                    speicher[gebaeude].push({ ...p });
-                    hinzugefügt.push(`Neues Produkt: ${p.name} in ${gebaeude}`);
-                });
-            }
+                    const neuesProdukt = { 
+                        ...quelleProd, 
+                        hergestellt: hergestelltAlt, 
+                        anzahlprodukte: anzahlAlt, 
+                        freigeschaltet: freigeschaltetAlt 
+                    };
 
-            const aktuelleNamen = quelle[gebaeude].map(p => p.name);
-            speicher[gebaeude] = speicher[gebaeude].filter(p => aktuelleNamen.includes(p.name));
-        });
-    }
+                    verändert.push(`Produkt aktualisiert: ${prod.name} in ${gebaeude}`);
+                    delete aktuelleMap[prod.name];
+                    return neuesProdukt;
+                } else {
+                    delete aktuelleMap[prod.name];
+                    return prod;
+                }
+            });
+
+            Object.values(aktuelleMap).forEach(p => {
+                speicher[gebaeude].push({ ...p });
+                hinzugefügt.push(`Neues Produkt: ${p.name} in ${gebaeude}`);
+            });
+        }
+
+        const aktuelleNamen = quelle[gebaeude].map(p => p.name);
+        speicher[gebaeude] = speicher[gebaeude].filter(p => aktuelleNamen.includes(p.name));
+    });
+}
 
     function aktualisiereBetriebsmittel(speicher, quelle) {
         const aktuelleMap = {};
@@ -910,8 +919,3 @@ function zeigeSpielerOverlay(name, daten) {
     overlay.appendChild(dialog);
     document.body.appendChild(overlay);
 }
-
-
-
-
-
