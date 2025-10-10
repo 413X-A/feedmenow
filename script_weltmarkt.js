@@ -56,8 +56,7 @@ function zeigeOverlay(titelText, nachricht) {
 }
 
 function setupWeltmarkt() {
-    const box = document.getElementById("weltmarkt_box");
-    if (!box) return;
+    const box = document.getElementById("weltmarkt_betriebsmittel");
 
     const items = box.querySelectorAll(".weltmarkt-item");
 
@@ -72,8 +71,7 @@ function setupWeltmarkt() {
     items.forEach(item => {
         const resName = item.dataset.res;
 
-        // Magie entfernen
-        if (resName === "magie") {
+        if (resName === "magie", resName === "juwelen") {
             item.remove();
             return;
         }
