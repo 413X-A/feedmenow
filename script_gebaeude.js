@@ -15,33 +15,30 @@ function ueberschrift() {
 
 function gebaeude_felder_faerben() {
     const aktuellerBenutzer = localStorage.getItem("aktuellerBenutzer");
-    if (!aktuellerBenutzer) return;
-
     const alleBenutzer = JSON.parse(localStorage.getItem("benutzer")) || {};
     const daten = alleBenutzer[aktuellerBenutzer];
-    if (!daten || !daten.gebaeudeFelder) return;
 
     Object.keys(daten.gebaeudeFelder).forEach(gebaeudeID => {
         const felder = daten.gebaeudeFelder[gebaeudeID];
-        if (!felder) return;
-
         const container = document.getElementById(`gebaeudeFelder_${gebaeudeID}`);
-        if (!container) return;
+
+        if (!container || !felder) return;
 
         Object.keys(felder).forEach((feldNummer, index) => {
             const feldObjekt = felder[feldNummer];
-            const item = container.children[index]; // Index nutzen, kein -1
-            if (!feldObjekt || !item) return;
+            const item = container.children[index];
 
-            // Status-Färbung
+            // 🔸 Status-Färbung
             if (feldObjekt.status === "leer") {
                 item.style.backgroundColor = "#b0b0b0"; // Grau
             } else if (feldObjekt.status === "inProduktion") {
-                item.style.backgroundColor = (Date.now() >= feldObjekt.zeit_fertig) ? "#2e7d32" : "#ffa500";
+                item.style.backgroundColor = (Date.now() >= feldObjekt.zeit_fertig)
+                    ? "#2e7d32" // Fertig
+                    : "#ffa500"; // Produktion läuft
             } else if (feldObjekt.status === "fertig") {
-                item.style.backgroundColor = "#2e7d32";
+                item.style.backgroundColor = "#2e7d32"; // Grün
             } else {
-                item.style.backgroundColor = "#b0b0b0"; // Standard
+                item.style.backgroundColor = "#b0b0b0"; // Fallback
             }
         });
     });
@@ -61,7 +58,6 @@ function gebaeudeAnzeigen() {
 
     Object.keys(daten.produkte).forEach(gebaeudeName => {
         const eintraege = daten.produkte[gebaeudeName];
-        if (!eintraege || eintraege.length === 0) return;
 
         const gebaeudeInfo = eintraege[0];
         gebaeudeIndex++;
@@ -91,7 +87,7 @@ function gebaeudeAnzeigen() {
 
                     const feldDiv = document.createElement("div");
                     feldDiv.className = "feldBox";
-                    feldDiv.style.backgroundColor = "#b0b0b0"; // Standard Grau
+                    feldDiv.style.backgroundColor = "#b0b0b0";
 
 
                     feldDiv.addEventListener("click", () => produktionsFeld_angeklickt(daten, gebaeudeInfo, feldNummer));
@@ -102,19 +98,26 @@ function gebaeudeAnzeigen() {
             gebaeudeBox.appendChild(felderContainer);
 
         } else {
-            // 🔒 Nicht freigeschaltetes Gebäude → Freischalten Button
-            const preis = 100 + (gebaeudeIndex - 1) * 50; // Preis steigert sich
+            const preis = gebaeudeInfo.kaufpreis;
             const freischaltenBtn = document.createElement("button");
             freischaltenBtn.textContent = `Freischalten für ${preis} Gold`;
             freischaltenBtn.className = "ui_unten";
 
+
             freischaltenBtn.addEventListener("click", () => {
                 if (daten.ressourcen.gold >= preis && daten.benutzer_level >= gebaeudeInfo.level) {
+                    if (daten.einstellungen.effekte) {
+                        const sound = new Audio("deine_reise_freigeschaltet.mp3");
+                        sound.volume = 1.0;
+                        sound.play().catch(() => { });
+                    }
+
                     daten.ressourcen.gold -= preis;
                     daten.produkte[gebaeudeName][0].freigeschaltet = true;
                     alleBenutzer[aktuellerBenutzer] = daten;
                     localStorage.setItem("benutzer", JSON.stringify(alleBenutzer));
-                    gebaeudeAnzeigen();
+
+                    gebaeudeAnzeigen(); // UI aktualisieren
                 } else {
                     const overlay = document.createElement("div");
                     Object.assign(overlay.style, {
@@ -222,35 +225,81 @@ function produktionsFeld_angeklickt(daten, gebaeudeInfo, feldNummer) {
     // 🟩 2. Feld ist fertig → Produkt ernten
     // ----------------------------------------------------
     if (feldObjekt.status === "fertig") {
-        const produkt = daten.produkte[gebaeudeInfo.name].find(p => p.fortschritt === feldObjekt.produktID);
-        if (!produkt) return;
+        const produkt = Object.values(daten.produkte)
+            .flat()
+            .find(p => p.fortschritt === feldObjekt.produktID);
 
-        if (daten.ressourcen.anz_produkte < daten.lagerplatz.produkte) {
-            daten.ressourcen.anz_produkte += 1;
-            daten.benutzer_exp += produkt.xp || 0;
-            daten.benutzer_ansehen += produkt.ansehen || 0;
-
-            if (produkt.geerntet == null) produkt.geerntet = 0;
-            produkt.geerntet += 1;
-
+        if (!produkt) {
+            // Feld zurücksetzen
             feldObjekt.status = "leer";
             feldObjekt.produktID = null;
             feldObjekt.zeit_fertig = null;
 
+            // Daten speichern
             alleBenutzer[aktuellerBenutzerName] = daten;
             localStorage.setItem("benutzer", JSON.stringify(alleBenutzer));
 
+            // Fehler anzeigen
+            const overlay = document.createElement("div");
+            overlay.className = "overlay";
+
+            const dialog = document.createElement("div");
+            dialog.className = "overlay_dialog";
+            dialog.innerHTML = `
+    <h2>Keine Ernte gefunden</h2>
+    <p>Leider konnten wir kein passendes Produkt finden.</p>
+    <p>Es wurde möglicherweise entfernt oder verändert.</p>
+`;
+
+
+            const closeBtn = document.createElement("button");
+            closeBtn.className = "ui_unten";
+            closeBtn.textContent = "OK";
+            closeBtn.addEventListener("click", () => {
+                overlay.remove();
+
+                gebaeudeAnzeigen();
+            });
+
+            dialog.appendChild(closeBtn);
+            overlay.appendChild(dialog);
+            document.body.appendChild(overlay);
+        }
+
+        // Prüfen, ob Lagerplatz vorhanden ist
+        else if (daten.ressourcen.anz_produkte < daten.lagerplatz.produkte) {
+
+            // Ressourcen & Werte anpassen
+            daten.ressourcen.anz_produkte += 1;
+            daten.ressourcen.gold += produkt.verkaufspreis || 0;
+            daten.benutzer_exp += produkt.xp || 0;
+            daten.benutzer_ansehen += produkt.ansehen || 0;
+
+            // Statistik: Erntezähler hochsetzen
+            if (produkt.geerntet == null) produkt.geerntet = 0;
+            produkt.geerntet += 1;
+
+            // Feld zurücksetzen
+            feldObjekt.status = "leer";
+            feldObjekt.produktID = null;
+            feldObjekt.zeit_fertig = null;
+
+            // Daten speichern
+            alleBenutzer[aktuellerBenutzerName] = daten;
+            localStorage.setItem("benutzer", JSON.stringify(alleBenutzer));
+
+            // Erfolgsmeldung anzeigen
             const overlay = document.createElement("div");
             overlay.className = "overlay";
 
             const dialog = document.createElement("div");
             dialog.className = "dialog";
             dialog.innerHTML = `
-                <h2>${produkt.name} geerntet!</h2>
-                <p>📚 +${produkt.ansehen || 0} Ansehen</p>
-                <p>💰 +${produkt.verkaufspreis || 0} Gold</p>
-                <p>🍀 Geerntet: ${produkt.geerntet}x</p>
-            `;
+            <h2>${produkt.name} geerntet!</h2>
+            <p>📚 +${produkt.ansehen || 0} Ansehen</p>
+            <p>💰 +${produkt.verkaufspreis || 0} Gold</p>
+            <p>🍀 Geerntet: ${produkt.geerntet}x</p>
+        `;
 
             const closeBtn = document.createElement("button");
             closeBtn.className = "ui_unten";
@@ -265,16 +314,16 @@ function produktionsFeld_angeklickt(daten, gebaeudeInfo, feldNummer) {
             document.body.appendChild(overlay);
 
         } else {
-            // Lager voll → Overlay
+            // Lager voll
             const overlay = document.createElement("div");
             overlay.className = "overlay";
 
             const dialog = document.createElement("div");
             dialog.className = "dialog";
             dialog.innerHTML = `
-                <h2>Nicht genug Lagerplatz!</h2>
-                <p>Du hast keinen freien Platz, um dieses Produkt zu ernten.</p>
-            `;
+            <h2>Nicht genug Lagerplatz!</h2>
+            <p>Du hast keinen freien Platz, um dieses Produkt zu ernten.</p>
+        `;
 
             const closeBtn = document.createElement("button");
             closeBtn.className = "ui_unten";
@@ -285,7 +334,9 @@ function produktionsFeld_angeklickt(daten, gebaeudeInfo, feldNummer) {
             overlay.appendChild(dialog);
             document.body.appendChild(overlay);
         }
+
         return;
+
     }
 
     // ----------------------------------------------------
@@ -513,110 +564,95 @@ function rezeptKaufen() {
 
     const rezeptPreis = 25;
 
+    // ❌ Nicht genug Gold
     if (daten.ressourcen.gold < rezeptPreis) {
-        const ressOverlay = document.createElement("div");
-        Object.assign(ressOverlay.style, {
-            position: "fixed", top: 0, left: 0,
-            width: "100vw", height: "100vh",
-            backgroundColor: "rgba(0,0,0,0.5)",
-            display: "flex", justifyContent: "center", alignItems: "center"
-        });
-
-        const ressDialog = document.createElement("div");
-        Object.assign(ressDialog.style, {
-            backgroundColor: "white", padding: "2rem",
-            borderRadius: "12px", textAlign: "center",
-            minWidth: "300px"
-        });
-        ressDialog.innerHTML = `
+        const overlay = erzeugeOverlay(`
             <h2>Nicht genug Gold!</h2>
             <p>Du hast nicht genügend Gold, um ein Rezept zu kaufen.</p>
-        `;
-
-        const closeBtn = document.createElement("button");
-        closeBtn.textContent = "Zurück";
-        closeBtn.className = "ui_unten";
-        closeBtn.addEventListener("click", () => ressOverlay.remove());
-
-        ressDialog.appendChild(closeBtn);
-        ressOverlay.appendChild(ressDialog);
-        document.body.appendChild(ressOverlay);
+        `, "Zurück");
+        document.body.appendChild(overlay);
         return;
     }
 
-    // Alle freigeschalteten Gebäude sammeln
+    // 🔹 Alle freigeschalteten Gebäude finden
     const freigeschalteteGebaeude = Object.keys(daten.produkte).filter(gName => {
-        const gebaeude = daten.produkte[gName][0];
-        return gebaeude && gebaeude.freigeschaltet;
+        const geb = daten.produkte[gName][0];
+        return geb && geb.freigeschaltet;
     });
 
-    // Alle Rezepte, die noch nicht freigeschaltet sind
+    // 🔹 Alle noch gesperrten Rezepte sammeln
     let verfuegbareRezepte = [];
     freigeschalteteGebaeude.forEach(gName => {
-        const gebaeudeRezepte = daten.produkte[gName];
-        gebaeudeRezepte.forEach(r => {
+        const rezepte = daten.produkte[gName];
+        rezepte.forEach(r => {
             if (!r.freigeschaltet) {
-                verfuegbareRezepte.push(r);
+                verfuegbareRezepte.push({ ...r, gebaeudeName: gName });
             }
         });
     });
 
+    // ❌ Keine Rezepte verfügbar
     if (verfuegbareRezepte.length === 0) {
-        const ressOverlay = document.createElement("div");
-        Object.assign(ressOverlay.style, {
-            position: "fixed", top: 0, left: 0,
-            width: "100vw", height: "100vh",
-            backgroundColor: "rgba(0,0,0,0.5)",
-            display: "flex", justifyContent: "center", alignItems: "center"
-        });
-
-        const ressDialog = document.createElement("div");
-        Object.assign(ressDialog.style, {
-            backgroundColor: "white", padding: "2rem",
-            borderRadius: "12px", textAlign: "center",
-            minWidth: "300px"
-        });
-        ressDialog.innerHTML = `
-            <h2>Keine Rezepte auffindbar!</h2>
-            <p>Du hast alle derzeit verfügbaren Rezepte für deine Gebäude freigeschaltet.</p>
-        `;
-
-        const closeBtn = document.createElement("button");
-        closeBtn.textContent = "Zurück";
-        closeBtn.className = "ui_unten";
-        closeBtn.addEventListener("click", () => ressOverlay.remove());
-
-        ressDialog.appendChild(closeBtn);
-        ressOverlay.appendChild(ressDialog);
-        document.body.appendChild(ressOverlay);
+        const overlay = erzeugeOverlay(`
+            <h2>Keine Rezepte verfügbar!</h2>
+            <p>Du hast bereits alle Rezepte freigeschaltet.</p>
+        `, "Zurück");
+        document.body.appendChild(overlay);
         return;
     }
 
-    // Zufälliges Rezept auswählen
+    // 🎲 Zufälliges Rezept auswählen
     const zufallIndex = Math.floor(Math.random() * verfuegbareRezepte.length);
     const gekauftesRezept = verfuegbareRezepte[zufallIndex];
 
-    // Gold abziehen und Rezept freischalten
+    // 💰 Gold abziehen
     daten.ressourcen.gold -= rezeptPreis;
-    gekauftesRezept.freigeschaltet = true;
 
+    // ✅ Rezept im Original-Objekt freischalten
+    const produktListe = daten.produkte[gekauftesRezept.gebaeudeName];
+    const produkt = produktListe.find(p => p.name === gekauftesRezept.name);
+    if (produkt) {
+        produkt.freigeschaltet = true;
+    } else {
+        console.warn("Produkt beim Freischalten nicht gefunden:", gekauftesRezept.name);
+    }
+
+    // 💾 Änderungen sicher speichern
     alleBenutzer[aktuellerBenutzer] = daten;
     localStorage.setItem("benutzer", JSON.stringify(alleBenutzer));
 
-    // 🔸 Sound abspielen
-    if (daten.einstellungen.effekte) {
-        const sound = new Audio("deine_reise_freigeschaltet.mp3");
-        sound.volume = 1.0;
-        sound.play().catch(() => { });
+    // 🔊 Soundeffekt (falls aktiviert)
+    if (daten.einstellungen?.effekte) {
+        try {
+            const sound = new Audio("deine_reise_freigeschaltet.mp3");
+            sound.volume = 1.0;
+            sound.play();
+        } catch (e) {
+            console.warn("Sound konnte nicht abgespielt werden:", e);
+        }
     }
 
-    // Overlay anzeigen
+    // 🪟 Erfolgs-Overlay anzeigen
+    const overlay = erzeugeOverlay(`
+        <h2>Rezept gekauft!</h2>
+        <p>Du hast das Rezept für <b>${gekauftesRezept.name}</b> erfolgreich freigeschaltet.</p>
+        <p>💰 -${rezeptPreis} Gold</p>
+    `, "OK", () => {
+        overlay.remove();
+        gebaeudeAnzeigen(); // ← Diese Funktion sollte immer neu aus localStorage lesen!
+    });
+    document.body.appendChild(overlay);
+}
+
+// 🔧 Hilfsfunktion: Einheitliches Overlay-Design
+function erzeugeOverlay(html, buttonText = "OK", onClose = null) {
     const overlay = document.createElement("div");
     Object.assign(overlay.style, {
         position: "fixed", top: 0, left: 0,
         width: "100vw", height: "100vh",
         backgroundColor: "rgba(0,0,0,0.5)",
-        display: "flex", justifyContent: "center", alignItems: "center"
+        display: "flex", justifyContent: "center", alignItems: "center",
+        zIndex: 9999
     });
 
     const dialog = document.createElement("div");
@@ -628,24 +664,19 @@ function rezeptKaufen() {
         minWidth: "300px"
     });
 
-    dialog.innerHTML = `
-        <h2>Rezept gekauft!</h2>
-        <p>Du hast das Rezept für <b>${gekauftesRezept.name}</b> freigeschaltet.</p>
-        <p>💰 -${rezeptPreis} Gold</p>
-    `;
+    dialog.innerHTML = html;
 
-    const closeBtn = document.createElement("button");
-    closeBtn.textContent = "OK";
-    closeBtn.className = "ui_unten";
-    closeBtn.addEventListener("click", () => {
+    const btn = document.createElement("button");
+    btn.textContent = buttonText;
+    btn.className = "ui_unten";
+    btn.addEventListener("click", () => {
         overlay.remove();
-        // UI sofort aktualisieren, damit das neue Rezept sichtbar ist
-        gebaeudeAnzeigen();
+        if (onClose) onClose();
     });
 
-    dialog.appendChild(closeBtn);
+    dialog.appendChild(btn);
     overlay.appendChild(dialog);
-    document.body.appendChild(overlay);
+    return overlay;
 }
 
 
