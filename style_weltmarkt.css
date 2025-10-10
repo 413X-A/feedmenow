@@ -1,21 +1,63 @@
-.weltmarkt-box {
+/* Betriebsmittel*/
+.weltmarkt-betriebsmittel {
     max-width: 800px;
     margin: 2rem auto;
     background: linear-gradient(to bottom, #e5f3d1, #c5e1a5);
-    border: 4px solid #8c5e2c;
+    border: 3px solid #8c5e2c;
     border-radius: 20px;
     padding: 1.5rem;
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
-.weltmarkt-box p {
+.weltmarkt-betriebsmittel p {
     text-align: center;
     color: #2e3d2f;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-bottom: 1rem;
-    text-shadow: 0 2px 3px rgba(255,255,255,0.6);
+    text-shadow: 0 2px 3px rgba(255, 255, 255, 0.7);
 }
+
+/* Samen | Produkte */
+.weltmarkt-samenprodukte {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: linear-gradient(to bottom, #fff4e0, #f7d99c);
+    border: 3px solid #a0682a;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.weltmarkt-samenprodukte p {
+    text-align: center;
+    color: #355834;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 3px rgba(255, 255, 255, 0.7);
+}
+
+
+
+/* Händler */
+.weltmarkt-haendler {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: linear-gradient(to bottom, #d0e6ff, #87bfff); /* helles zu kräftiges Blau */
+    border: 3px solid #3a7ca5; /* dunkleres Blau für Rahmen */
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: #1a374d; /* dunkles Blau für Text */
+}
+.weltmarkt-haendler p {
+    font-size: 1.2rem;
+    color: #1a374d;
+    margin-bottom: 1rem;
+}
+
+
 
 .weltmarkt-container {
     display: flex;
