@@ -4,8 +4,8 @@
 .produkte-box {
     max-width: 800px;
     margin: 2rem auto;
-    background: linear-gradient(to bottom, #f3f3f3, #e0e0e0); /* neutral-grauer Hintergrund */
-    border: 3px solid #888; /* dezenter Rahmen passend zu Industrie-/Betriebsmitteln */
+    background: linear-gradient(to bottom, #f3f3f3, #e0e0e0);
+    border: 3px solid #888;
     border-radius: 20px;
     padding: 1.5rem;
     box-shadow: 0 6px 18px rgba(0,0,0,0.15);
